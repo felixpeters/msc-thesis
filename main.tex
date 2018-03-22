@@ -14,11 +14,17 @@
 \include{sec/abstract}
 
 \pagestyle{headings}
+
+\captionsetup[figure]{name=Figure}
+\captionsetup[table]{name=Table}
         
+\renewcommand{\contentsname}{Table of contents}
 \tableofcontents	
 \newpage 
+\renewcommand{\listfigurename}{List of figures}
 \listoffigures
 \newpage
+\renewcommand{\listtablename}{List of tables}
 \listoftables
 \clearpage
 
@@ -29,15 +35,17 @@
 
 \pagenumbering{arabic}
 
-\include{chapters/einleitung}%1
-\include{chapters/grundlagen}%2
-\include{chapters/entwicklung}%3
-\include{chapters/forschungsmethode}%4
-\include{chapters/forschungsergebnisse}%5
-\include{chapters/diskussion}%6
-\include{chapters/fazitundausblick}
+\include{sec/intro}
+\include{sec/background}
+%\include{chapters/einleitung}%1
+%\include{chapters/grundlagen}%2
+%\include{chapters/entwicklung}%3
+%\include{chapters/forschungsmethode}%4
+%\include{chapters/forschungsergebnisse}%5
+%\include{chapters/diskussion}%6
+%\include{chapters/fazitundausblick}
 \pagenumbering{Roman}
-\bibliography{bibliography/referenzen}
+\bibliography{bibliography/thesis}
 
 \include{chapters/appendix}
 

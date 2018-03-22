@@ -1,4 +1,4 @@
-\subsection{Basic Concepts}
+\subsubsection{Basic Concepts}
 \label{sub:dl_concepts}
 
 Understanding more sophisticated deep learning methods used in later
@@ -12,7 +12,7 @@ The first paragraph in this subsection will introduce the major elements
 of the neural network training process which will then be described in more
 detail in the following paragraphs.
 
-\subsubsection{Training process}
+\paragraph{Training process}
 
 Like most machine learning algorithms, neural networks are trained using an iterative process.
 In short, the network takes some example from the training data set as an input 
@@ -36,7 +36,7 @@ basic elements of an artifical neural network.
 In order to define them in more detail, mathematical notation has first to be
 established.
 
-\subsubsection{Neural network structure}
+\paragraph{Neural network structure}
 
 \begin{figure}[h]
   \centering
@@ -66,7 +66,7 @@ the ${(l-1)}^{th}$ layer with the $j^{th}$ unit in the $l^{th}$ layer.
 Figure~\ref{fig:nn_architecture} contains an example path from input to ouput
 layer which resembles this notation.
 
-\subsubsection{Forward propagation}
+\paragraph{Forward propagation}
 \label{sub:dl_forward}
 
 During the forward propagation process, the neural network calculates an output
@@ -151,7 +151,7 @@ be applied in each layer.
 With the calculated outputs it is possible to evaluate predictions of the
 networks by calculating the error according to the cost function.
 
-\subsubsection{Cost function}
+\paragraph{Cost function}
 
 In order to state necessary assumptions about the cost function, a first look
 at the goal of the backpropagation algorithm is useful.
@@ -198,7 +198,7 @@ With these assumptions set the next paragraph will explain how the
 backpropagation algorithm derives gradients for the weight updates which enable
 learning in the training process.
 
-\subsubsection{Backpropagation}
+\paragraph{Backpropagation}
 \label{sub:backprop}
 
 As mentioned before, the backpropagation offers a way to calculate gradients

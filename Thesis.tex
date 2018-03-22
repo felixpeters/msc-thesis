@@ -1,0 +1,89 @@
+\documentclass[twoside, type=msc,colorback,accentcolor=tud1b, 11pt, numbersubsubsec]{tudthesis}
+\usepackage[german]{babel}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{courier}
+\usepackage{amsmath}
+\usepackage{todonotes}
+\usepackage{booktabs}
+
+\mdfsetup{nobreak=true}
+\mdtheorem{definition}{Definition}
+\mdtheorem{formula}{Formula}
+
+% todonotes setup
+\newcommand{\addcitation}[1]{\todo[color=yellow,inline]{Missing citation: #1}}
+\newcommand{\outline}[1]{\todo[color=pink,inline]{Outline: #1}}
+
+\usepackage{float}
+% Figure caption
+\usepackage{caption}
+\captionsetup[figure]{name=Figure}
+\captionsetup[table]{name=Table}
+\usepackage{subcaption}
+
+% Paragraph style
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1em}
+
+\DeclareMathSizes{11}{14}{9}{9}
+\linespread{1.3}
+
+\newcommand{\getmydate}{%
+  \ifcase\month%
+  \or Januar\or Februar\or M\"arz%
+  \or April\or Mai\or Juni\or Juli%
+  \or August\or September\or Oktober%
+  \or November\or Dezember%
+  \fi\ \number\year%
+}
+
+\parskip=2mm
+
+\begin{document}
+\thesistitle{Using Deep Learning Methods to Predict Tweet Engagement Metrics}{}
+
+\author{Felix Peters}
+\birthplace{Bad Soden am Taunus}
+
+\department{Fachbereich Rechts- und Wirtschaftswissenschaften}
+\group{Wirtschaftsinformatik}
+\referee{Prof. Dr. Peter Buxmann}{Prof. Dr. Alexander Benlian}
+
+% Start of text output
+\makethesistitle
+
+% TODO: Change
+\affidavit[24. April 2018]{Felix Peters}
+
+\input{sec/abstract.tex}
+
+\renewcommand{\contentsname}{Table of contents}
+\tableofcontents
+
+\renewcommand{\listfigurename}{List of figures}
+\listoffigures
+
+\renewcommand{\listtablename}{List of tables}
+\listoftables
+
+\input{sec/intro.tex}
+
+\input{sec/background.tex}
+
+\input{sec/methodology.tex}
+
+\input{sec/results.tex}
+
+\input{sec/conclusion.tex}
+
+\bibliographystyle{plain}
+\newpage
+\renewcommand{\bibname}{References}
+\bibliography{thesis}
+\end{document}
