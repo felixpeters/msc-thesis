@@ -1,0 +1,13 @@
+*.log
+*.aux
+*.bbl
+*.blg
+*.log
+*.lof
+*.out
+*.toc
+*.url
+*.lot
+main.pdf
+*.swp
+*.synctex.gz
