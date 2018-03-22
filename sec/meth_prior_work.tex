@@ -1,0 +1,143 @@
+\section{Prior Work}
+\label{sec:prior_work}
+
+This section lists previous work in tweet engagement prediction, starting with
+general retweet research and then introducing models that cope with different
+kinds of prediction problems.
+Predictive models in this area are largely focused on retweet prediction.
+This can be explained by the sharing effect of retweeting, which can be interpreted
+as information diffusion, a highly researched area in social network analysis.
+Previously developed models were roughly classified according to their problem type.
+
+\paragraph{General retweet research}
+
+General research on the act of retweeting offers intuitions about the mechanism
+and gives way for feature ideas for machine learning models.
+Boyd et al.~\cite{Golder} examine conversational aspects of retweeting and
+compare the mechanism to other behavioral conventions on the Twitter platform,
+namely mentions and hashtags.
+Where mentions constitute a form of direct messaging and hashtags enable
+communication around specific topics, retweeting is a form of information
+diffusion and participating in conversations without actively contributing.
+Furthermore, the authors identify motivations for retweeting, e.g., showing
+presence as a listener or validating a tweet.
+According to their examination, the most commonly retweeted content is
+time-sensitive, e.g., breaking news.
+Factors influencing retweetability have also been the subject of other work.
+Features are often separated into content and contextual features.
+Among content features, the use of URLs and hashtags has been shown to be
+positively correlated with retweetability, especially for URLs that are seen
+as particularly interesting by human respondents~\cite{Suh}.
+Contextual features comprise all factors related to the source user, his
+following and activitiy on the platform.
+The number of followers and friends, as well as account age have positive
+effects on retweetability.
+Moreover, past activity, e.g., tweet frequency was shown to not be significantly
+influential~\cite{Bakshy2011, Suh}.
+Retweeting has also been analyzed in temporal fashion, mainly through the use
+retweet graphs which constitute representations of cascades.
+Kwak et al.~\cite{Kwak2010} show that most retweeting acts occur in the first
+and second degree network of the source user.
+Additionally, most retweeting happens in a concise time frame.
+Namely, 50 \% of retweets take place within one hour, 75 \% within a day and more
+than 90 \% in one month after tweet creation.
+
+\paragraph{Retweet probability prediction}
+
+Retweet probability prediction refers to the problem of forecasting the
+probability that a given destination user will retweet a specific tweet of
+the source user.
+This problem has drawn interest from the research community in the past, and
+multiple models have been developed for this purpose.
+First models only used very simple features like tweet words, identity of the
+source user and the number of his followers and friends~\cite{Zaman2010}.
+Other work focuses on content features, which can be divided into two separate
+categories.
+Low-level features include used words, the number of hashtags, URLs and mentions,
+as well as usage of positive and negative terms according to predefined word 
+classification.
+High-level features on the other hand describe more complex features such as
+the association to topics or sentiments.
+Naveed et al.~\cite{Naveed2011} develop a logistic regression model using
+both types of features and find that tweets regarding more general and 
+negatively connoted topics have a higher probability of being retweeted.
+More complex features are included by Peng et al.~\cite{Peng2011},
+who employ conditional random fields for their predictive model.
+The authors include content features such as topic similarity of a tweet with 
+interests of the source user and his audience.
+In addition, activity data is used, e.g., tweet frequencies of user and
+followers around specific times.
+A new set of features involves the relationship between source and destination
+user, i.e., the number of mutual followers, friends and mentions.
+It is shown that user features are most helpful for the prediction of
+retweet probability.
+Lee et al.~\cite{Lee2014} go a step further and try to identify the most
+effective message propagator for a given tweet.
+They rely on a rich set of manually crafted features around personality and activity data
+and employ different machine learning models, e.g., random forest, logistic
+regression and support vector machines.
+
+\paragraph{Classification approaches}
+
+As introduced in ch.~\ref{sub:dl_terminology}, classification models learn a
+mapping between inputs and predefined sets of outputs.
+A model employing an output variable with exactly two possible values is referred
+to as a \textit{binary classification model}.
+This approach can be used for retweet prediction approach, namely if the goal
+of the model is to simply determine whether a given tweet will be retweeted
+or not.
+So-called \textit{multi-class classification models} aim to deliver a more
+precise prediction regarding the number of retweets.
+Hong et al.~\cite{Hong2011} have developed both types of models in their work
+using a logistic regression approach.
+Whereas the binary classification model shows promising results, the multi-class
+model only performs well for predicting retweet counts of 0 and larger than
+10,000.
+Classes inbetween these two extremes are predicted with much lower accuracy.
+Another binary classification model was introduced by Petrovic et al.~\cite{Petrovic2011}
+who focus on the creation a deployable model.
+This leads to the utilization of simple content and contextual features, as described
+in the above paragraph.
+They find that contextual features, especially regarding the source user,
+have higher predictive power than tweet features.
+The models achieve accuracy metrics between 70 and 80 \% on different tasks,
+which is not significantly different from recorded human performance.
+
+\paragraph{Regression approaches}
+
+Regression models aim to predict a specific value for given inputs.
+For retweet prediction this refers to forecasting a numerical value for the
+eventual retweet count.
+Since the retweet process after tweet creation has no preset determination date, general assumptions
+about the temporal retweet distribution have to be made when building
+regression models.
+Kupavskii et al.~\cite{Kupavskii2012} try to predict the eventual size of the
+retweet cascade, i.e., the graph whose vertices represent retweeting users.
+At the time, this constituted a novel task which enables two distinct predictions:
+one at the initial point of tweet creation, the second after a short
+time of observing the retweet cascade.
+Obviously, the second prediction can be made using more information about the
+initial message spread.
+The authors employ a gradient boosted decision tree based on standard content
+features (see above paragraphs).
+Additionally, they take retweet ratios of creating user and followers into
+account and precalculate PageRank statistics for all considered users on a
+separate data set of retweet graphs.
+Thus, they gain more insights into retweeting behavior of users in their data
+set.
+As expected, observing retweet cascades for some time improves the quality
+of their prediction considerably.
+A comparable approach is used by Zaman et al.~\cite{Zaman2014}, whose work
+examines retweet time series for 52 manually chosen tweets.
+They find that the median of all retweets occurs between four minutes and three
+hours after tweet creation.
+In addition, they develop a Bayesian model for evaluating the retweet graph
+which is able to utilize parts of the time series data to improve its
+prediction.
+The model outperforms a linear regression baseline using only
+the follower count as input data.
+Moreover, the prediction becomes more precise the more time series data is utilized
+as an input.
+
+Having established this line of prior research, the approaches used in this
+work can now be described.

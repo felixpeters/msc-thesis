@@ -1,0 +1,60 @@
+\section{Data}
+\label{sec:data_collection}
+
+The main goal of this thesis regarding the examined data is to have diverse
+data sets from users for which engagement prediction has practical relevance.
+The diversity requirement mainly comprises different retweet distributions
+so that the model performance can evaluated in a generalized manner.
+Predicting the popularity of tweets is relevant for all individuals and
+organizations that somehow rely on social media marketing or customer support.
+Therefore, the collected data sets include data from public figures and
+companies, most of whom actively maintain a Twitter account.
+The selected accounts were separated into three groups and saved as Twitter lists
+in the author's profile (see Appendix).
+For each of the three groups, all tweets from January to August 2017 were
+fetched from the public Twitter API~\footnote{\url{https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline.html}}.
+Afterwards, retweets that the specified users made were excluded since their
+engagement statistics are not related to their accounts, but the users who
+originally created their tweets.
+In summary, the final data sets include all status updates and quotes from the
+specified users in the given time frame.
+Since the data was collected in October/November 2017, all tweets in the data
+set are older than the threshold of one month that was assumed in the previous
+subsection.
+The following paragraph will introduce the three distinct user groups in more
+detail.
+
+\begin{table}
+\centering
+\begin{tabular}{lllr}
+\toprule
+Name & Accounts & Number of accounts & Total tweets \\
+\midrule
+Companies & Fortune 500 companies & 441 & 254,059 \\
+Politicians & US Governors and Senators & 162 & 94,919 \\
+Celebrities & Athletes, actors, actresses \& celebrities & 170 & 46,986 \\
+\bottomrule
+\end{tabular}
+\caption{Summary of collected data sets}
+\label{tab:dataset_summary}
+\end{table}
+
+Tab.~\ref{tab:dataset_summary} sums up all data sets used for the purpose of
+this work.
+The first data set comprises all Twitter accounts from \textit{Fortune 500}
+companies in 2017~\footnote{\url{http://fortune.com/fortune500/}}.
+All in all, 441 out of 500 companies operate a Twitter presence, which accounted
+for a total of 254,059 tweets in the evaluated period.
+The second user group includes all Twitter accounts of US Senators~\footnote{\url{https://twitter.com/cspan/lists/senators}} and Governors~\footnote{\url{https://twitter.com/cspan/lists/governors}}
+as of October 2017 which were derived from Twitter lists by the television
+network \textit{C-SPAN}.
+From January to August 2017, 162 politicians created a total of 94,919 tweets.
+The smalles data sets stems from celebrities, namely the \textit{Forbes Highest-Paid
+Athletes 2017}~\footnote{\url{https://www.forbes.com/sites/kurtbadenhausen/2017/06/15/full-list-the-worlds-highest-paid-athletes-2017}}, \textit{Forbes Highest-Paid Actors and Actresses 2017}~\footnote{\url{https://www.forbes.com/sites/natalierobehmed/2017/08/22/full-list-the-worlds-highest-paid-actors-and-actresses-2017}} and
+\textit{Forbes Highest-Paid Celebrities 2017}~\footnote{\url{https://www.forbes.com/sites/zackomalleygreenburg/2017/06/12/full-list-the-worlds-highest-paid-celebrities-2017}}.
+The derived data set contains 46,986 tweets from 170 accounts.
+
+Descriptive statistics about all three data sets can be found in ch.~\ref{sec:dda}.
+This section concludes the methodology chapter.
+The upcoming chapter will describe results of the undertaken experiments for
+this thesis.
