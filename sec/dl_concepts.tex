@@ -6,8 +6,8 @@ chapters requires comprehension of the basic concepts behind artificial
 neural networks.
 This chapter introduces mathematical foundations of both neural network
 structure and algorithms.
-The notation mostly follows the one from Nielsen~\cite{Nielsen2015}, but also
-adds explanations from Bishop~\cite{Bishop2006} and Goodfellow et al.~\cite{Goodfellow2016}.
+The notation mostly follows the one from Nielsen~\footcite{Nielsen2015}, but also
+adds explanations from Bishop~\footcite{Bishop2006} and Goodfellow et al.~\footcite{Goodfellow2016}.
 The first paragraph in this subsection will introduce the major elements
 of the neural network training process which will then be described in more
 detail in the following paragraphs.
@@ -135,7 +135,7 @@ train on a classification task.
 Contrary, most hidden layers in modern neural networks use ReLU as an activation
 function.
 The function was introduced in 2000 and has shown to be suitable for most deep
-learning techniques, since it stabilizes the training process~\cite{Hahnioser2000, Nair2010}.
+learning techniques, since it stabilizes the training process~\footcite{Hahnioser2000, Nair2010}.
 
 All in all, forward propagation is the layer-wise application of above described
 calculations. For the example network in figure~\ref{fig:nn_architecture}, the
@@ -231,7 +231,7 @@ weighted input in the opposite direction.
 \end{equation}
 
 The following explanation of the backpropagation algorithm is centered around
-the four fundamental equations mentioned by Nielsen~\cite{Nielsen2015}.
+the four fundamental equations mentioned by Nielsen~\footcite{Nielsen2015}.
 Since the value of the cost function is known after the forward propagation
 procedure, the first step of backpropagation is to calculate the error in the
 output layer $L$.

@@ -9,7 +9,7 @@ into.
 Understanding the origins of this methodology will be helpful in the next 
 subsection which explains the more formal aspects of neural networks.
 Overall, the history of neural network research is often separated into three
-distinct phases of active research and progress in the literature~\cite{Goodfellow2016}.
+distinct phases of active research and progress in the literature~\footcite{Goodfellow2016}.
 All three phases will be described in the following.
 
 \paragraph{Phase 1: First models}
@@ -24,19 +24,19 @@ model:
 \end{equation}
 
 The neuron was able to recognize two different categories by determining
-whether $f(x, w)$ was positive or negative~\cite{McCulloch1943}.
+whether $f(x, w)$ was positive or negative~\footcite{McCulloch1943}.
 As a downside, there was no way to set the weights via an algorithm.
 Instead, the weights had to be set by a human.
 The first model of a neuron which overcame this obstacle was the \textit{perceptron}
-developed by Rosenblatt~\cite{Rosenblatt1958}. The main contribution of the
+developed by Rosenblatt~\footcite{Rosenblatt1958}. The main contribution of the
 perceptron was a simple algorithm to update weights iteratively.
 The only requirement for the algorithm to run was a set of labeled examples.
-In the same timespan, Widrow and Hoff~\cite{Widrow1960} came up with a similar
+In the same timespan, Widrow and Hoff~\footcite{Widrow1960} came up with a similar
 model called \textit{adaptive linear element (ADALINE)} for regression problems.
 The main disadvantage that could not be overcome at the time lied in the 
 linearity of the model which limited its representational capability.
 For example, the model from equation 2.1 is not able to learn the XOR function 
-(see equations 2.2 to 2.5)~\cite{Minsky1969}.
+(see equations 2.2 to 2.5)~\footcite{Minsky1969}.
 
 \begin{align}
   f ([0, 1], w) = 1\\
@@ -47,25 +47,25 @@ For example, the model from equation 2.1 is not able to learn the XOR function
 
 These limitations caused a decline in research interest and thus mark the end
 of the first phase of neural network research, which is often referred to
-as \textbf{cybernetics}~\cite{Goodfellow2016}.
+as \textbf{cybernetics}~\footcite{Goodfellow2016}.
 
 \paragraph{Phase 2: Backpropagation and connectionism}
 
 The second wave of neural network research largely took place from the late
 1970s until the mid-1990s. 
 The problem of limited representational capability was overcome by wrapping
-neurons inside a non-linear function, which basically transforms its output~\cite{Fukushima1975}.
+neurons inside a non-linear function, which basically transforms its output~\footcite{Fukushima1975}.
 This idea was combined with distributing the representational capacity over
 more neurons, thus creating the first \textit{neural networks}. 
 The neurons were combined in layers which were connected to each other.
 This is also the main reason why this phase of neural network research is
-often referred to as \textbf{connectionism}~\cite{Goodfellow2016}.
+often referred to as \textbf{connectionism}~\footcite{Goodfellow2016}.
 The intuition behind this was that more neurons would be more capable of
 representing the input by acting together. 
 Here, each neuron stands for a distinct feature, e.g., the color of an object
-or the type of object itself~\cite{Rumelhart1986a}.
+or the type of object itself~\footcite{Rumelhart1986a}.
 Training these more complex models became easier and faster with the
-introduction of the backpropagation algorithm~\cite{Rumelhart1986}.
+introduction of the backpropagation algorithm~\footcite{Rumelhart1986}.
 More complex neural networks meant more weights which needed to be updated
 iteratively. 
 The backpropagation algorithm is still the dominant approach for training
@@ -76,7 +76,7 @@ Despite the fast progress in academic research, the interest in neural networks
 once again declined in the mid-1990s. The main reasons for this were the
 lack of computational power to train deeper models containing more layers, as 
 well as the advancements of other fields of machine learning (e.g., Support
-Vector Machines) around this time~\cite{Goodfellow2016}.
+Vector Machines) around this time~\footcite{Goodfellow2016}.
 
 % Third wave ("deep learning"):
 % Training deep networks becomes efficient (Hinton 2006)
@@ -87,15 +87,15 @@ Vector Machines) around this time~\cite{Goodfellow2016}.
 The difficulties of training deeper neural networks were overcome in 2006.
 It was shown that a combination of more efficient training algorithms and
 more advanced hardware enabled training deep networks in a reasonable amount of 
-time~\cite{Hinton2006, Holden2006}.
+time~\footcite{Hinton2006, Holden2006}.
 Further developments in the techniques and availability of more computational
 power led to popularization of deep neural networks and the term \textbf{deep
-learning} was coined~\cite{Goodfellow2016, LeCun2015}.
+learning} was coined~\footcite{Goodfellow2016, LeCun2015}.
 Deep learning was used in models that outperformed other machine learning
-algorithms in areas like image and speech recognition~\cite{Krizhevsky2012, Hinton2012}. 
+algorithms in areas like image and speech recognition~\footcite{Krizhevsky2012, Hinton2012}. 
 These made use of neural network architectures like \textit{convolutional neural networks} 
 and \textit{recurrent neural networks}, that were originally developed during 
-the second wave of neural network research~\cite{Fukushima1980, Hochreiter1997, LeCun1998}.
+the second wave of neural network research~\footcite{Fukushima1980, Hochreiter1997, LeCun1998}.
 
 Subsection 2.1.4 will go into more detail about the recent developments of
 deep learning techniques. The following subsection will describe the basic

@@ -37,22 +37,22 @@ are examples for data types which complement more traditional text and relationa
 data.
 Companies making use of big data in the form of data-driven decision making
 have been shown to be more profitable and productive than companies that do not
-apply such practices~\cite{McAfee2012}.
+apply such practices~\footcite{McAfee2012}.
 Modern world connectedness makes it possible to store data coming from
 many different sources and process it in centralized manner, e.g., to offer
-individualized services for consumers~\cite{Jordan2015}.
+individualized services for consumers~\footcite{Jordan2015}.
 Deep learning profits from big data, particularly because models become more
 precise with larger data sets.
 Large data sets have been shown to improve model performance more than careful
-feature engineering, which is required for most machine learning algorithms~\cite{Goodfellow2016}.
+feature engineering, which is required for most machine learning algorithms~\footcite{Goodfellow2016}.
 This trend is exemplified in growing benchmark data sets for deep learning
 models.
 For example, the \textit{MNIST} data set contains 70,000 images of size 28$\times$28 
 pixels and served as a benchmark for image recognition since being first
-introduced in 1998~\cite{LeCun1998}.
+introduced in 1998~\footcite{LeCun1998}.
 Nowadays, the most commonly used benchmark for the same task is the \textit{ImageNet}
 database, which consists of about 1.2 million images in higher 
-resolution~\cite{Russakovsky2015}.
+resolution~\footcite{Russakovsky2015}.
 
 Processing larger data sets demands a higher number of necessary computations.
 Hence, \textbf{computational resources} have to evolve in order to calculate models
@@ -64,7 +64,7 @@ GPUs are preferred over CPUs for these tasks, because they contain more
 processing units which can carry out computations in parallel.
 Graphics processors enable training of more complex models, i.e., models which
 contain more neurons and thus learn representation with higher numbers of 
-parameters~\cite{Goodfellow2016, Raina2009}.
+parameters~\footcite{Goodfellow2016, Raina2009}.
 
 \begin{figure}[h]
   \centering
@@ -86,7 +86,7 @@ from a two-dimensional input vector $x$, which is obviously independent of
 other activation computations in the same layer.
 Most notably, matrix operations are replaced with element-wise calculations here.
 Deep learning software typically computes forward and backward pass in this way
-layer by layer in order to speed up the training process~\cite{Abadi2016}.
+layer by layer in order to speed up the training process~\footcite{Abadi2016}.
 
 This work applies modern deep learning software and hardware for its model.
 Exact specifications can be found in chapter~\ref{ch:methodology}.
@@ -113,7 +113,7 @@ connected model from chapter~\ref{sub:dl_concepts}
 \end{figure}
 
 \textbf{Convolutional neural networks} were first developed by LeCun et al. in 1998,
-based on approaches that had been invented during the 1980s~\cite{Fukushima1980, LeCun1998}.
+based on approaches that had been invented during the 1980s~\footcite{Fukushima1980, LeCun1998}.
 At that time they were mostly used for simple image processing tasks like
 automatic character recognition from handwriting.
 In order to understand what characterizes convolutional layers, it is helpful
@@ -139,12 +139,12 @@ determined during the training process.
 \begin{figure}[h]
   \centering
   \includegraphics[height=8cm]{img/conv_filters.jpeg}
-  \caption[Example filters in a convolutional layer]{Example filters in a convolutional layer~\cite{Krizhevsky2012}}
+  \caption[Example filters in a convolutional layer]{Example filters in a convolutional layer~\footcite{Krizhevsky2012}}
 \label{fig:conv_examples}
 \end{figure}
 
 Figure~\ref{fig:conv_examples} shows examples for such filters, as found in
-a large convolutional neural network~\cite{Krizhevsky2012}.
+a large convolutional neural network~\footcite{Krizhevsky2012}.
 The top half of filters identify edges of varying orientation and thickness,
 whereas the bottom half of filters focuses on color contrasts.
 These are examples for filters learned in the first convolutional layer of a
@@ -159,7 +159,7 @@ network, that set a new benchmark for image recognition tasks.
 
 In practice, convolutional layers are stacked, so that later layers can learn
 to identify increasingly complex shapes, e.g., faces or objects, from more
-primitive shapes like edges and color contrasts~\cite{Simonyan2015}.
+primitive shapes like edges and color contrasts~\footcite{Simonyan2015}.
 \textit{Pooling layers} are often used to combine the output of neuron copies, which
 enables the next convolutional layer to detect shapes from a greater portion of
 the image effectively.
@@ -198,7 +198,7 @@ e.g., translation tasks or time-series forecasting.
 Recurrent neural networks overcome the liability by introducing the concept
 of \textbf{memory}.
 As shown in Fig.~\ref{fig:rnn_unrolled}b, information is passed between
-iterations, which for example enables the network to memorize previous inputs~\cite{Goodfellow2016}.
+iterations, which for example enables the network to memorize previous inputs~\footcite{Goodfellow2016}.
 The most applied RNN variant is the so-called \textbf{Long Short-Term Memory}
 network, which will be explained in the following.
 
@@ -210,7 +210,7 @@ network, which will be explained in the following.
 \end{figure}
 
 The Long Short-Term Memory (LSTM) network was first introduced by Hochreiter \&
-Schmidhuber~\cite{Hochreiter1997} in 1997, aiming to solve the problem of
+Schmidhuber~\footcite{Hochreiter1997} in 1997, aiming to solve the problem of
 storing information in a neural network over time.
 A LSTM neuron (often calledLSTM cell) comprises four separate layers which 
 manipulate the \textit{cell state}.
@@ -229,7 +229,7 @@ LSTMs are commonly applied for Natural Language Processing tasks such as
 language modeling, i.e., prediction of the next word based on previously seen
 text.
 Therefore, an example language modeling task will be used to describe the
-gate functionalities~\cite{Olah2015}.
+gate functionalities~\footcite{Olah2015}.
 Firstly, the \textit{forget gate} decides which information can be removed from
 the cell state.
 Internally, the forget gate contains a simple layer with sigmoid activations.
@@ -252,7 +252,7 @@ Continuing previous example, the input gate would likely add information about
 the gender of the new subject, which determines word endings for predicates in
 many languages.
 Finally, an output for the current iteration is generated in the \textit{output gate}.
-The output represents `a filtered version'~\cite{Olah2015} of the cell state, e.g.,
+The output represents `a filtered version'~\footcite{Olah2015} of the cell state, e.g.,
 information for upcoming verbs when a new subject is observed.
 This happens through the use of another layer with sigmoid activations which
 intuitively filters relevant information from the cell state.
@@ -272,12 +272,12 @@ due to driving factors described in Chapter~\ref{sub:dl_drivers}.
 Finally, this subsection introduces \textbf{Generative Adverserial Networks (GANs)}, which
 represent a more recently invented model architecture.
 The basic concept was presented by researchers in 2014, and has gained popularity
-since then~\cite{Goodfellow2014}.
+since then~\footcite{Goodfellow2014}.
 As can be extracted from the name, GANs belong to the family of \textit{generative
 models}.
 In contrast to \textit{discriminative models} which learn a decision boundary
 between classes (e.g., Support Vector Machines), generative models implicitly 
-model the probability distribution of inputs and outputs~\cite{Bishop2006}.
+model the probability distribution of inputs and outputs~\footcite{Bishop2006}.
 Therefore, generative models can be used to generate new data from the learned
 distribution, e.g., new images can be created from a sample of real images.
 Generative adversarial networks approach this problem by combining two neural 
@@ -303,7 +303,7 @@ such similarity with original samples, that the discriminator can not differenti
 between real and generated anymore.
 The question arises, how this objective can be expressed in a cost function.
 Traditionally, generative models were trained by minimizing the distance of
-generated output to nearest sample in the real data~\cite{Goodfellow2014}.
+generated output to nearest sample in the real data~\footcite{Goodfellow2014}.
 GANs use a different objective function, which is exemplified in equation~\ref{eq:gan_obj}.
 
 \begin{equation}
@@ -319,9 +319,9 @@ of the discriminator), minimizing it implies that the discriminator is not capab
 of specifying where a sample comes from (aim of the generator).
 The authors of the original paper prove the existence of a unique solution, where
 the generator is able to represent the original data distribution and the 
-discriminator outputs probabilities of 0.5 for every sample~\cite{Goodfellow2014}.
+discriminator outputs probabilities of 0.5 for every sample~\footcite{Goodfellow2014}.
 Such a game between two entities following conflictive objectives is referred to
-as a \textit{minimax setting}~\cite{Russell1995}.
+as a \textit{minimax setting}~\footcite{Russell1995}.
 
 During the training process, weights for both networks have to be updated.
 This can be achieved through backpropagating errors through both networks,
@@ -377,9 +377,9 @@ numerical optimization and then explain a commonly deployed algorithm called
 \end{equation}
 
 The concept of \textbf{momentum} was developed in the 1960s and has since been applied
-to numerical optimization problems~\cite{Polyak1964}.
+to numerical optimization problems~\footcite{Polyak1964}.
 During the third wave of neural network research, the concept was first
-utilized for accelerating training processes in deep networks~\cite{Sutskever2013}.
+utilized for accelerating training processes in deep networks~\footcite{Sutskever2013}.
 In its essence, momentum (equation~\ref{eq:momentum}) adds an additional step to 
 the gradient descent update function (equation~\ref{eq:gd}).
 
@@ -409,7 +409,7 @@ This added average constitutes a first moment estimate of the gradients, also
 known as \textit{mean estimate}.
 The \textbf{adaptive moment estimation (Adam)} optimization algorithm enhances
 momentum with further computations in order to guarantee accelerated
-convergence~\cite{Kingma2014a}.
+convergence~\footcite{Kingma2014a}.
 Intuitively, Adam adapts the learning rate for each parameter based on mean and
 variance of recent updates in the specific parameter.
 Equations~\ref{eq:adam_start} through~\ref{eq:adam_end} exemplify the update
@@ -440,11 +440,11 @@ $\eta$ (representing the learning rate) and $\epsilon$ (defaults to $10^{-8}$).
 \begin{figure}[h]
   \centering
   \includegraphics[height=10cm]{img/adam_comparison}
-  \caption[Comparison of optimization algorithms]{Comparison of optimization algorithms~\cite{Kingma2014a}}
+  \caption[Comparison of optimization algorithms]{Comparison of optimization algorithms~\footcite{Kingma2014a}}
 \label{fig:adam_comp}
 \end{figure}
 
-Kingma \& Ba~\cite{Kingma2014a} list concise implementation, computational efficiency,
+Kingma \& Ba~\footcite{Kingma2014a} list concise implementation, computational efficiency,
 suitability for complex models with many parameters and reasonable default values
 for the hyperparameters as main benefits of adaptive moment estimation.
 Figure~\ref{fig:adam_comp} compares Adam to other optimization algorithms,
@@ -466,7 +466,7 @@ This subsection will introduce regularization procedures after firstly explainin
 the concept of overfitting which many techniques aim to prevent.
 
 \textit{Generalization} constitutes the main challenge in machine learning and
-denotes the ability to `perform will on new, previously unseen inputs'~\cite[p. 110]{Goodfellow2016}.
+denotes the ability to `perform will on new, previously unseen inputs'~\footcite[110]{Goodfellow2016}.
 Therefore, machine learning models should not only be evaluated using training
 error, i.e., the performance measure on training data, but also via \textit{test
 error}, i.e., the performance on unseen test data.
@@ -480,7 +480,7 @@ In summary, key objectives of machine learning algorithms can be put as follows:
 \begin{figure}[h]
   \centering
   \includegraphics[height=8cm]{img/overfitting}
-  \caption[Overfitting, underfitting and appropriate capacity]{Overfitting, underfitting and appropriate capacity~\cite{Goodfellow2016}}
+  \caption[Overfitting, underfitting and appropriate capacity]{Overfitting, underfitting and appropriate capacity~\footcite{Goodfellow2016}}
 \label{fig:overfitting}
 \end{figure}
 
@@ -497,7 +497,7 @@ not regularized appropriately.
 The following paragraphs describe techniques commonly used to avoid overfitting.
 
 \textbf{Dropout} aims to solve a commonly occurring problem in deep neural networks
-called `co-adaption'~\cite{Hinton2012a}.
+called `co-adaption'~\footcite{Hinton2012a}.
 It refers to neurons that detect features whose usefulness can not be isolated,
 but is dependent on the detection of other features.
 Such a neuron is only helpful in conjunction with other neuron.
@@ -520,7 +520,7 @@ When applying the network to test data, all units are present to make prediction
 However, weights from all network layers using dropout are multiplied by $p$.
 This makes the application of dropout straighforward.
 Despite its algorithmic simplicity, dropout has been shown to reduce overfitting
-in several deep architectures~\cite{Srivastava2014}.
+in several deep architectures~\footcite{Srivastava2014}.
 
 Another, even more recently developed regularization technique is \textbf{batch
 normalization}.
@@ -550,7 +550,7 @@ each input, which serve to scale and shift the input after normalization~\ref{eq
 Hence, the network can learn to undo the normalization (\textit{denormalization})
 if necessary.
 Batch normalization has been shown to speed up the training process and also
-reduce overfitting which limits the necessity for dropout~\cite{Ioffe2015}.
+reduce overfitting which limits the necessity for dropout~\footcite{Ioffe2015}.
 
 \begin{figure}[h]
   \centering
@@ -566,7 +566,7 @@ more data.
 This can be achieved using either more real data, or by generating new examples
 from already used training data.
 This technique called \textbf{data augmentation} is common in computer vision
-problems that deal with images~\cite{Simard2003}.
+problems that deal with images~\footcite{Simard2003}.
 It refers to the enhancement of training data with variations of existing training
 examples.
 For images these augmented images can created using minor mutations, e.g., random rotations, flips, shifts or
@@ -574,4 +574,4 @@ color changes.
 Fig.~\ref{fig:augmented_images} shows examples of a handwritten character being
 mutated in various ways.
 Data augmentation leads to a bigger variety of inputs, which has been shown
-to reduce overfitting for deep neural networks~\cite{Krizhevsky2012}.
+to reduce overfitting for deep neural networks~\footcite{Krizhevsky2012}.

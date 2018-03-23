@@ -11,14 +11,14 @@ research and they essentially mean different things.
 and build intelligent entities (often called \textit{agents}). Hence, AI touches the 
 areas of philosophy, mathematics, psychology and computer science. Here, 
 intelligence is defined as \textit{rational action}, which means that an agent aims
-to perform the best possible action in a given setting~\cite{Russell1995}.
+to perform the best possible action in a given setting~\footcite{Russell1995}.
 
 In order to perform actions in an intelligent mannner, agents need to be able
 to recognize patterns in observed data. The found patterns can then be used
 by the agent to build up knowledge. This process is known as \textbf{machine
-learning (ML)}~\cite{Goodfellow2016}. In order to understand the methodology in
+learning (ML)}~\footcite{Goodfellow2016}. In order to understand the methodology in
 later chapters of this thesis, a more detailed examination of machine learning
-problems is needed. Mitchell~\cite[p. 2]{Mitchell1997} offers the following 
+problems is needed. Mitchell~\footcite[2]{Mitchell1997} offers the following 
 definition for machine learning algorithms:
 
 \begin{quote}
@@ -47,7 +47,7 @@ Machine learning is often used in settings where programs with fixed rules are
 insufficient. Hence, the application of machine learning adds a more dynamic
 component in order to perform a given task. Here, the task is usually to process
 an \textit{example} which consists of a set of \textit{features}. Features are
-attributes of an object that can be measured quantitatively~\cite{Goodfellow2016}. 
+attributes of an object that can be measured quantitatively~\footcite{Goodfellow2016}. 
 In the example described above, the number of bedrooms is one the features of 
 the house object. The task \textit{T} would then be to predict a price for this 
 house. Depending on the type of the specific output variable this problem can 
@@ -77,12 +77,12 @@ for more complex learning problems such as machine translation. The design of
 \textit{P} can influence the training process, e.g., if not all errors have the
 same misclassification cost. Furthermore, machine learning models should be evaluated on unseen
 data, i.e., data points that were not used for training the model. This way,
-one derives a better estimate of the generalization abilities of the model~\cite{Bishop2006, Goodfellow2016, Mitchell1997}.
+one derives a better estimate of the generalization abilities of the model~\footcite{Bishop2006, Goodfellow2016, Mitchell1997}.
 
 \paragraph{Experience \textit{E}}
 
 Machine learning algorithms can further be classified by the `kind of experience
-they are allowed to have during the training process'~\cite[p. 104]{Goodfellow2016}.
+they are allowed to have during the training process'~\footcite[104]{Goodfellow2016}.
 In \textbf{unsupervised learning} settings the label for an example (also called
 \textit{data point}) is unknown. For the house price prediction example this
 would mean that real prices for the houses in the data set are not
@@ -96,18 +96,18 @@ kinds of algorithms aim to identify underlying distributions of data. Contrary, 
 observed output (usually called \textit{label} or \textit{target}). Hence, a
 performance measure can be calculated for each data point, by which the
 algorithm is able to improve its predictions over time (see above classification
-and regression examples)~\cite{Goodfellow2016, Bishop2006}. The third kind of
+and regression examples)~\footcite{Goodfellow2016, Bishop2006}. The third kind of
 experience for a machine learning algorithm is a \textbf{reinforcement learning}
 setting. Here, the algorithm does not rely on a fixed data set, but instead 
 interacts with its environment steadily. It then learns from the feedback it
 derives from these interactions. A common usecase for reinforcement
 learning is the interaction of agents with the real environments, e.g.,
 self-driving cars. In most of these settings collecting all data points is
-insufficient or simply not feasible~\cite{Sutton1998}.
+insufficient or simply not feasible~\footcite{Sutton1998}.
 
 It becomes obvious that the three dimesions are related, i.e., choices for a
 specific dimension are conditioned on the other dimensions. Prior identification 
 of all three dimensions is key in order to identify 
-`well-defined learning problems'~\cite[p. 2f.]{Mitchell1997}. All developed 
+`well-defined learning problems'~\footcite[2--3]{Mitchell1997}. All developed 
 learning algorithms in later chapters will also use this classification 
 framework. 
