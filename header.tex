@@ -1,4 +1,4 @@
-\documentclass[accentcolor=tud1b,longdoc,nopartpage,table,twoside,bibtotoc, liststotoc,openright,colorbacktitle,inverttitle,numbersubsubsec,noresetcounter,11pt,noheadingspace,numbers=noenddot,article,parskip=half]{tudreport}
+\documentclass[accentcolor=tud1b,longdoc,nopartpage,table,oneside,bibtotoc, liststotoc,openright,colorbacktitle,inverttitle,numbersubsubsec,noresetcounter,11pt,noheadingspace,numbers=noenddot,article,parskip=half]{tudreport}
 
 % Babel-Paket f. neue deutsche Rechtschreibung
 \usepackage[ngerman, english]{babel}
@@ -180,7 +180,11 @@ pdfstartview={FitH}
 \usepackage{icomma}
 \usepackage{float}
 \usepackage{amsmath}
+\usepackage{todonotes}
 
+% todonotes setup
+\newcommand{\addcitation}[1]{\todo[color=yellow,inline]{Missing citation: #1}}
+\newcommand{\outline}[1]{\todo[color=pink,inline]{Outline: #1}}
 
 \colorlet{punct}{red!60!black}
 \definecolor{background}{HTML}{EEEEEE}
@@ -244,7 +248,7 @@ pdfstartview={FitH}
 \let\endoldtabular\endtabular
 \renewenvironment{tabular}{\rowcolors{2}{white}{lightgray}\oldtabular}{\endoldtabular}
 %Welche Ebenen bekommen die Linien des Desings in der Überschrift
-\setcounter{seclinedepth}{3}
+\setcounter{seclinedepth}{4}
 
 %Gepunktete Linien auch bei Verzeichnissen im Inhaltsverzeichnis
 \usepackage{tocstyle}
