@@ -18,9 +18,7 @@ Progress in deep learning research is mainly enabled by two factors, namely
 increased data availability and improved hardware for computation.
 Both factors will be detailed in the following.
 
-\paragraph{Big data}
-
-The term big data is used to describe the phenomenon of increased data
+The term \textbf{big data} is used to describe the phenomenon of increased data
 availability.
 Main causes for this are migration of transactions from the physical world
 to the internet, wide spread of mobile devices like smartphones and success
@@ -56,10 +54,8 @@ Nowadays, the most commonly used benchmark for the same task is the \textit{Imag
 database, which consists of about 1.2 million images in higher 
 resolution~\cite{Russakovsky2015}.
 
-\paragraph{Computational resources}
-
 Processing larger data sets demands a higher number of necessary computations.
-Hence, computational resources have to evolve in order to calculate models
+Hence, \textbf{computational resources} have to evolve in order to calculate models
 in a timely manner.
 Deep learning models are most commonly trained using \textit{graphics processing
 units} (GPUs), which were formerly applied to highly parallelized processing
@@ -109,8 +105,6 @@ be used for the model of this work.
 For better understanding the architectures are compared to the basic fully-
 connected model from chapter~\ref{sub:dl_concepts}
 
-\paragraph{Convolutional neural networks (CNN)}
-
 \begin{figure}[h]
   \centering
   \includegraphics[height=8cm]{img/conv_layer.png}
@@ -118,7 +112,7 @@ connected model from chapter~\ref{sub:dl_concepts}
 \label{fig:conv_layer}
 \end{figure}
 
-Convolutional neural networks were first developed by LeCun et al. in 1998,
+\textbf{Convolutional neural networks} were first developed by LeCun et al. in 1998,
 based on approaches that had been invented during the 1980s~\cite{Fukushima1980, LeCun1998}.
 At that time they were mostly used for simple image processing tasks like
 automatic character recognition from handwriting.
@@ -177,11 +171,9 @@ find occurrences of two parallel edges in an image.
 
 As mentioned before, convolutional neural networks are mostly applied to data
 like images and texts.
-More detailed practical applications will be discussed in chapter~\ref{sub:dl_applications}.
+More details about practical applications will be discussed in chapter~\ref{sub:dl_applications}.
 
-\paragraph{Recurrent neural networks (RNN)}
-
-Like convolutional neural networks, recurrent neural networks (RNNs) are usually
+Like convolutional neural networks, \textbf{recurrent neural networks} (RNNs) are usually
 used on data that underlies some kind of ordering.
 Popular applications of RNNs lie in the  area of \textbf{Naturual Language
 Processing (NLP)}, because text can be formalized as an ordered sequence of
@@ -274,12 +266,10 @@ Architectures using multiple, stacked LSTM layers are also used in practice,
 mainly to learn even more complex representations.
 Detailed use cases will be a central theme in Ch.~\ref{sub:dl_applications}.
 
-\paragraph{Generative adversarial networks}
-
 The previously described architectures of CNNs and RNNs were developed prior to
 the third wave of neural network research and became efficiently trainable
 due to driving factors described in Chapter~\ref{sub:dl_drivers}.
-Finally, this subsection introduces \textit{Generative Adverserial Networks (GANs)}, which
+Finally, this subsection introduces \textbf{Generative Adverserial Networks (GANs)}, which
 represent a more recently invented model architecture.
 The basic concept was presented by researchers in 2014, and has gained popularity
 since then~\cite{Goodfellow2014}.
@@ -386,9 +376,7 @@ numerical optimization and then explain a commonly deployed algorithm called
   w_{t+1} \rightarrow w_t - \eta \nabla f(w_t)
 \end{equation}
 
-\paragraph{Momentum}
-
-The concept of momentum was developed in the 1960s and has since been applied
+The concept of \textbf{momentum} was developed in the 1960s and has since been applied
 to numerical optimization problems~\cite{Polyak1964}.
 During the third wave of neural network research, the concept was first
 utilized for accelerating training processes in deep networks~\cite{Sutskever2013}.
@@ -415,13 +403,11 @@ This overcomes the liability of gradient descent which is susceptible to
 frequent changes of directions in the gradient, e.g., if examples in a mini-batch
 are particularly noisy.
 
-\paragraph{Adam}
-
 As outlined in above paragraph, momentum keeps track of the exponentially moving
 average of previous gradients.
 This added average constitutes a first moment estimate of the gradients, also 
 known as \textit{mean estimate}.
-The \textit{adaptive moment estimation (Adam)} optimization algorithm enhances
+The \textbf{adaptive moment estimation (Adam)} optimization algorithm enhances
 momentum with further computations in order to guarantee accelerated
 convergence~\cite{Kingma2014a}.
 Intuitively, Adam adapts the learning rate for each parameter based on mean and
@@ -479,8 +465,6 @@ research wave.
 This subsection will introduce regularization procedures after firstly explaining
 the concept of overfitting which many techniques aim to prevent.
 
-\paragraph{Overfitting}
-
 \textit{Generalization} constitutes the main challenge in machine learning and
 denotes the ability to `perform will on new, previously unseen inputs'~\cite[p. 110]{Goodfellow2016}.
 Therefore, machine learning models should not only be evaluated using training
@@ -500,7 +484,7 @@ In summary, key objectives of machine learning algorithms can be put as follows:
 \label{fig:overfitting}
 \end{figure}
 
-\textit{Overfitting} simply refers to a large gap between training error and test
+\textbf{Overfitting} simply refers to a large gap between training error and test
 error.
 Intuitively, the model learns too much about specific examples in the training
 set and can not perform well on other data.
@@ -512,9 +496,7 @@ Overfitting is often a result of long-running training processes which are
 not regularized appropriately.
 The following paragraphs describe techniques commonly used to avoid overfitting.
 
-\paragraph{Dropout}
-
-\textit{Dropout} aims to solve a commonly occurring problem in deep neural networks
+\textbf{Dropout} aims to solve a commonly occurring problem in deep neural networks
 called `co-adaption'~\cite{Hinton2012a}.
 It refers to neurons that detect features whose usefulness can not be isolated,
 but is dependent on the detection of other features.
@@ -540,9 +522,7 @@ This makes the application of dropout straighforward.
 Despite its algorithmic simplicity, dropout has been shown to reduce overfitting
 in several deep architectures~\cite{Srivastava2014}.
 
-\paragraph{Batch Normalization}
-
-Another, even more recently developed regularization technique is \textit{batch
+Another, even more recently developed regularization technique is \textbf{batch
 normalization}.
 It addresses the problem of slowly converging training processes caused by
 \textit{internal covariate shift}, which is the amount by which layer activations
@@ -572,8 +552,6 @@ if necessary.
 Batch normalization has been shown to speed up the training process and also
 reduce overfitting which limits the necessity for dropout~\cite{Ioffe2015}.
 
-\paragraph{Data augmentation}
-
 \begin{figure}[h]
   \centering
   \includegraphics[height=7cm]{img/data_augmentation}
@@ -587,7 +565,7 @@ Therefore, the first step in reducing overfitting is usually to add
 more data.
 This can be achieved using either more real data, or by generating new examples
 from already used training data.
-This technique called \textit{data augmentation} is common in computer vision
+This technique called \textbf{data augmentation} is common in computer vision
 problems that deal with images~\cite{Simard2003}.
 It refers to the enhancement of training data with variations of existing training
 examples.
