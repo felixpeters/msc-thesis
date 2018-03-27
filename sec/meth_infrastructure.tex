@@ -55,11 +55,20 @@ manipulation and analysis, namely \textit{pandas}\footnote{\url{https://pandas.p
 \textit{NumPy}\footnote{\url{http://www.numpy.org/}},
 \textit{matplotlib}\footnote{\url{https://matplotlib.org/}} and
 \textit{scikit-learn}\footnote{\url{http://scikit-learn.org/stable/}}.
-
-\outline{Data analysis and wrangling: pandas, numpy, matplotlib, scikit-learn}
-
-\outline{Model training: Keras (high-level API) with Theano backend (low-level: cudNN, CUDA)}
-\outline{Possible alternatives: TensorFlow, PyTorch (not as familiar to author)}
+Training deep neural networks effectively requires a multi-layered software
+stack, which consists of low-level processing software and high-level libraries
+for developing models conveniently.
+In this thesis, \textit{Keras}\footnote{\url{https://keras.io/}} served as a
+high-level API for developing and training models.
+The library is compatible with several more low-level frameworks for numerical
+computation, e.g., \textit{Theano}\footnote{\url{http://deeplearning.net/software/theano/}} 
+or Google's \textit{TensorFlow}\footnote{\url{https://www.tensorflow.org/}}.
+Out of these possible backends, Theano was used due to an easier setup procedure.
+Processing the necessary computations for neural networks on graphics processors
+further requires GPU-specific software.
+Since a NVIDIA GPU was applied, the \textit{CUDA}\footnote{\url{https://developer.nvidia.com/cuda-zone}}
+and \textit{cuDNN}\footnote{\url{https://developer.nvidia.com/cudnn}} toolkits
+had to be installed.
 
 This section about infrastructure concludes the methodology chapter.
 The upcoming chapter will describe results of experiments undertaken in this
