@@ -44,11 +44,17 @@ Conducting experiments in notebooks proved to increase reproducibility of result
 and overall project organization.
 Reusable functionality tested in notebooks was often transferred to Python
 modules.
-
-\outline{Development environment: Jupyter notebooks (+ self-written Python modules)}
-
-\outline{Data collection: python-twitter library}
-\outline{Possible alternatives: using API directly, wrangling with JSON (not as convenient)}
+In order to collect data from the public Twitter API, a Python library called
+\textit{python-twitter} was used.
+The library provides wraps the API in that it directly converts the requested
+data to Python objects.
+This removed the need to deal with raw JSON data and made the data collection
+process more convenient.
+Several other Python libraries were applied to common tasks such as data
+manipulation and analysis, namely \textit{pandas}\footnote{\url{https://pandas.pydata.org/}},
+\textit{NumPy}\footnote{\url{http://www.numpy.org/}},
+\textit{matplotlib}\footnote{\url{https://matplotlib.org/}} and
+\textit{scikit-learn}\footnote{\url{http://scikit-learn.org/stable/}}.
 
 \outline{Data analysis and wrangling: pandas, numpy, matplotlib, scikit-learn}
 
