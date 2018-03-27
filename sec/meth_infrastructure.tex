@@ -1,23 +1,60 @@
 \subsection{Infrastructure}
 \label{sec:infrastructure}
 
-\outline{Introduce subsection}
+The experiments in this thesis were conducted using infrastructure suitable
+to handle complex computations and large data sets.
+This section will describe hardware (ch.~\ref{sub:meth_hardware}) and software
+(ch.~\ref{sub:meth_software }) which was applied to the problem of tweet
+engagement prediction.
 
 \subsubsection{Hardware}
 \label{sub:meth_hardware}
 
-\outline{Data storage: Amazon S3}
-
-\outline{Data preprocessing \& model training: Amazon EC2 p2.xlarge instance (+ specs)}
+As stated in Chapter~\ref{sub:dl_drivers}, training deep neural networks
+typically requires the parallel computing power of graphics processors.
+In addition, large data files need to be stored and processed.
+Cloud environments are well suited for these tasks, since they enable on-demand 
+access to specialized hardware.
+\textit{Amazon Web Services} was chosen as primary infrastructure provider for 
+work on this thesis, mainly due to familiarity and a broad palette of offered
+solutions.
+Raw, unfiltered data files containing tweet and author information were stored
+on an \textit{Amazon S3}\footnote{\url{https://aws.amazon.com/s3/}} instance,
+which could be accessed programmatically or via the management console.
+After filtering retweets and extracting features, the prepared data sets could
+permanently be saved on the respective processing instance for improved
+accessibility.
+Training of deep learning models was undertaken on an \textit{Amazon EC2}\footnote{\url{https://aws.amazon.com/ec2/}}
+instance.
+Namely, the specification \textit{p2.xlarge} was chosen in order to train models
+on a GPU.
+These instances employ a \textit{NVIDIA K80} GPU with 12GB of memory and 2,496
+processing cores.
+Moreover, p2.xlarge machines possess 61GB of memory and four CPU cores.
 
 \subsubsection{Software}
 \label{sub:meth_software}
+
+All model development was conducted using the \textit{Python}\footnote{\url{https://www.python.org/}} programming language,
+since it offers extensive and well-docomented libraries for data analysis and numerical computation.
+\textit{Jupyter notebooks}\footnote{\url{http://jupyter.org/}} were used as development environment, because
+of their capability to combine code, visualizations and documentation in a single
+document.
+Conducting experiments in notebooks proved to increase reproducibility of results
+and overall project organization.
+Reusable functionality tested in notebooks was often transferred to Python
+modules.
 
 \outline{Development environment: Jupyter notebooks (+ self-written Python modules)}
 
 \outline{Data collection: python-twitter library}
 \outline{Possible alternatives: using API directly, wrangling with JSON (not as convenient)}
 
+\outline{Data analysis and wrangling: pandas, numpy, matplotlib, scikit-learn}
+
 \outline{Model training: Keras (high-level API) with Theano backend (low-level: cudNN, CUDA)}
 \outline{Possible alternatives: TensorFlow, PyTorch (not as familiar to author)}
 
+This section about infrastructure concludes the methodology chapter.
+The upcoming chapter will describe results of experiments undertaken in this
+thesis.
