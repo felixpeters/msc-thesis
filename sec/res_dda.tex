@@ -171,21 +171,21 @@ defined user groups and examines the correlation with engagement metrics.
 
 \begin{table}
 \centering
-\begin{tabular}{lrrr}
+\begin{tabular}{lrrrr}
 \toprule
-Number of followers & Celebrities & Politicians & Companies \\
+  Number of followers & Celebrities & Politicians & Companies & Combined\\
 \midrule
-Mean & 10,255,423 & 331,944 & 357,023 \\
-Median & 3,228,642 & 89,072 & 23,204 \\
-Correlation w/ retweets & 0.1457 & 0.2828 & 0.0326 \\
-Correlation w/ favorites & 0.1922 & 0.3423 & 0.0442 \\
+  Mean & 10,255,423 & 331,944 & 357,023 & 2,170,010\\
+  Median & 3,228,642 & 89,072 & 23,204 & 92,273\\
+  Correlation w/ retweets & 0.1457 & 0.2828 & 0.0326 & 0.2947\\
+  Correlation w/ favorites & 0.1922 & 0.3423 & 0.0442 & 0.3396\\
 \midrule
-Number of friends & Celebrities & Politicians & Companies \\
+  Number of friends & Celebrities & Politicians & Companies & Combined\\
 \midrule
-Mean & 5,587 & 3,775 & 5,513 \\
-Median & 241 & 599 & 800 \\
-Correlation w/ retweets & 0.1799 & 0.0030 & -0.0036 \\
-Correlation w/ favorites & 0.1754 & 0.0092 & -0.0049 \\
+  Mean & 5,587 & 3,775 & 5,513 & 4,942\\
+  Median & 241 & 599 & 800 & 1,055\\
+  Correlation w/ retweets & 0.1799 & 0.0030 & -0.0036 & 0.1967\\
+  Correlation w/ favorites & 0.1754 & 0.0092 & -0.0049 & 0.1617\\
 \bottomrule
 \end{tabular}
 \caption{Summary of network statistics}
@@ -238,6 +238,11 @@ The median value is highest for corporate accounts which seems logical, since
 these accounts are probably most often managed using more manpower.
 Particularly strong linear relationships between number of friends and engagement statistics can not
 be found.
+Correlation coefficients are higher for the combined data set, but still not
+significant.
+Since the majority of users come from the company user group, follower and friend
+distributions for the combined data set are very similar to the ones of this group.
+Illustration is thus omitted for the sake of brevity.
 
 \begin{figure}[h]
 \centering
@@ -335,7 +340,7 @@ Although accounts exemplify rougly the same age distribution across all user
 groups, their activity level differ considerably (see Fig.~\ref{fig:freq_distr}).
 Many celebrities do not average one tweet per day and the median for this group (1.20)
 is lower than the respective counterparts for politicians and companies (1.75 resp. 2.16).
-However, these numbers are not surprising, since many companies user their accounts
+However, these numbers are not surprising, since many companies employ Twitter accounts
 for daily customer support.
 This could also explain the high percentage of accounts with more than ten tweets
 per day in this group (so-called \textit{power users}).
