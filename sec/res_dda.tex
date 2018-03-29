@@ -19,6 +19,8 @@ For example, the bin `1-10k' denotes all observations between 1,000 and
 9,999 (for a variable scaled as an integer).
 In addition, all represented distributions are normalized to account for varying
 data set sizes and improve comparability.
+Diagrams for the combined data set are omitted at times, mainly when the observed
+distibution closely resembles the other data sets.
 
 \subsubsection{Engagement statistics}
 \label{sec:engagement_stats}
@@ -28,23 +30,23 @@ of this thesis is to predict these variables.
 This section will therefore compare retweet and favorite distribution for 
 celebrity, politician and corporate tweets.
 
-\begin{table}
+\begin{table}[h]
 \centering
-\begin{tabular}{lrrr}
+\begin{tabular}{lrrrr}
 \toprule
-Retweets & Celebrities & Politicians & Companies \\
+  Retweets & Celebrities & Politicians & Companies & Combined\\
 \midrule
-Mean & 1,629.8 & 318.4 & 15.1 \\
-Median & 176.0 & 23.0 & 1.0 \\
+  Mean & 1,629.8 & 318.4 & 15.1 & 286.2\\
+  Median & 176.0 & 23.0 & 1.0 & 3.0 \\
 \midrule
-Favorites & Celebrities & Politicians & Companies \\
+  Favorites & Celebrities & Politicians & Companies & Combined\\
 \midrule
-Mean & 6,135.6 & 832.9 & 40.3 \\
-Median & 1117.0 & 69.0 & 1.0 \\
+  Mean & 6,135.6 & 832.9 & 40.3 & 908.8 \\
+  Median & 1117.0 & 69.0 & 1.0 & 5.0 \\
 \midrule
-Pearson correlation & Celebrities & Politicians & Companies \\
+  Pearson correlation & Celebrities & Politicians & Companies & Combined\\
 \midrule
-Correlation coefficient & 0.9188 & 0.9457 & 0.9803 \\
+  Correlation coefficient & 0.9188 & 0.9457 & 0.9803 & 0.9132\\
 \bottomrule
 \end{tabular}
 \caption{Summary of engagement statistics}
@@ -57,7 +59,7 @@ This holds true when looking at central tendency statistics (mean and median)
 for retweet and favorite counts.
 Moreover, in this sample politician tweets are more popular compared to tweets from corporate
 accounts.
-For all three data sets, strong correlation between the number of favorites and retweets can
+For all data sets, strong correlation between the number of favorites and retweets can
 be stated.
 This observation is useful for later model development, because it can be concluded that
 both variables should be predictable using similar statistical models, e.g.,
@@ -78,23 +80,29 @@ of this thesis.
 
 \begin{figure}[h]
 \centering
-\begin{subfigure}{.33\textwidth}
+\begin{subfigure}{.45\textwidth}
   \centering
   \includegraphics[width=.95\linewidth]{img/celeb_retw_distr}
   \caption{Celebrity data set}
   \label{fig:retw_distr_sub1}
 \end{subfigure}%
-\begin{subfigure}{.33\textwidth}
+\begin{subfigure}{.45\textwidth}
   \centering
   \includegraphics[width=.95\linewidth]{img/polit_retw_distr}
   \caption{Politician data set}
   \label{fig:retw_distr_sub2}
 \end{subfigure}
-\begin{subfigure}{.33\textwidth}
+\begin{subfigure}{.45\textwidth}
   \centering
   \includegraphics[width=.95\linewidth]{img/corp_retw_distr}
   \caption{Company data set}
   \label{fig:retw_distr_sub3}
+\end{subfigure}%
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{img/comb_retw_distr}
+  \caption{Combined data set}
+  \label{fig:retw_distr_sub4}
 \end{subfigure}%
 \caption{Retweet distributions}
 \label{fig:retw_distr}
@@ -102,23 +110,29 @@ of this thesis.
 
 \begin{figure}[h]
 \centering
-\begin{subfigure}{.33\textwidth}
+\begin{subfigure}{.45\textwidth}
   \centering
   \includegraphics[width=.95\linewidth]{img/celeb_fav_distr}
   \caption{Celebrity data set}
   \label{fig:fav_distr_sub1}
 \end{subfigure}%
-\begin{subfigure}{.33\textwidth}
+\begin{subfigure}{.45\textwidth}
   \centering
   \includegraphics[width=.95\linewidth]{img/polit_fav_distr}
   \caption{Politician data set}
   \label{fig:fav_distr_sub2}
 \end{subfigure}
-\begin{subfigure}{.33\textwidth}
+\begin{subfigure}{.45\textwidth}
   \centering
   \includegraphics[width=.95\linewidth]{img/corp_fav_distr}
   \caption{Company data set}
   \label{fig:fav_distr_sub3}
+\end{subfigure}%
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{img/comb_fav_distr}
+  \caption{Combined data set}
+  \label{fig:fav_distr_sub4}
 \end{subfigure}%
 \caption{Favorite distributions}
 \label{fig:fav_distr}
@@ -137,6 +151,9 @@ Company retweet classes seem to be more exponentially shaped.
 Moving to favorites, central tendencies of all distributions are clearly pushed to the right of the
 spectrum, which accounts for the generally observed difference between favorite
 and retweet counts.
+As can be expected, class distributions in the combined data set resemble a
+weighted average of the other data sets.
+As a consequence, class imbalance is less extreme for this data set.
 
 The upcoming subsections further describe characteristics of the collected
 data sets and provide possible explanations of the found discrepancies in
