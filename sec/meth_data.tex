@@ -18,21 +18,27 @@ engagement statistics are not related to their accounts, but the users who
 originally created their tweets.
 In summary, the final data sets include all status updates and quotes from the
 specified users in the given time frame.
-Since the data was collected in October/November 2017, all tweets in the data
-set are older than the threshold of one month that was assumed in the previous
-subsection.
-The following paragraph will introduce the three distinct user groups in more
-detail.
+It was ensured that all collected tweets were older than one month 
+at the time of retrieval.
+As mentioned in the previous section, the third stage of model development
+for this thesis aims to extract meaningful features from the raw tweet content.
+This typically requires a huge number of data points, so that popular NLP benchmark
+data set for similar tasks, e.g., sentiment analysis, usually contain more than
+a million labeled training examples~\footcite{Go2009}.
+In order to account for these massive data requirements, an additional data set was
+collected, which includes all tweets from the aforementioned user groups over
+the course of two years.
 
 \begin{table}
 \centering
 \begin{tabular}{lllr}
 \toprule
-Name & Accounts & Number of accounts & Total tweets \\
+  Accounts & Total accounts & Time frame & Total tweets \\
 \midrule
-Companies & Fortune 500 companies & 441 & 254,059 \\
-Politicians & US Governors and Senators & 162 & 94,919 \\
-Celebrities & Athletes, actors, actresses \& celebrities & 170 & 46,986 \\
+  Fortune 500 companies & 441 & 1/2017 - 8/2017 & 254,059 \\
+  US Governors and Senators & 162 & 1/2017 -  8/2017 & 94,919 \\
+  Celebrities & 170 & 1/2017 - 8/2017 & 46,986 \\
+  Companies, politicians \& celebrities & 773 & 1/2016 - 12/2017 & 863,004 \\
 \bottomrule
 \end{tabular}
 \caption{Summary of collected data sets}
@@ -53,11 +59,10 @@ The smalles data sets stems from celebrities, namely the \textit{Forbes Highest-
 Athletes 2017}~\footnote{\url{https://www.forbes.com/sites/kurtbadenhausen/2017/06/15/full-list-the-worlds-highest-paid-athletes-2017}}, \textit{Forbes Highest-Paid Actors and Actresses 2017}~\footnote{\url{https://www.forbes.com/sites/natalierobehmed/2017/08/22/full-list-the-worlds-highest-paid-actors-and-actresses-2017}} and
 \textit{Forbes Highest-Paid Celebrities 2017}~\footnote{\url{https://www.forbes.com/sites/zackomalleygreenburg/2017/06/12/full-list-the-worlds-highest-paid-celebrities-2017}}.
 The derived data set contains 46,986 tweets from 170 accounts.
-In comparison to popular NLP benchmark data sets, numbers of training examples
-for all three groups are rather small.
-Learning representation from text data typically requires large data sets, often
-in the magnitude of a million data points~\cite{Go2009}.
-
-\outline{Set data set in relation to recent NLP papers}
+Over the course of 2016 and 2017, all users combined accounted for a total
+of 863,004 tweets which comprise the additional data set.
+It has to be mentioned that company tweets account for an unproportionally high
+percentage (around 60\%) of all tweets in this data sets, simply due to greater
+total of accounts from this group.
 
 Descriptive statistics about all three data sets can be found in ch.~\ref{sec:dda}.
