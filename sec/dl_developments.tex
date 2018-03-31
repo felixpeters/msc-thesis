@@ -67,7 +67,6 @@ contain more neurons and thus learn representation with higher numbers of
 parameters~\footcite{Goodfellow2016, Raina2009}.
 
 \begin{figure}[h]
-  \centering
   \includegraphics[height=10cm]{img/computation_graph_3}
   \caption[Computation graph for single layer and neuron]{Left: computation graph for a single layer \\ Right: computation graph for a single neuron}
 \label{fig:comp_graph}
@@ -106,7 +105,6 @@ For better understanding the architectures are compared to the basic fully-
 connected model from chapter~\ref{sub:dl_concepts}
 
 \begin{figure}[h]
-  \centering
   \includegraphics[height=8cm]{img/conv_layer.png}
   \caption{Comparison of fully-connected and convolutional neuron}
 \label{fig:conv_layer}
@@ -137,7 +135,6 @@ What kind of pattern (also called \textit{filter}) is learned by the neuron is
 determined during the training process.
 
 \begin{figure}[h]
-  \centering
   \includegraphics[height=8cm]{img/conv_filters.jpeg}
   \caption[Example filters in a convolutional layer]{Example filters in a convolutional layer~\footcite{Krizhevsky2012}}
 \label{fig:conv_examples}
@@ -151,7 +148,6 @@ These are examples for filters learned in the first convolutional layer of a
 network, that set a new benchmark for image recognition tasks.
 
 \begin{figure}[h]
-  \centering
   \includegraphics[height=6cm]{img/conv_architecture}
   \caption{Convolutional neural network}
 \label{fig:cnn_architecture}
@@ -180,7 +176,6 @@ Processing (NLP)}, because text can be formalized as an ordered sequence of
 words.
 
 \begin{figure}[h]
-  \centering
   \includegraphics[height=10cm]{img/rnn_unrolled_2}
   \caption{Comparison between unrolled feed-forward and recurrent neural network}
 \label{fig:rnn_unrolled}
@@ -203,7 +198,6 @@ The most applied RNN variant is the so-called \textbf{Long Short-Term Memory}
 network, which will be explained in the following.
 
 \begin{figure}[h]
-  \centering
   \includegraphics[height=11cm]{img/lstm_cell}
   \caption{Simplified LSTM cell}
 \label{fig:lstm_cell}
@@ -284,7 +278,6 @@ Generative adversarial networks approach this problem by combining two neural
 networks into a single model, as illustrated in Fig.~\ref{fig:gan_architecture}.
 
 \begin{figure}[h]
-  \centering
   \includegraphics[height=6.5cm]{img/gan_architecture}
   \caption{Architecture of a Generative Adversarial Network (GAN)}
 \label{fig:gan_architecture}
@@ -438,7 +431,6 @@ Final updates are then calculated via the corrected estimates and hyperparameter
 $\eta$ (representing the learning rate) and $\epsilon$ (defaults to $10^{-8}$).
 
 \begin{figure}[h]
-  \centering
   \includegraphics[height=10cm]{img/adam_comparison}
   \caption[Comparison of optimization algorithms]{Comparison of optimization algorithms~\footcite{Kingma2014a}}
 \label{fig:adam_comp}
@@ -478,7 +470,6 @@ In summary, key objectives of machine learning algorithms can be put as follows:
 \end{enumerate}
 
 \begin{figure}[h]
-  \centering
   \includegraphics[height=8cm]{img/overfitting}
   \caption[Overfitting, underfitting and appropriate capacity]{Overfitting, underfitting and appropriate capacity~\footcite{Goodfellow2016}}
 \label{fig:overfitting}
@@ -553,8 +544,7 @@ Batch normalization has been shown to speed up the training process and also
 reduce overfitting which limits the necessity for dropout~\footcite{Ioffe2015}.
 
 \begin{figure}[h]
-  \centering
-  \includegraphics[height=7cm]{img/data_augmentation}
+  \includegraphics[height=6.5cm]{img/data_augmentation}
   \caption{Examples of augmented images}
 \label{fig:augmented_images}
 \end{figure}

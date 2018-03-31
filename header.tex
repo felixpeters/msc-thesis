@@ -186,6 +186,13 @@ pdfstartview={FitH}
 \newcommand{\addcitation}[1]{\todo[color=yellow,inline]{Missing citation: #1}}
 \newcommand{\outline}[1]{\todo[color=pink,inline]{Outline: #1}}
 
+% display table caption on top
+\floatstyle{plaintop}
+\restylefloat{table}
+
+% align caption to the left
+\captionsetup{justification=raggedright,singlelinecheck=false}
+
 \colorlet{punct}{red!60!black}
 \definecolor{background}{HTML}{EEEEEE}
 \definecolor{delim}{RGB}{20,105,176}

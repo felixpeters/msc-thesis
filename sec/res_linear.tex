@@ -15,7 +15,6 @@ It concludes by summarizing results and analyzing model performance in more deta
 \label{sub:lin_architecture}
 
 \begin{figure}[h]
-  \centering
   \includegraphics[height=8cm]{img/linear_model_architecture}
   \caption{General architecture of linear models}
 \label{fig:linear_model_architecture}
@@ -45,7 +44,6 @@ The reason for that is the sole reliance on a linear combination of the
 (normalized) inputs.
 
 \begin{table}
-\centering
 \begin{tabular}{ll}
 \toprule
 Feature & Description \\
@@ -90,7 +88,6 @@ In addition, contextual features comprise popularity and activity information
 about the tweet author.
 
 \begin{table}
-\centering
   \begin{tabular}{lr}
     \toprule
     Class & Range \\
@@ -243,7 +240,6 @@ evaluating the classification models in more detail.
 Finally, possible interpretations detected results will be listed.
 
 \begin{table}
-\centering
   \begin{tabular}{lrrrrrrr}
     \toprule
     & \multicolumn{4}{l}{Classification} & \multicolumn{3}{l}{Regression} \\
@@ -284,21 +280,17 @@ In general, the observed results are not compelling for both classification and
 regression models and leave room for improvements using deep neural networks.
 
 \begin{figure}[h]
-\centering
 \begin{subfigure}{.5\textwidth}
-  \centering
   \includegraphics[width=.95\linewidth]{img/celeb_lin_cm_retweets}
   \caption{Celebrity data set}
   \label{fig:retw_distr_sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
-  \centering
   \includegraphics[width=.95\linewidth]{img/polit_lin_cm_retweets}
   \caption{Politician data set}
   \label{fig:retw_distr_sub2}
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
-  \centering
   \includegraphics[width=.95\linewidth]{img/corp_lin_cm_retweets}
   \caption{Company data set}
   \label{fig:retw_distr_sub3}
