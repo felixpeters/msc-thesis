@@ -111,10 +111,18 @@ containing many learnable parameters.
 \subsubsection{Training process}
 \label{sub:deep1_training}
 
-\outline{Setting is mostly unchanged: same training/validation split, optimizer
-and cost functions}
-\outline{Only change: regression model trained for only 100 iterations since they
-converge faster}
+As mentioned above, training setting remain mostly unchanged.
+The same training and validation splits were used for all data sets, i.e.,
+for the singular data sets 10\% of all examples were separated for validation.
+The validation set for the combined data set comprised 10,000 examples.
+Furthermore, optimization algorithm and cost functions were identical to the ones
+used for training linear models.
+To recap, adaptive moment estimation (Adam) was used for optimizing
+categorical cross-entropy (classification models) and mean absolute error (regression
+models) cost functions.
+Because faster convergence was observed on the regression task, the total number
+of iterations was decreased from 150 to 100 iterations.
+Classification models were still trained for a total of 50 iterations each.
 
 \subsubsection{Model performance}
 \label{sub:deep1_performance}

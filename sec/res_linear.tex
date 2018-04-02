@@ -135,8 +135,14 @@ used in this work.
 In particular, data usage, training duration and choices of optimization
 algorithm and cost functions will be explained and motivated.
 
-Prior to training, all three data sets were split into training and validation
-data according to a 90\%/10\% split.
+Prior to training, the celebrity, company and politician data sets were split into 
+training and validation data according to a 90\%/10\% split.
+For the combined data set, only 10,000 examples were set aside for validation,
+since the main purpose of this data set is to examine network behavior on a
+maximum amount of training examples.
+However, this should not be seen as a limitation, since this number of validation
+examples still guarantees precise detection of performance changes, e.g.,
+in the magnitude of hundredths of percents.
 Since the splitting process was undertaken after permutating the example order
 randomly, class distributions in training and validation sets should be very
 similar.
