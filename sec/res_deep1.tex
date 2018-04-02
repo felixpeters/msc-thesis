@@ -1,7 +1,6 @@
 \subsection{Deep Models on Structured Data}
 \label{sec:deep1}
 
-\outline{Explain next step in model evolution}
 Linear models directly map from inputs to predictions.
 Assuming the inputs stay the same, the next step in neural network evolution
 should be to add hidden layers.
@@ -9,21 +8,30 @@ The reasoning behind this is the increased capability of the model to learn inte
 feature representations, which in turn should enable more accurate predictions.
 This section examines application of deep feedforward networks to the problem
 of engagement prediction.
-Model architectures are introduced in Chapter~\ref{sub:deep1_architecture}
-\outline{Introduce subsection structure}, before the training process is detailled
-in Chapter~\ref{sub:deep1_training}.
+Model architectures are introduced in Chapter~\ref{sub:deep1_architecture}, 
+before the training process is detailled in Chapter~\ref{sub:deep1_training}.
 Finally, results and accompanying analysis are presented in Chapter~\ref{sub:deep1_performance}.
 
 \subsubsection{Model architecture}
 \label{sub:deep1_architecture}
 
-\outline{Starting point: same inputs and outputs as before, but adding hidden
-(feedforward) layers inbetween}
-\outline{Why feedforward? Only reasonably applicable layer type since input features
-are temporarily and locally unrelated}
-\outline{Question: how many hidden layers to add? No strict rules exist, only heuristics.}
-\addcitation{Link to heuristics article}
-\outline{Answer: testing different architectures for model selection; trade-off between performance and training time}
+Model architecture for the deep feedforward networks is similar to linear models
+in that model inputs and outputs are the same.
+The main difference is the addition of hidden layers inbetween inputs and outputs.
+Fully-connected feedforward layers (see ch.~\ref{sub:dl_concepts}) are chosen,
+because they constitute the sole reasonably applicable layer architecture.
+More complex layer architectures like recurrent or convolutional layers require
+temporal or local relations between input features.
+Examples for such relations would be images (local relations between pixels)
+or time-series data (obvious temporal relation).
+The main question that arises is how many hidden layers should be inserted.
+Additionally, the number of neurons in hidden layers has to be determined.
+No strict rules exist to answer this question, but heuristics have been developed
+by long-time deep learning practicioners~\footnote{\url{http://www.heatonresearch.com/2017/06/01/hidden-layers.html}}.
+In any case, experimentation is required to find a suitable architecture for a distinct problem setting.
+Thus, several architectures were tested for model selection in this work.
+Obvious evaluation criteria are model performance on training and validation data,
+as well as total training time.
 
 \begin{table}
 \begin{tabular}{llrr}
@@ -47,14 +55,31 @@ Hidden layers & Hidden units & Classification loss & Regression loss \\
 \label{tab:dm1_selection_results}
 \end{table}
 
-\outline{Selection process: celebrity data set, 50 (classification) resp. 100
-(regression) iterations with same settings as before}
-\outline{Hidden layer variants: 2-6, hidden unit variants: 16, 32, 64}
-\outline{Results: 4 layers w/ 64 units for classification, 5 layers w/ 64 units 
-for regression}
-\outline{Adding units yields better results than adding layers}
-\outline{Adding more layers only leads to minor improvement and more unstable
-training process (i.e., overfitting)}
+Experimentation for classification and regression models was conducted on the
+celebrity data set, because it contains the smallest number of training examples
+and is thus most prone to overfitting.
+In order to preserve comparability, the same settings were used for each architecture.
+Models were trained for 50 (classification) respectively 100 (regression) epochs
+on identical training examples.
+Tested variants included two to six hidden layers with the same number of hidden
+units in each layer, namely 16, 32 and 64 neurons.
+Some architectures for very deep networks (five or six hidden layers) were omitted
+when it became obvious that layers with 64 neurons showed the most promising
+performance.
+Table~\ref{tab:dm1_selection_results} summarizes results for the experiments.
+As expected, increases in both number of hidden layers and units improve
+performance.
+However, adding units yields generally leads to higher performance increases than
+simply adding layers.
+In addition, adding more hidden layers increases total training time more than
+adding units.
+Including more than four hidden layers only leads to minor performance improvement for
+the classification setting.
+Also, a more unstable training process was observed, sometimes resulting in overfitting.
+Hence, the configuration consisting of four layers with 64 neurons each was
+chosen for models in this thesis.
+The regression setting proved to be a bit more robust regarding the number of
+hidden layers, so that an additional layer could be inserted here.
 
 \begin{figure}[h]
 \begin{subfigure}{.4\textwidth}
@@ -71,8 +96,17 @@ training process (i.e., overfitting)}
 \label{fig:deep1_architecture}
 \end{figure}
 
-\outline{BatchNormalization after each layer to speed up training process and
-avoid overfitting}
+Fig.~\ref{fig:deep1_architecture} shows the final neural network architectures
+for this section.
+Input features and output types (including classes) are identical to the ones
+used in linear models (see ch.~\ref{sub:lin_architecture}).
+As before, inputs are normalized using batch normalization, which is also applied
+after each fully-connected layer.
+Citing Chapter~\ref{sub:dl_developments}, batch normalization speeds up the
+training process by decreasing the range of weight values without sacrificing
+model performance.
+Moreover, it helps to avoid overfitting, which is more prone to occur in models
+containing many learnable parameters.
 
 \subsubsection{Training process}
 \label{sub:deep1_training}
