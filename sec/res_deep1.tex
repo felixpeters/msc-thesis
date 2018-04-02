@@ -1,4 +1,4 @@
-\subsection{Deep Models on Structured Data}
+\subsection{Deep Feedforward Models}
 \label{sec:deep1}
 
 Linear models directly map from inputs to predictions.
@@ -269,11 +269,37 @@ distribution.
   \label{tab:d1_regression_eval}
 \end{table}
 
-\outline{Using MAE requires mean calculation => need for more detailed performance
-evaluation}
-\outline{Errors need to be considered in relation to magnitude of actual counts}
-\outline{Table shows MAE for specific ranges of actual engagement counts}
-\outline{Dash denotes absence of validation data for this range}
-\outline{Observation: MAE increases with rising engagement counts}
-\outline{Order of magnitudes vary drastically (can be expected)}
+Analyzing regression results in more details is helpful, especially when considering
+that the MAE loss value represents an average over all validation examples.
+In order to evaluate model performance in more detail, MAE values should thus be
+observed separately for different ranges of actual engagement.
+This evaluation approach effectively puts observed error magnitudes in relation
+to actual engagement counts and further helps to determine in which ranges 
+the model performs better than in others.
+Table~\ref{tab:d1_regression_eval} shows results of such an analysis, with
+engagement distributions separated into seven distinct regions.
+These regions basically represent logarithmic bins with base 10, similar to
+the bins used in classification models.
+Dashes denote that no example in the given range was present in a respective
+validation set.
+As expected, mean absolute errors increase with rising actual engagement.
+Put simply: the smaller the actual retweet or favorite count, the smaller the
+average prediction error.
+The magnitudes of average errors vary drastically across ranges.
+Most notably, most classes are predicted best for the combined data set,
+especially for retweet prediction.
+This is in contrast to the classification task, where the combined data set
+showed the worst performance.
+Results of this analysis also explain higher regression loss values for
+celebrities and combined data set.
+These are the only data sets that contain examples with very large engagement
+counts, which act as outliers and thus have large influence on the mean
+calculation.
+
+This section concludes the results of applying deep feedforward networks to
+the problem of engagement prediction. 
+So far, only structured data was used as model input, namely by extracting
+numeric and boolean features from tweet objects.
+The next section introduces ways of incorporating the actual tweet content as
+an additional input to more complex neural networks.
 
