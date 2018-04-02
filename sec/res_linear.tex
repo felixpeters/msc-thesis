@@ -6,7 +6,7 @@ were trained as a baseline for later comparison with deep neural networks.
 This kind of model evolution allows analysis of performance improvements
 with regard to standardized metrics.
 As is the case for all models, both multi-class classification and regression
-models were developed for all three data sets.
+models were developed for all data sets.
 This section starts with describing the model architecture (ch.~\ref{sub:lin_architecture}) and continues by detailling the training process (ch.~\ref{sub:lin_training}).
 It concludes by summarizing results and analyzing model performance in more detail
 (ch.~\ref{sub:lin_performance}).
@@ -37,7 +37,7 @@ Contrary, the classification model should output class probabilities for each
 of the six predefined classes (see Table~\ref{tab:classification_buckets}).
 As a result, the outputs have to be split according to the number of classes and transformed
 using the \textit{sigmoid function} (see ch.~\ref{sub:dl_forward}).
-This kind of model is called \textit{logistic regression} and is considered
+This kind of model is called \textit{logistic regression} and considered
 a linear classifier despite the outputs being transformed using a non-linear
 function.
 The reason for that is the sole reliance on a linear combination of the
@@ -249,6 +249,7 @@ Finally, possible interpretations detected results will be listed.
     Celebrities & 1.22 & 48.84\% & 47.15\% & 50.52\% & 3,490.21 & 1,552.63 & 5,427.79 \\
     Politicians & 1.04 & 54.17\% & 51.64\% & 56.70\% & 482.81 & 273.83 & 691.80 \\
     Companies & 0.95 & 59.64\% & 63.38\% & 55.90\% & 24.66 & 13.02 & 36.29 \\
+    Combined & 1.15 & 51.69\% & 54.00\% & 49.37\% & 579.26 & 269.35 & 889.16 \\
     \bottomrule
   \end{tabular}
   \caption{Summary of linear model results}
@@ -276,6 +277,12 @@ However, this has to be expected since retweet counts are considerably smaller
 and thus more narrowly distributed than favorites.
 A wider underlying distribution of engagement counts, i.e., larger mean and median values, might also be the reason
 for higher estimation discrepancies on celebrity and politician data.
+Model performance on the larger, combined data set is comparable to the other
+data sets.
+This is hardly surprising, since the underlying class distribution constitutes a
+weighted average of these examples.
+For linear models, performance improvements from adding data can not be
+expected due to the lack of representational capability.
 In general, the observed results are not compelling for both classification and
 regression models and leave room for improvements using deep neural networks.
 
@@ -293,6 +300,11 @@ regression models and leave room for improvements using deep neural networks.
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=.95\linewidth]{img/corp_lin_cm_retweets}
   \caption{Company data set}
+  \label{fig:retw_distr_sub3}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=.95\linewidth]{img/comb_lin_cm_retweets}
+  \caption{Combined data set}
   \label{fig:retw_distr_sub3}
 \end{subfigure}%
 \caption{Confusion matrices for linear retweet classification models}
@@ -316,6 +328,8 @@ Accuracy for predicting these popular classes is higher than 75\% on all three d
 However, too many examples from other classes are misclassified here, as can be
 seen when looking at respective class columns.
 Such model behavior results in poor predictive performance for less common classes.
+All observations also hold true for the combined data set, where classes 1 and 2
+are predicted most accurately.
 Confusion matrices for favorite prediction yield similar results and are
 omitted for the sake of brevity here (see Appendix).
 
