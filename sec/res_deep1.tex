@@ -175,7 +175,7 @@ These improvements are mainly driven by strong decreases in favorite MAE values,
 which are higher for all three data sets.
 For the combined data set, results are only slightly better compared to using
 linear models.
-Interestingly, performance on the favorite regresssion task does not improve
+Interestingly, performance on the favorite regression task does not improve
 at all.
 This is surprising, since one would expect larger performance increases when
 adding more data.
@@ -210,13 +210,37 @@ regression performance will be analyzed further in the following paragraphs.
 \label{fig:d1_cm}
 \end{figure}
 
-\outline{More correctly classified examples (see main diagonal)}
-\outline{Celebrities: Classes around median are predicted more accurately than border classes}
-\outline{Celebrities: Not biased towards biggest class, misclassifications are `better'}
-\outline{Sames is true for politicians}
-\outline{Companies: model is good at predicting first two classes}
-\outline{Companies: better (but not good) performance on classes 3 and 4}
-\outline{Companies: classes 5 and 6 are still never predicted}
+Fig.~\ref{fig:d1_cm} shows confusion matrices for retweet classification on all
+data sets.
+Again, the matrices look similar for favorite prediction and are omitted
+here for the sake of brevity.
+In general, more validation examples are classified correctly for the three
+smaller data sets, i.e., percentages on the main diagonals are higher.
+For the celebrity data set it holds true that classes around the median of the
+distribution (class 4) are predicted more accurately than border classes.
+However, predictions for these less common classes are less biased towards
+the biggest class.
+Instead, misclassifications mostly happen on behalf of neighboring classes (2 and 5),
+which makes the predictions in a sense ``better''.
+Both observations can also be made on the politician data set.
+In addition it has to be noted that class 6 is never predicted for politicians
+and companies.
+Reasons for this could be the small number of training examples from this class
+or a lack of representational capability in the model.
+Retweet predictions on the company data are still biased towards the first
+two classes, which also occur most commonly in this data set.
+Performance for theses classes is good, whereas the other classes are predicted
+with accuracies of 50\% or below.
+These observed results are better compared to applying linear models, but still
+not satisfying.
+As mentioned above, classes 5 and 6 are never predicted and thus, accuracy is
+equal to zero here.
+Similar results can be found for the combined data set.
+Classes 1 and 2 are predicted best, class 3 predictions are also significantly
+better than for linear models.
+On the negative side, performance on classes 4, 5 and 6 is decreasing, which
+points to an inability of the model to learn this wide-ranging class
+distribution.
 
 \begin{table}
   \begin{tabular}{lrrrrrrr}
