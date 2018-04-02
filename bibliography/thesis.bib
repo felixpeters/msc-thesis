@@ -94,7 +94,6 @@ author = {Fukushima, Kunihiko},
 journal = {Biological Cybernetics},
 number = {3-4},
 pages = {121--136},
-pmid = {1203338},
 title = {{Cognitron: A self-organizing multilayered neural network}},
 volume = {20},
 year = {1975}
@@ -107,315 +106,142 @@ urldate = {31.03.2018},
 year = {2015}
 }
 @inproceedings{Girshick2012,
-abstract = {Object detection performance, as measured on the canonical PASCAL VOC dataset, has plateaued in the last few years. The best-performing methods are complex ensemble systems that typically combine multiple low-level image features with high-level context. In this paper, we propose a simple and scalable detection algorithm that improves mean average precision (mAP) by more than 30{\%} relative to the previous best result on VOC 2012---achieving a mAP of 53.3{\%}. Our approach combines two key insights: (1) one can apply high-capacity convolutional neural networks (CNNs) to bottom-up region proposals in order to localize and segment objects and (2) when labeled training data is scarce, supervised pre-training for an auxiliary task, followed by domain-specific fine-tuning, yields a significant performance boost. Since we combine region proposals with CNNs, we call our method R-CNN: Regions with CNN features. We also compare R-CNN to OverFeat, a recently proposed sliding-window detector based on a similar CNN architecture. We find that R-CNN outperforms OverFeat by a large margin on the 200-class ILSVRC2013 detection dataset. Source code for the complete system is available at http://www.cs.berkeley.edu/{\~{}}rbg/rcnn.},
-archivePrefix = {arXiv},
-arxivId = {1311.2524},
 author = {Girshick, Ross and Donahue, Jeff and Darrell, Trevor and Malik, Jitendra},
 booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
-doi = {10.1109/CVPR.2014.81},
-eprint = {1311.2524},
-file = {:Users/felix/code/ml/master-thesis/literature/Girshick{\_}Rich{\_}Feature{\_}Hierarchies{\_}2014{\_}CVPR{\_}paper.pdf:pdf},
-isbn = {978-1-4799-5118-5},
-issn = {10636919},
-month = {nov},
+month = {November},
 pages = {580--587},
-pmid = {26656583},
 title = {{Rich feature hierarchies for accurate object detection and semantic segmentation}},
-url = {http://arxiv.org/abs/1311.2524},
 year = {2014}
 }
-@article{Go2009,
-abstract = {We introduce a novel approach for automatically classifying the sentiment of Twitter messages. These messages are classified as either positive or negative with respect to a query term. This is useful for consumers who want to research the sentiment of products before purchase, or companies that want to monitor the public sentiment of their brands. There is no previous research on classifying sentiment of messages on microblogging services like Twitter. We present the results of machine learning algorithms for classifying the sentiment of Twitter messages using distant supervision. Our training data consists of Twitter messages with emoticons, which are used as noisy labels. This type of training data is abundantly available and can be obtained through automated means. We show that machine learning algorithms (Naive Bayes, Maximum Entropy, and SVM) have accuracy above 80{\%} when trained with emoticon data. This paper also describes the preprocessing steps needed in order to achieve high accuracy. The main contribution of this paper is the idea of using tweets with emoticons for distant supervised learning.},
-archivePrefix = {arXiv},
-arxivId = {1702.08388},
+@misc{Go2009,
 author = {Go, Alec and Bhayani, Richa and Huang, Lei},
-doi = {10.1016/j.sedgeo.2006.07.004},
-eprint = {1702.08388},
-isbn = {1012341234},
-issn = {00370738},
 journal = {CS224N Project Report, Stanford},
-keywords = {sentiment analysis,sentiment classification,twitter},
 number = {12},
 pages = {12},
-pmid = {791643259},
 title = {{Twitter sentiment classification using distant supervision}},
 url = {http://www.stanford.edu/{~}alecmgo/papers/TwitterDistantSupervision09.pdf},
+urldate = {02.04.2018}
 volume = {1},
 year = {2009}
 }
 @book{Goodfellow2016,
-abstract = {Deep learning is a form of machine learning that enables computers to learn from experience and understand the world in terms of a hierarchy of concepts. Because the computer gathers knowledge from experience, there is no need for a human computer operator to formally specify all the knowledge that the computer needs. The hierarchy of concepts allows the computer to learn complicated concepts by building them out of simpler ones; a graph of these hierarchies would be many layers deep. This book introduces a broad range of topics in deep learning. The text offers mathematical and conceptual background, covering relevant concepts in linear algebra, probability theory and information theory, numerical computation, and machine learning. It describes deep learning techniques used by practitioners in industry, including deep feedforward networks, regularization, optimization algorithms, convolutional networks, sequence modeling, and practical methodology; and it surveys such applications as natural language processing, speech recognition, computer vision, online recommendation systems, bioinformatics, and videogames. Finally, the book offers research perspectives, covering such theoretical topics as linear factor models, autoencoders, representation learning, structured probabilistic models, Monte Carlo methods, the partition function, approximate inference, and deep generative models. Deep Learning can be used by undergraduate or graduate students planning careers in either industry or research, and by software engineers who want to begin using deep learning in their products or platforms. A website offers supplementary material for both readers and instructors.},
-archivePrefix = {arXiv},
-arxivId = {arXiv:1312.6184v5},
 author = {Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
 booktitle = {MIT Press},
-doi = {10.1038/nmeth.3707},
-eprint = {arXiv:1312.6184v5},
-file = {:Users/felix/Google Drive/04{\_}Ressources/Books/Deep Learning Book/Deep{\_}Learning{\_}Book.pdf:pdf},
-isbn = {978-0262035613},
-issn = {0028-0836},
 pages = {800},
-pmid = {26017442},
 title = {{Deep Learning}},
-url = {http://goodfeli.github.io/dlbook/{\%}0Ahttp://dx.doi.org/10.1038/nature14539},
 volume = {1},
 year = {2016}
 }
-@article{Goodfellow2014,
-abstract = {We propose a new framework for estimating generative models via an adversar- ial process; in which we simultaneously train two models: a generative model G that captures the data distribution; and a discriminative model D that estimates the probability that a sample came from the training data rather thanG. The train- ing procedure for G is to maximize the probability of D making a mistake. This framework corresponds to a minimax two-player game. In the space of arbitrary functions G and D; a unique solution exists; with G recovering the training data distribution andD equal to 1 2 everywhere. In the case where G andD are defined by multilayer perceptrons; the entire system can be trained with backpropagation. There is no need for any Markov chains or unrolled approximate inference net- works during either training or generation of samples. Experiments demonstrate the potential of the framework through qualitative and quantitative evaluation of the generated samples. 1},
-archivePrefix = {arXiv},
-arxivId = {arXiv:1406.2661v1},
+@inproceedings{Goodfellow2014,
 author = {Goodfellow, Ian and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
-doi = {10.1017/CBO9781139058452},
-eprint = {arXiv:1406.2661v1},
-file = {:Users/felix/code/ml/master-thesis/literature/5423-generative-adversarial-nets.pdf:pdf},
-isbn = {1406.2661},
-issn = {10495258},
-journal = {Advances in Neural Information Processing Systems 27},
+booktitle = {Advances in Neural Information Processing Systems 27},
 pages = {2672--2680},
-pmid = {1000183096},
 title = {{Generative Adversarial Nets}},
-url = {http://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf},
 year = {2014}
+number = {27}
 }
-@misc{Granovetter1973,
-abstract = {Granovetter, S. (1973) The strength of weak ties, American Journal of Sociology, 78(6), pp. 1360–1380.},
-archivePrefix = {arXiv},
-arxivId = {NIHMS150003},
+@article{Granovetter1973,
 author = {Granovetter, Mark},
-booktitle = {The American Journal of Sociology},
-doi = {10.1086/225469},
-eprint = {NIHMS150003},
-file = {:Users/felix/code/ml/master-thesis/literature/the{\_}strength{\_}of{\_}weak{\_}ties{\_}and{\_}exch{\_}w-gans.pdf:pdf},
-isbn = {9783540723462},
-issn = {0002-9602},
+journal = {The American Journal of Sociology},
 number = {6},
 pages = {1360--1380},
-pmid = {19848562},
 title = {{The Strength of Weak Ties}},
-url = {https://sociology.stanford.edu/sites/default/files/publications/the{\_}strength{\_}of{\_}weak{\_}ties{\_}and{\_}exch{\_}w-gans.pdf},
 volume = {78},
 year = {1973}
 }
 @article{Hahnioser2000,
-abstract = {Digital circuits such as the flip-flop use feedback to achieve multistability and nonlinearity to restore signals to logical levels, for example 0 and 1. Analogue feedback circuits are generally designed to operate linearly, so that signals are over a range, and the response is unique. By contrast, the response of cortical circuits to sensory stimulation can be both multistable and graded. We propose that the neocortex combines digital selection of an active set of neurons with analogue response by dynamically varying the positive feedback inherent in its recurrent connections. Strong positive feedback causes differential instabilities that drive the selection of a set of active neurons under the constraints embedded in the synaptic weights. Once selected, the active neurons generate weaker, stable feedback that provides analogue amplification of the input. Here we present our model of cortical processing as an electronic circuit that emulates this hybrid operation, and so is able to perform computations that are similar to stimulus selection, gain modulation and spatiotemporal pattern generation in the neocortex.},
 author = {Hahnioser, Richard H.R. and Sarpeshkar, Rahul and Mahowald, Misha A. and Douglas, Rodney J. and Seung, H. Sebastian},
-doi = {10.1038/35016072},
-isbn = {0028-0836 (Print)$\backslash$r0028-0836 (Linking)},
-issn = {00280836},
 journal = {Nature},
 number = {6789},
 pages = {947--951},
-pmid = {10879535},
 title = {{Digital selection and analogue amplification coexist in a cortex- inspired silicon circuit}},
 volume = {405},
 year = {2000}
 }
 @inproceedings{He2017,
-abstract = {We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available.},
-archivePrefix = {arXiv},
-arxivId = {1703.06870},
 author = {He, Kaiming and Gkioxari, Georgia and Doll{\'{a}}r, Piotr and Girshick, Ross},
 booktitle = {International Conference on Computer Vision (ICCV)},
-doi = {10.1109/ICCV.2017.322},
-eprint = {1703.06870},
-file = {:Users/felix/code/ml/master-thesis/literature/1703.06870.pdf:pdf},
-isbn = {978-1-5386-1032-9},
-issn = {0006-291X},
 pages = {2980--2988},
-pmid = {303902},
 title = {{Mask R-CNN}},
-url = {http://arxiv.org/abs/1703.06870},
 year = {2017}
 }
 @inproceedings{He2016,
-abstract = {Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57{\%} error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28{\%} relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC {\&} COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.},
-annote = {Authors examine performance increases through deepening the model
-
-They argue that decreasing performance for deeper models (called degradation) is not caused by overfitting
-
-Introduction of Deep Residual Networks which consist of so-called residual blocks
-
-Residual blocks include shortcut connection where the layer input is passed through and then pair-wise combined with the outputs of several layers (e.g. convolutions)
-
-This enables training competitive models with a depth of up to 1,000 layers without the use of regularization methods (e.g. batch normalization, dropout)
-
-Result: deep, thin models that set new state-of-the-art on many commonly used benchmark data sets (e.g. ImageNet)},
-archivePrefix = {arXiv},
-arxivId = {1512.03385},
 author = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
 booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
-doi = {10.1007/s11042-017-4440-4},
-eprint = {1512.03385},
-file = {:Users/felix/code/ml/master-thesis/literature/1512.03385.pdf:pdf},
-isbn = {978-1-4673-6964-0},
-issn = {15737721},
-keywords = {Convolutional neural networks,Image steganalysis,Residual learning},
-month = {dec},
+month = {December},
 pages = {770--778},
-pmid = {23554596},
 title = {{Deep Residual Learning for Image Recognition}},
-url = {http://arxiv.org/abs/1512.03385},
 year = {2016}
 }
 @article{Holden2006,
-abstract = {High-dimensional data can be converted to low-dimensional codes by training a multilayer neural$\backslash$rnetwork with a small central layer to reconstruct high-dimensional input vectors. Gradient descent$\backslash$r$\backslash$ncan be used for fine-tuning the weights in such ‘‘autoencoder'' networks, but this works well only if$\backslash$r$\backslash$nthe initial weights are close to a good solution. We describe an effective way of initializing the$\backslash$r$\backslash$nweights that allows deep autoencoder networks to learn low-dimensional codes that work much$\backslash$r$\backslash$nbetter than principal components analysis as a tool to reduce the dimensionality of data.$\backslash$r$\backslash$n},
-annote = {Classic paper on deep learning
-
-Trains multi-layer autoencoder (consisting of encoder and decoder) for the purpose of dimensionality reduction
-
-The autoencoder works on the MNIST dataset, newswire story classification and portrait images
-
-Fast computers, big data sets and good weight initialization were biggest obstacles to deep learning breakthrough
-Article shows that all three conditions are now satisfied},
-archivePrefix = {arXiv},
-arxivId = {20},
 author = {Hinton, G. E.},
-doi = {10.1126/science.1127647},
-eprint = {20},
-file = {:Users/felix/code/ml/master-thesis/literature/science.pdf:pdf},
-isbn = {1095-9203 (Electronic)$\backslash$r0036-8075 (Linking)},
-issn = {0036-8075},
 journal = {Science},
 number = {5786},
 pages = {504--507},
-pmid = {16873662},
 title = {{Reducing the Dimensionality of Data with Neural Networks}},
-url = {http://www.sciencemag.org/cgi/doi/10.1126/science.1127647},
 volume = {313},
 year = {2006}
 }
 @article{Hinton2006,
-abstract = {We show how to use "complementary priors" to eliminate the explaining-away effects that make inference difficult in densely connected belief nets that have many hidden layers. Using complementary priors, we derive a fast, greedy algorithm that can learn deep, directed belief networks one layer at a time, provided the top two layers form an undirected associative memory. The fast, greedy algorithm is used to initialize a slower learning procedure that fine-tunes the weights using a contrastive version of the wake-sleep algorithm. After fine-tuning, a network with three hidden layers forms a very good generative model of the joint distribution of handwritten digit images and their labels. This generative model gives better digit classification than the best discriminative learning algorithms. The low-dimensional manifolds on which the digits lie are modeled by long ravines in the free-energy landscape of the top-level associative memory, and it is easy to explore these ravines by using the directed connections to display what the associative memory has in mind.},
-archivePrefix = {arXiv},
-arxivId = {1111.6189v1},
 author = {Hinton, Geoffrey E. and Osindero, Simon and Teh, Yee Whye},
-doi = {10.1162/neco.2006.18.7.1527},
-eprint = {1111.6189v1},
-file = {:Users/felix/code/ml/master-thesis/literature/ncfast.pdf:pdf},
-isbn = {0899-7667},
-issn = {0899-7667},
 journal = {Neural computation},
-keywords = {Algorithms,Animals,Humans,Learning,Learning: physiology,Neural Networks (Computer),Neurons,Neurons: physiology},
 number = {7},
 pages = {1527--54},
-pmid = {16764513},
 title = {{A fast learning algorithm for deep belief nets.}},
-url = {http://www.ncbi.nlm.nih.gov/pubmed/16764513},
 volume = {18},
 year = {2006}
 }
-@article{Hinton2012a,
-abstract = {When a large feedforward neural network is trained on a small training set, it typically performs poorly on held-out test data. This "overfitting" is greatly reduced by randomly omitting half of the feature detectors on each training case. This prevents complex co-adaptations in which a feature detector is only helpful in the context of several other specific feature detectors. Instead, each neuron learns to detect a feature that is generally helpful for producing the correct answer given the combinatorially large variety of internal contexts in which it must operate. Random "dropout" gives big improvements on many benchmark tasks and sets new records for speech and object recognition.},
-archivePrefix = {arXiv},
-arxivId = {1207.0580},
+@misc{Hinton2012a,
 author = {Hinton, Geoffrey E. and Srivastava, Nitish and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan R.},
-doi = {arXiv:1207.0580},
-eprint = {1207.0580},
-file = {:Users/felix/code/ml/master-thesis/literature/1207.0580.pdf:pdf},
-isbn = {9781467394673},
-issn = {9781467394673},
 pages = {1--18},
-pmid = {1000104337},
 title = {{Improving neural networks by preventing co-adaptation of feature detectors}},
 url = {http://arxiv.org/abs/1207.0580},
+urldate = {02.04.2018}
 year = {2012}
 }
 @article{Hinton2012,
-abstract = {Most current speech recognition systems use hidden Markov models (HMMs) to deal with the temporal variability of speech and Gaussian mixture models (GMMs) to determine how well each state of each HMM fits a frame or a short window of frames of coefficients that represents the acoustic input. An alternative way to evaluate the fit is to use a feed-forward neural network that takes several frames of coefficients as input and produces posterior probabilities over HMM states as output. Deep neural networks (DNNs) that have many hidden layers and are trained using new methods have been shown to outperform GMMs on a variety of speech recognition benchmarks, sometimes by a large margin. This article provides an overview of this progress and represents the shared views of four research groups that have had recent successes in using DNNs for acoustic modeling in speech recognition.},
-archivePrefix = {arXiv},
-arxivId = {1207.0580},
 author = {Hinton, Geoffrey and Deng, Li and Yu, Dong and Dahl, George and Mohamed, Abdel Rahman and Jaitly, Navdeep and Senior, Andrew and Vanhoucke, Vincent and Nguyen, Patrick and Sainath, Tara and Kingsbury, Brian},
-doi = {10.1109/MSP.2012.2205597},
-eprint = {1207.0580},
-isbn = {1053-5888},
-issn = {10535888},
 journal = {IEEE Signal Processing Magazine},
 number = {6},
 pages = {82--97},
-pmid = {13057166},
 title = {{Deep neural networks for acoustic modeling in speech recognition: The shared views of four research groups}},
 volume = {29},
 year = {2012}
 }
 @article{Hochreiter1997,
-abstract = {Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's (1991) analysis of this problem, then address it b...},
-archivePrefix = {arXiv},
-arxivId = {1206.2944},
 author = {Hochreiter, Sepp and Schmidhuber, Jurgen J{\"{u}}rgen},
-doi = {10.1162/neco.1997.9.8.1735},
-eprint = {1206.2944},
-file = {:Users/felix/Downloads/Bobby{\_}paper1.pdf:pdf},
-isbn = {08997667 (ISSN)},
-issn = {0899-7667},
 journal = {Neural Computation},
 number = {8},
 pages = {1735--1780},
-pmid = {9377276},
 title = {{Long short-term memory}},
-url = {http://www.mitpressjournals.org/doi/abs/10.1162/neco.1997.9.8.1735{\%}5Cnfile:///Files/F0/F0267A41-D807-4137-A5AC-8D9A84E9E12C.pdf{\%}5Cnpapers3://publication/doi/10.1162/neco.1997.9.8.1735{\%}5Cnfile:///Files/B1/B10E2649-D486-4D93-B71B-80023681156B.pdf},
 volume = {9},
 year = {1997}
 }
 @article{Hoffman2010,
-abstract = {You can. But it requires a new set of measurements that begins with tracking the customers investments not yours.},
-archivePrefix = {arXiv},
-arxivId = {arXiv:1011.1669v3},
 author = {Hoffman, Dl D.L. Donna L and Fodor, Marek},
-doi = {10.1287/mksc.1120.0768},
-eprint = {arXiv:1011.1669v3},
-file = {:Users/felix/code/ml/master-thesis/literature/social{\_}media{\_}marketing{\_}roi.pdf:pdf},
-isbn = {15329194},
-issn = {15329194},
 journal = {MIT Sloan Management Review},
 number = {1},
 pages = {41--49},
-pmid = {78434266},
 title = {{Can You Measure the ROI of Your Social Media Marketing?}},
-url = {http://www.mitsmr-ezine.com/mitsmriphone11/fall2010/m2/MobileArticle.action?articleId=23732{\&}mobileWeb=true{\&}lm=1285614348000{\%}5Cnhttp://www.emarketingtravel.net/resources/can you mesur the ROI of your Social media marketing.pdf{\%}5Cnhttp://sloanreview},
 volume = {52},
 year = {2010}
 }
 @inproceedings{Hong2011,
-abstract = {Social network services have become a viable source of information for users. In Twitter, information deemed important by the community propagates through retweets. Studying the characteristics of such popular messages is important for a number of tasks, such as breaking news detection, personalized message recommendation, viral marketing and others. This paper investigates the problem of predicting the popularity of messages as measured by the number of future retweets and sheds some light on what kinds of factors influence information propagation in Twitter. We formulate the task into a classification problem and study two of its variants by investigating a wide spectrum of features based on the content of the messages, temporal information, metadata of messages and users, as well as structural properties of the users' social graph on a large scale dataset. We show that our method can successfully predict messages which will attract thousands of retweets with good performance.},
-annote = {Build two models for predicting retweets:
-First, binary model
-Second, multi-class classifier (0, {\textless}100, {\textless}10000, {\textgreater}10000)
-
-Use advanced topological features like PageRank, degree distribution},
 author = {Hong, Liangjie and Dan, Ovidiu and Davison, Brian D.},
 booktitle = {Proceedings of the 20th international conference companion on World wide web},
-doi = {10.1145/1963192.1963222},
-file = {:Users/felix/code/ml/master-thesis/literature/p57.pdf:pdf},
-isbn = {9781450306379},
-issn = {9781450306379},
-keywords = {2,classification,features,information diffusion,microblogs,of messages,of predicting the popularity,problems,social media,we cast the problem},
 pages = {57--58},
 title = {{Predicting popular messages in Twitter}},
-url = {http://portal.acm.org/citation.cfm?doid=1963192.1963222},
 year = {2011}
 }
 @inproceedings{Ioffe2015,
-abstract = {The objective of this case study was to obtain some first-hand information about the functional consequences of a cosmetic tongue split operation for speech and tongue motility. One male patient who had performed the operation on himself was interviewed and underwent a tongue motility assessment, as well as an ultrasound examination. Tongue motility was mildly reduced as a result of tissue scarring. Speech was rated to be fully intelligible and highly acceptable by 4 raters, although 2 raters noticed slight distortions of the sibilants /s/ and /z/. The 3-dimensional ultrasound demonstrated that the synergy of the 2 sides of the tongue was preserved. A notably deep posterior genioglossus furrow indicated compensation for the reduced length of the tongue blade. It is concluded that the tongue split procedure did not significantly affect the participant's speech intelligibility and tongue motility.},
-archivePrefix = {arXiv},
-arxivId = {arXiv:1011.1669v3},
 author = {Ioffe, Sergey and Szegedy, Christian},
 booktitle = {International conference on machine learning},
-doi = {10.1007/s13398-014-0173-7.2},
-eprint = {arXiv:1011.1669v3},
-file = {:Users/felix/Downloads/1502.03167.pdf:pdf},
-isbn = {9780874216561},
-issn = {10282092},
-keywords = {Blechnaceae,Indonesia,New species,Stenochlaena},
 pages = {448--456},
-pmid = {15003161},
 title = {{Batch Normalization}},
-url = {https://arxiv.org/pdf/1502.03167.pdf},
 year = {2015}
 }
 @article{Jordan2015,
 author = {Jordan, M. I. and Mitchell, T. M.},
-file = {:Users/felix/code/ml/master-thesis/literature/jordan{\_}mitchell{\_}2015{\_}machine{\_}learning.pdf:pdf},
 journal = {Science},
 number = {6245},
 pages = {255--260},
@@ -424,240 +250,93 @@ volume = {349},
 year = {2015}
 }
 @article{Kaplan2010,
-abstract = {The concept of Social Media is top of the agenda for many business executives today. Decision makers, as well as consultants, try to identify ways in which firms can make profitable use of applications such as Wikipedia, YouTube, Facebook, Second Life, and Twitter. Yet despite this interest, there seems to be very limited understanding of what the term "Social Media" exactly means; this article intends to provide some clarification. We begin by describing the concept of Social Media, and discuss how it differs from related concepts such as Web 2.0 and User Generated Content. Based on this definition, we then provide a classification of Social Media which groups applications currently subsumed under the generalized term into more specific categories by characteristic: collaborative projects, blogs, content communities, social networking sites, virtual game worlds, and virtual social worlds. Finally, we present 10 pieces of advice for companies which decide to utilize Social Media. ?? 2009 Kelley School of Business, Indiana University.},
-archivePrefix = {arXiv},
-arxivId = {1501.00994},
 author = {Kaplan, Andreas M. and Haenlein, Michael},
-doi = {10.1016/j.bushor.2009.09.003},
-eprint = {1501.00994},
-file = {:Users/felix/code/ml/master-thesis/literature/social{\_}media{\_}challenges{\_}opportunities.pdf:pdf},
-isbn = {0007-6813},
-issn = {00076813},
 journal = {Business Horizons},
-keywords = {Social Media,Social networking sites,User Generated Content,Virtual worlds,Web 2.0},
 number = {1},
 pages = {59--68},
-pmid = {45641953},
 title = {{Users of the world, unite! The challenges and opportunities of Social Media}},
 volume = {53},
 year = {2010}
 }
 @article{Karpathy2017,
-abstract = {We present a model that generates natural language descriptions of images and their regions. Our approach leverages datasets of images and their sentence descriptions to learn about the inter-modal correspondences between language and visual data. Our alignment model is based on a novel combination of Convolutional Neural Networks over image regions, bidirectional Recurrent Neural Networks over sentences, and a structured objective that aligns the two modalities through a multimodal embedding. We then describe a Multimodal Recurrent Neural Network architecture that uses the inferred alignments to learn to generate novel descriptions of image regions. We demonstrate that our alignment model produces state of the art results in retrieval experiments on Flickr8K, Flickr30K and MSCOCO datasets. We then show that the generated descriptions significantly outperform retrieval baselines on both full images and on a new dataset of region-level annotations.},
-archivePrefix = {arXiv},
-arxivId = {1412.2306},
 author = {Karpathy, Andrej and Fei-Fei, Li},
-doi = {10.1109/TPAMI.2016.2598339},
-eprint = {1412.2306},
-file = {:Users/felix/code/ml/master-thesis/literature/cvpr2015.pdf:pdf},
-isbn = {9781467369640},
-issn = {01628828},
 journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
-keywords = {Image captioning,deep neural networks,language model,recurrent neural network,visual-semantic embeddings},
 number = {4},
 pages = {664--676},
-pmid = {16873662},
 title = {{Deep Visual-Semantic Alignments for Generating Image Descriptions}},
 volume = {39},
 year = {2017}
 }
 @article{Kim2012,
-abstract = {In light of a growing interest in the use of social media marketing (SMM) among luxury fashion brands, this study set out to identify attributes of SMM activities and examine the relationships among those perceived activities, value equity, relationship equity, brand equity, customer equity, and purchase intention through a structural equation model. Five constructs of perceived SSM activities of luxury fashion brands are entertainment, interaction, trendiness, customization, and word of mouth. Their effects on value equity, relationship equity, and brand equity are significantly positive. For the relationship between customer equity drivers and customer equity, brand equity has significant negative effect on customer equity while value equity and relationship equity show no significant effect. As for purchase intention, value equity and relationship equity had significant positive effects, while relationship equity had no significant influence. Finally, the relationship between purchase intention and customer equity has significance. The findings of this study can enable luxury brands to forecast the future purchasing behavior of their customers more accurately and provide a guide to managing their assets and marketing activities as well. {\textcopyright} 2011 Elsevier Inc.},
-archivePrefix = {arXiv},
-arxivId = {arXiv:1011.1669v3},
 author = {Kim, Angella J. and Ko, Eunju},
-doi = {10.1016/j.jbusres.2011.10.014},
-eprint = {arXiv:1011.1669v3},
-file = {:Users/felix/code/ml/master-thesis/literature/social{\_}media{\_}customer{\_}equity.pdf:pdf},
-isbn = {0148-2963},
-issn = {01482963},
 journal = {Journal of Business Research},
-keywords = {Brand equity,Customer equity,Luxury brands,Perceived social media marketing (SMM) activities,Purchase intention,Relationship equity,Value equity},
 number = {10},
 pages = {1480--1486},
-pmid = {78434266},
 publisher = {Elsevier Inc.},
 title = {{Do social media marketing activities enhance customer equity? An empirical study of luxury fashion brand}},
-url = {http://dx.doi.org/10.1016/j.jbusres.2011.10.014},
 volume = {65},
 year = {2012}
 }
 @inproceedings{Kim2015,
-abstract = {We describe a simple neural language model that relies only on character-level inputs. Predictions are still made at the word-level. Our model employs a convolutional neural network (CNN) and a highway network over characters, whose output is given to a long short-term memory (LSTM) recurrent neural network language model (RNN-LM). On the English Penn Treebank the model is on par with the existing state-of-the-art despite having 60{\%} fewer parameters. On languages with rich morphology (Arabic, Czech, French, German, Spanish, Russian), the model outperforms word-level/morpheme-level LSTM baselines, again with fewer parameters. The results suggest that on many languages, character inputs are sufficient for language modeling. Analysis of word representations obtained from the character composition part of the model reveals that the model is able to encode, from characters only, both semantic and orthographic information.},
-archivePrefix = {arXiv},
-arxivId = {1508.06615},
 author = {Kim, Yoon and Jernite, Yacine and Sontag, David and Rush, Alexander M.},
 booktitle = {AAAI},
-doi = {2},
-eprint = {1508.06615},
-file = {:Users/felix/code/ml/master-thesis/literature/1508.06615.pdf:pdf},
-isbn = {9781577357605},
-issn = {14814374},
 pages = {2741--2749},
-pmid = {15003161},
 title = {{Character-Aware Neural Language Models}},
-url = {http://arxiv.org/abs/1508.06615},
 year = {2016}
 }
-@article{Kingma2014a,
-abstract = {We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm.},
-archivePrefix = {arXiv},
-arxivId = {1412.6980},
+@misc{Kingma2014a,
 author = {Kingma, Diederik P. and Ba, Jimmy},
-doi = {http://doi.acm.org.ezproxy.lib.ucf.edu/10.1145/1830483.1830503},
-eprint = {1412.6980},
-file = {:Users/felix/code/ml/master-thesis/literature/1412.6980.pdf:pdf},
-isbn = {9781450300728},
-issn = {09252312},
 pages = {1--15},
-pmid = {172668},
 title = {{Adam: A Method for Stochastic Optimization}},
 url = {http://arxiv.org/abs/1412.6980},
+urldate = {02.04.2018}
 year = {2014}
 }
 @inproceedings{Krizhevsky2012,
-abstract = {We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSRVRC-2010 contest into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 37.5{\%} and 17.0{\%} which is considerably better than the previous state of the art. The neural network, which has 60 million paramters and 650,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and three fully connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of the convolutional operation. To reduce overfitting in the fully-connected layers, we employed a recently-developed method called 'dropout' that proved to be effective. We also entered a variant of the model in the ILSVRC-2012 competition and achievd a top-5 test error rate of 15.3{\%}, compared to 26.2{\%} achieved by the second-best entry.},
-annote = {Description of CNN trained on the ImageNet data set
-
-Achieves new state-of-the-art results in the ImageNet competition
-
-Deep neural network using common methods such as dropout and data augmentation in order to avoid overfitting
-
-Very good write-up of the model, very comprehensible},
-archivePrefix = {arXiv},
-arxivId = {1102.0183},
 author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
 booktitle = {Advances In Neural Information Processing Systems},
-doi = {http://dx.doi.org/10.1016/j.protcy.2014.09.007},
-eprint = {1102.0183},
-file = {:Users/felix/code/ml/master-thesis/literature/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf:pdf},
-isbn = {9781627480031},
-issn = {10495258},
 pages = {1097--1105},
-pmid = {7491034},
 title = {{ImageNet Classification with Deep Convolutional Neural Networks}},
 year = {2012}
 }
-@article{Kupavskii2012,
-abstract = {Retweet cascades play an essential role in information diffusion in Twitter. Popular tweets reflect the current trends in Twitter, while Twitter itself is one of the most important online media. Thus, understanding the reasons why a tweet becomes popular is of great interest for sociologists, marketers and social media researches. What is even more important is the possibility to make a prognosis of a tweet's future popularity. Besides the scientific significance of such possibility, this sort of prediction has lots of practical applications such as breaking news detection, viral marketing etc. In this paper we try to forecast how many retweets a given tweet will gain during a fixed time period. We train an algorithm that predicts the number of retweets during time T since the initial moment. In addition to a standard set of features we utilize several new ones. One of the most important features is the flow of the cascade. Another one is PageRank on the retweet graph, which can be considered as the measure of influence of users. {\textcopyright} 2012 ACM.},
-annote = {REFERENCE RESULTS FOR REGRESSION
-
-Build prediction model for number of retweets in a given time period
-
-Using content and text features and gradient boosted decision tree model
-
-Minimizing mean square error for cascade size
-
-New measure of influence: PageRank of a user in the retweet graph
-
-Retweet cascade: graph whose vertices are users that retweeted the tweet
-Retweet tree: draw edges for first retweeters in cascade
-
-Possible source of assumption about retweet distribution},
+@inproceedings{Kupavskii2012,
 author = {Kupavskii, Andrey and Ostroumova, Liudmila and Umnov, Alexey and Usachev, Svyatoslav and Serdyukov, Pavel and Gusev, Gleb and Kustarev, Andrey},
-doi = {10.1145/2396761.2398634},
-file = {:Users/felix/code/ml/master-thesis/literature/post1726-kupavskii.pdf:pdf},
-isbn = {9781450311564},
-journal = {Proceedings of the 21st ACM international conference on Information and knowledge management},
-keywords = {Cascade sizes,Commerce,Fixed time,Forecasting,Initial moments,Knowledge management,Marketing,Online media,PageRank,Social media,Social networking (online),Viral marketing,influence,information diffusion,retweet cascade},
-number = {OCTOBER},
+booktitle = {Proceedings of the 21st ACM international conference on Information and knowledge management},
+number = {October},
 pages = {2335--2338},
 title = {{Prediction of retweet cascade size over time}},
-url = {http://www.scopus.com/inward/record.url?eid=2-s2.0-84871058841{\&}partnerID=40{\&}md5=eaf796c17b6c884c9f666aaf2fb341e6},
 year = {2012}
 }
 @inproceedings{Kwak2010,
-abstract = {Twitter, a microblogging service less than three years old, com- mands more than 41 million users as of July 2009 and is growing fast. Twitter users tweet about any topic within the 140-character limit and follow others to receive their tweets. The goal of this paper is to study the topological characteristics of Twitter and its power as a new medium of information sharing. We have crawled the entire Twitter site and obtained 41.7 million user profiles, 1.47 billion social relations, 4, 262 trending topics, and 106 million tweets. In its follower-following topology analysis we have found a non-power-lawfollower distribution, a short effec- tive diameter, and low reciprocity, which all mark a deviation from known characteristics of human social networks [28]. In order to identify influentials on Twitter, we have ranked users by the number of followers and by PageRank and found two rankings to be sim- ilar. Ranking by retweets differs from the previous two rankings, indicating a gap in influence inferred from the number of followers and that from the popularity of one's tweets. We have analyzed the tweets of top trending topics and reported on their temporal behav- ior and user participation. We have classified the trending topics based on the active period and the tweets and show that the ma- jority (over 85{\%}) of topics are headline news or persistent news in nature. A closer look at retweets reveals that any retweeted tweet is to reach an average of 1, 000 users no matter what the number of followers is of the original tweet. Once retweeted, a tweet gets retweeted almost instantly on next hops, signifying fast diffusion of information after the 1st retweet. To the best of our knowledge this work is the first quantitative study on the entire Twittersphere and information diffusion on it.},
-annote = {Possible source of retweet distribution assumptions
-
-Most retweeting in first and second degree network
-
-Evidence of favoritism: people retweet from small number of people
-
-Follower distribution not power-law
-
-Small-world phenomenon in Twitter
-
-Most links are reciprocal, i.e. go both ways
-
-Twitter is more a medium for breaking news than a social network},
-archivePrefix = {arXiv},
-arxivId = {0809.1869v1},
 author = {Kwak, Haewoon and Lee, Changhyun and Park, Hosung and Moon, Sue},
 booktitle = {Proceedings of the 19th international conference on world wide web},
-doi = {10.1145/1772690.1772751},
-eprint = {0809.1869v1},
-file = {:Users/felix/code/ml/master-thesis/literature/22-WhatisTwitterASocialNetworkOrANewsMedia.pdf:pdf},
-isbn = {9781605587998},
-issn = {1932-8036},
-keywords = {copyright is held by,degree of,homophily,influential,information diffusion,online social network,pagerank,reciprocity,retweet,separation,the international world wide,twitter,web conference com-},
 pages = {591--600},
-pmid = {70583450},
 title = {{What is Twitter, a Social Network or a News Media?}},
-url = {http://dl.acm.org/citation.cfm?id=1772751},
 year = {2010}
 }
 @article{LeCun2015,
-abstract = {Deep learning allows computational models that are composed of multiple processing layers to learn representations of data with multiple levels of abstraction. These methods have dramatically improved the state-of-the-art in speech recognition, visual object recognition, object detection and many other domains such as drug discovery and genomics. Deep learning discovers intricate structure in large data sets by using the backpropagation algorithm to indicate how a machine should change its internal parameters that are used to compute the representation in each layer from the representation in the previous layer. Deep convolutional nets have brought about breakthroughs in processing images, video, speech and audio, whereas recurrent nets have shone light on sequential data such as text and speech.},
-annote = {Review paper explaining deep learning on a basic level
-
-Contains information on basic deep learning architectures such as CNNs, RNNs and LSTM
-
-Shows applications and areas of further research},
-archivePrefix = {arXiv},
-arxivId = {arXiv:1312.6184v5},
 author = {LeCun, Yann and Bengio, Yoshua and Hinton, Geoffrey},
-doi = {10.1038/nature14539},
-eprint = {arXiv:1312.6184v5},
-file = {:Users/felix/code/ml/master-thesis/literature/NatureDeepReview.pdf:pdf},
-isbn = {9780521835688},
-issn = {0028-0836},
 journal = {Nature},
 number = {7553},
 pages = {436--444},
-pmid = {10463930},
 title = {{Deep learning}},
-url = {http://www.nature.com/doifinder/10.1038/nature14539},
 volume = {521},
 year = {2015}
 }
 @inproceedings{LeCun1998,
-abstract = {Multilayer neural networks trained with the back-propagation$\backslash$nalgorithm constitute the best example of a successful gradient based$\backslash$nlearning technique. Given an appropriate network architecture,$\backslash$ngradient-based learning algorithms can be used to synthesize a complex$\backslash$ndecision surface that can classify high-dimensional patterns, such as$\backslash$nhandwritten characters, with minimal preprocessing. This paper reviews$\backslash$nvarious methods applied to handwritten character recognition and$\backslash$ncompares them on a standard handwritten digit recognition task.$\backslash$nConvolutional neural networks, which are specifically designed to deal$\backslash$nwith the variability of 2D shapes, are shown to outperform all other$\backslash$ntechniques. Real-life document recognition systems are composed of$\backslash$nmultiple modules including field extraction, segmentation recognition,$\backslash$nand language modeling. A new learning paradigm, called graph transformer$\backslash$nnetworks (GTN), allows such multimodule systems to be trained globally$\backslash$nusing gradient-based methods so as to minimize an overall performance$\backslash$nmeasure. Two systems for online handwriting recognition are described.$\backslash$nExperiments demonstrate the advantage of global training, and the$\backslash$nflexibility of graph transformer networks. A graph transformer network$\backslash$nfor reading a bank cheque is also described. It uses convolutional$\backslash$nneural network character recognizers combined with global training$\backslash$ntechniques to provide record accuracy on business and personal cheques.$\backslash$nIt is deployed commercially and reads several million cheques per day$\backslash$n},
-archivePrefix = {arXiv},
-arxivId = {1102.0183},
 author = {LeCun, Yann and Bottou, L{\'{e}}on and Bengio, Yoshua and Haffner, Patrick},
 booktitle = {Proceedings of the IEEE},
-doi = {10.1109/5.726791},
-eprint = {1102.0183},
-file = {:Users/felix/Downloads/1998Lecun.pdf:pdf},
-isbn = {0018-9219},
-issn = {00189219},
-keywords = {Convolutional neural networks,Document recognition,Finite state transducers,Gradient-based learning,Graph transformer networks,Machine learning,Neural networks,Optical character recognition (OCR)},
 number = {11},
 pages = {2278--2323},
-pmid = {15823584},
 title = {{Gradient-based learning applied to document recognition}},
 volume = {86},
 year = {1998}
 }
-@misc{Lee2014,
-abstract = {There has been much effort on studying how social media sites, such as Twitter, help propagate information in different situations, including spreading alerts and SOS messages in an emergency. However, existing work has not addressed how to actively identify and engage the right strangers at the right time on social media to help effectively propagate intended information within a desired time frame. To address this problem, we have developed two models: (i) a feature-based model that leverages peoples' exhibited social behavior, including the content of their tweets and social interactions, to characterize their willingness and readiness to propagate information on Twitter via the act of retweeting; and (ii) a wait-time model based on a user's previous retweeting wait times to predict her next retweeting time when asked. Based on these two models, we build a recommender system that predicts the likelihood of a stranger to retweet information when asked, within a specific time window, and recommends the top-N qualified strangers to engage with. Our experiments, including live studies in the real world, demonstrate the effectiveness of our work.},
-annote = {Try to identify the most effective information propagators (i.e. right people at the right time)
-
-Find strangers on Twitter who will retweet a message when asked
-
-Six groups of features plus intuitive reasoning},
-archivePrefix = {arXiv},
-arxivId = {1405.3750},
+@inproceedings{Lee2014,
 author = {Lee, Kyumin and Mahmud, Jalal and Chen, Jilin and Zhou, Michelle and Nichols, Jeffrey},
 booktitle = {Proceedings of the 19th International Conference on Intelligent User Interfaces},
-doi = {10.1145/2557500.2557502},
-eprint = {1405.3750},
-file = {:Users/felix/code/ml/master-thesis/literature/1405.3750.pdf:pdf},
-isbn = {9781450321846},
 pages = {247--256},
 title = {{Who Will Retweet This?: Automatically Identifying and Engaging Strangers on Twitter to Spread Information}},
-url = {http://doi.acm.org/10.1145/2557500.2557502},
 year = {2014}
 }
 @article{Mangold2009,
