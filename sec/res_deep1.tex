@@ -107,6 +107,9 @@ training process by decreasing the range of weight values without sacrificing
 model performance.
 Moreover, it helps to avoid overfitting, which is more prone to occur in models
 containing many learnable parameters.
+For the larger data sets, further regularization had to be added in order prevent overfitting.
+More specifically, dropout was inserted after each fully-connected layer, where
+the probability of keeping a neuron was set to 50\% (see ch.~\ref{sub:dl_developments}).
 
 \subsubsection{Training process}
 \label{sub:deep1_training}
@@ -127,6 +130,12 @@ Classification models were still trained for a total of 50 iterations each.
 \subsubsection{Model performance}
 \label{sub:deep1_performance}
 
+This section will list results of training deep feedforward networks on the task
+of engagement prediction.
+First, general performance metrics will be presented, before subsequent paragraphs
+analyze the results for both regression and classification approaches in more
+detail.
+
 \begin{table}
   \begin{tabular}{lrrrrrrr}
     \toprule
@@ -144,19 +153,37 @@ Classification models were still trained for a total of 50 iterations each.
   \label{tab:deep1_results}
 \end{table}
 
-\outline{Overall performance increases (cost function lower for both tasks
-across all data sets)}
-\outline{Additional information: models start to overfit slightly (esp. company
-classification => training loss is 0.64)}
-\outline{Classification accuracy improvements between 10 and 20 \% (celebrity performance
-improvements are strongest), 65 to 70\% of validation examples are classified correctly}
-\outline{Improvements are slightly higher for favorite classification (except for politicians)}
-\outline{Relation between RetAcc and FavAcc unchanged}
-\outline{Interesting: classification works best for celebrity data (previously worst performance)}
-\outline{MAE results lowered by 12 (politicians) to 33\% (celebrities)}
-\outline{Improvements mostly driven by strong decreases in FavMAE (decreases
-higher across the board)}
-\outline{More details on classification and regression performance in the following}
+Table~\ref{tab:deep1_results} summarizes performance metrics across all data
+sets for classification and regression task.
+The metrics were calculated using unseen data, i.e., the held-out validation
+set.
+On the smaller data sets, performance increases considerably, i.e.,
+smaller values are found for both cost functions.
+Regarding the classification task, accuracy improves between 10 and 20\%, such
+that 65 to 70\% of validation examples are labeled correctly by the classifier.
+Here, the deep feedforward network yields the largest improvement on celebrity
+tweets, which interestingly are also classified most accurately among all data sets.
+This is in contrast to linear model results, where performance was worst on this
+data set.
+Except for politician data, performance increases are slightly higher for favorite
+classification.
+However, relations between both classification tasks remain unchanged, i.e.,
+retweets are more accurately classified for celebrities and politicians.
+Concerning the regression task, MAE values are lowered by 12 (politicians) to
+33\% (celebrities).
+These improvements are mainly driven by strong decreases in favorite MAE values,
+which are higher for all three data sets.
+For the combined data set, results are only slightly better compared to using
+linear models.
+Interestingly, performance on the favorite regresssion task does not improve
+at all.
+This is surprising, since one would expect larger performance increases when
+adding more data.
+Overall, results of appying deep feedforward networks to structured inputs
+yield more compelling results than using linear models.
+Nevertheless, room for further improvements is definitely given.
+In order to understand the observed results better, both classification and 
+regression performance will be analyzed further in the following paragraphs.
 
 \begin{figure}[h]
 \begin{subfigure}{.5\textwidth}
