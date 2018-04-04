@@ -27,27 +27,44 @@ These will be preprocessed so that they can be used as an actual input to a neur
 \paragraph{Word vectors}
 \label{sub:word_vectors}
 
-\outline{Basic concept: words are transformed into vectors with dimensionality d}
-\outline{This places words in a vector space}
-\outline{Allows examination of space structure and relationships between words}
-
-\outline{Thesis uses pre-trained word vectors: GloVe (NLP Stanford)}
-\outline{Trained on 2B tweets containing 27B unique tokens from different languages (English, Arabic, Japanese)}
-\outline{Vectors are obtained by examining co-occurrence statistics in given data}
-\outline{Token can be a word or symbol with special meaning, e.g., tokens for numbers, punctuation repetition}
-\outline{Special features of these pretrained vectors: nearest neighbors, linear substructures} 
-\outline{Nearest neighbors: possibility to use Euclidian distance to quantify
-linguistic or semantic similarity between words}
-\outline{Linear substructures: calculating semantic distance allows to compare
-relatedness, e.g., man <=> woman similar to king <=> queen (underlying concept to distinguish is gender)}
+As mentioned above, an embedding is a function that maps from a specific
+vocabulary to vectors with dimensionality $d$.
+As a results, words are effectively placed in a vector space $\mathbb{R}^d$.
+This allows examination of space structure and relationships between words of 
+the vocabulary.
+This thesis uses the pre-trained \textit{GloVe} word vectors by the \textit{Stanford
+Natural Language Processing Group}\footcite{Pennington2014}\footnote{\url{https://nlp.stanford.edu/projects/glove/}}.
+These were trained on a corpus of two billion tweets containing a total of
+27 billion unique token from different languages, e.g., English, Arabic and
+Japanese.
+Here, a token can be a word or a symbol with a special meaning.
+In detail, vectors were obtained by examining co-occurrence statistics in this
+large data set.
+Two special featues come with this set of word vectors.
+Firstly, it is possible to quantify linguistic or semantic similarity between
+words by calculating the Euclidian distance between them.
+For example, the word pair ``frog-toad'' should have a smaller distance than
+the pair ``frog-tiger'', because frogs and toads are both amphibians.
+Secondly, calculating semantic distance allow to compare relatedness of word
+pairs, so-called linear substructures.
+As an example, the word pair ``man-woman'' should intuitively have similar distance
+compared to the pair ``king-queen'', since the underlying concept to distinguish
+the words is gender.
+Using pre-existing word vectors removes the need to learn these parameters
+at training time, thus speeding up the model development process.
 
 \paragraph{Tokenization}
 \label{sub:tokenization}
 
-\outline{Raw tweet texts need to adapt to chosen word vectors}
-\outline{Most importantly: use predefined tokens in order to get the maximum
-benefit out of pretrained word vectors}
-\outline{Goal: Text should be able to be separated into tokens by simply splitting on spaces}
+Making maximum use of pre-trained word vectors requires preprocessing the raw
+tweet texts so that they are in conformity with existing standards set by
+the creators.
+Explicitly, \textit{GloVe} word vectors come with predefined tokens for tweet
+components such as hashtags, URLs or user mentions, stylistic expressions such
+as punctuation repetition or word elongation, and general concepts like numbers.
+These tokens need to be recognized and marked in tweet texts.
+In addtion, tokenization should preprocess the texts in a way that they can
+later be separated into single tokens by simply splitting on whitespace.
 
 \begin{table}
 \begin{tabular}{rlll}
@@ -71,26 +88,43 @@ Step & Description & Before & After \\
 \label{tab:text_preprocessing}
 \end{table}
 
+Table~\ref{tab:text_preprocessing} shows the undertaken tweet preprocessing
+steps for this thesis.
+These are inspired by a Ruby script written by the GloVe creators\footnote{\url{https://nlp.stanford.edu/projects/glove/preprocess-twitter.rb}}.
+The code was ported to Python, including necessary fixes and expansions.
+Special tokens often replace the original content, e.g., for URLs, user mentions,
+numbers and emoticons.
+The main reason behind this is that consuming algorithms are more capable of
+making sense of the general occurrence of such components, rather than their
+actual meaning.
+For example, a neural network will not be able to derive the content of the
+actual web pages behind URLs.
+Stylistic expressions such as word elongations, punctuation repetitions or
+allcaps words could be useful to learn about tweet sentiment since the author is 
+obviously trying to highlight the specific passage.
+Words that are transformed, e.g., by elongations or uppercasing, are converted to their original, lowercase
+version for easier matching with the pre-trained word vectors.
+Since hashtags are often written in camelcase form, they are split on uppercase
+letters with the aim of understanding the meaning behind them.
+Finally, spaces are added where needed, e.g., between slashes (obviously after
+replacing URLs) or around punctuation.
+
 \begin{figure}[h]
   \includegraphics[width=\textwidth]{img/text_preprocessing_1}
   \caption{Tokenization example}
 \label{fig:tokenization}
 \end{figure}
 
-\outline{List of steps inspired by provided Ruby scripts, but fixed and expanded}
-\outline{Step 1: Replace URLs => only occurrence is notable, extracting meaning very difficult}
-\outline{Step 2: Split words separated by slashes => get singular words}
-\outline{Step 3: Replace user mentions => same as URLs}
-\outline{Step 4: Replace specific emojis => could be sign of sentiment}
-\outline{Step 5: Replace numbers => sames as URLs}
-\outline{Step 6: Split hashtags on uppercase letters => derive their meaning}
-\outline{Step 7: Mark punctuation repetitions => mark importance of sentiment}
-\outline{Step 8: Add spaces around punctuation => separate from words}
-\outline{Step 9: Mark elongated words => possible sign of exaggeration}
-\outline{Step 10: Mark allcaps words => possible sign of exaggeration}
-\outline{Step 11: Replace unicode characters => avoid preprocessing errors}
-
-\outline{Example: apply tokenization to example texts}
+Fig.~\ref{fig:tokenization} presents the results of applying the above listed
+steps to the example tweets used in this section.
+The tokenized texts are prepared for the next preprocessing steps, which
+are described in the following paragraphs.
+In practice, the derived tokenizations are often noisy due to individual tweeting
+behaviors.
+Unconvential writing often leads to the creation of unknown tokens and other
+edge cases which are not covered by pre-trained word vectors.
+This constitutes one of the reasons why huge amounts of data are usually needed
+for NLP tasks.
 
 \paragraph{Word index}
 \label{sub:word_index}

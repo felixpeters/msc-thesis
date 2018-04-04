@@ -1,9 +1,17 @@
 \subsection{Multi-Input Deep Neural Networks}
 \label{sec:deep_combined}
 
-\outline{Going a step further: multi-input model => texts and additional features}
-\outline{Testing whether features from tweet content can improve predictions further}
-\outline{List subsections}
+This section aims to examine whether using the actual tweet content as an
+auxiliary input has a positive influence on model performance.
+Models created in this chapter make use of both structured and unstructured data,
+effectively creating so-called \textit{multi-input} neural networks.
+As a result, some of the more complex layer architectures introduced in Chapter~\ref{sub:dl_developments}
+have to be applied in order to make sense of unstructured inputs.
+How tweet texts can be incorporated in neural networks is described in the
+first section (ch.~\ref{sub:text_preprocessing}).
+Following the structure of previous chapters, model architecture (ch.~\ref{sub:comb_model_architecture}),
+training process {ch.~\ref{comb_training_process}} and performance (ch.~\ref{sub:comb_performance})
+are presented afterwards.
 
 \input{sec/text_preprocessing.tex}
 
