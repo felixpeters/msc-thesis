@@ -51,9 +51,15 @@ Step & Description & Before & After \\
 11 & Remove unicode character & ``u00B3'' & `` '' \\
 \bottomrule
 \end{tabular}
-\caption{Summary of model selection results}
-\label{tab:dm1_selection_results}
+\caption{Order of text preprocessing steps}
+\label{tab:text_preprocessing}
 \end{table}
+
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{img/text_preprocessing_1}
+  \caption{Tokenization example}
+\label{fig:tokenization}
+\end{figure}
 
 \outline{List of steps inspired by provided Ruby scripts, but fixed and expanded}
 \outline{Step 1: Replace URLs => only occurrence is notable, extracting meaning very difficult}
@@ -73,7 +79,11 @@ Step & Description & Before & After \\
 \paragraph{Word index}
 \label{sub:word_index}
 
-\missingfigure{Creation of word index for example}
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{img/text_preprocessing_2}
+  \caption{Word index example}
+\label{fig:word_index}
+\end{figure}
 
 \outline{First step of embedding creation: get a list of all occurring words}
 \outline{Word index: map (key => word, value => unique ID)}
@@ -85,7 +95,11 @@ words can be extracted if number of words is limited for some reason}
 \paragraph{Sequences}
 \label{sub:sequences}
 
-\missingfigure{From text to sequence of word IDs (via word index)}
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{img/text_preprocessing_3}
+  \caption{Text sequencing example}
+\label{fig:text_sequencing}
+\end{figure}
 
 \outline{Second step: transform texts into sequence (i.e., list of word IDs)}
 \outline{Split on whitespace (space, tab, newline)}
@@ -95,7 +109,11 @@ words can be extracted if number of words is limited for some reason}
 \paragraph{Embedding index}
 \label{sub:embedding_index}
 
-\missingfigure{From file to embedding index}
+\begin{figure}[h]
+  \includegraphics[height=7cm]{img/text_preprocessing_4}
+  \caption{Embedding index example}
+\label{fig:embedding_index}
+\end{figure}
 
 \outline{Third step: load pretrained word vectors from file}
 \outline{Create a map (key: word, value: d-dimensional vector)}
@@ -103,7 +121,11 @@ words can be extracted if number of words is limited for some reason}
 \paragraph{Embedding matrix}
 \label{sub:embedding_matrix}
 
-\missingfigure{Combine embedding and word indices into embedding matrix}
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{img/text_preprocessing_5}
+  \caption{Embedding matrix example}
+\label{fig:embedding_matrix}
+\end{figure}
 
 \outline{Final step: create a matrix in which the i-th row represents the word
 vector for the word with ID i from word index}
