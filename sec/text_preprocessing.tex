@@ -33,7 +33,27 @@ relatedness, e.g., man <=> woman similar to king <=> queen (underlying concept t
 benefit out of pretrained word vectors}
 \outline{Goal: Text should be able to be separated into tokens by simply splitting on spaces}
 
-\missingfigure{List of preprocessing steps including before/after examples}
+\begin{table}
+\begin{tabular}{rlll}
+\toprule
+Step & Description & Before & After \\
+\midrule
+1 & Mark URLs & ``https://t.co/IFt05'' & ``<url>'' \\
+2 & Split words separated by slashes & ``fruits/vegetables'' & ``fruits / vegetables'' \\
+3 & Mark user mentions & ``@rogerfederer'' & ``<user>'' \\
+4 & Mark emoticons & ``:-)'' & ``<smile>'' \\
+5 & Mark numbers & ``123'' & ``<number>'' \\
+6 & Mark and split hashtags & ``\#SoNice'' & ``<hashtag> so nice'' \\
+7 & Mark punctuation repetitions & ``!!!'' & ``! <repeat>'' \\
+8 & Add spaces around punctuation & ``Watch out!'' & ``watch out !'' \\
+9 & Mark elongated words & ``niceeeee'' & ``nice <elong>'' \\
+10 & Mark allcaps words & ``IMPORTANT'' & ``important <allcaps>'' \\
+11 & Remove unicode character & ``u00B3'' & `` '' \\
+\bottomrule
+\end{tabular}
+\caption{Summary of model selection results}
+\label{tab:dm1_selection_results}
+\end{table}
 
 \outline{List of steps inspired by provided Ruby scripts, but fixed and expanded}
 \outline{Step 1: Replace URLs => only occurrence is notable, extracting meaning very difficult}
