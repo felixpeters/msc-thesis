@@ -1,12 +1,28 @@
 \subsubsection{Text preprocessing}
 \label{sub:text_preprocessing}
 
-\outline{Neural networks only require inputs to be numbers (vectors or scalars)}
-\outline{Need to translate text into numbers, i.e., obtain vector representation for words}
-\outline{This is called an embedding (layer)}
-\outline{Section will use simple example for preprocessing steps, but also
-describe intermediate results for collected data sets}
-\outline{Introduce simple example: texts}
+In general, neural networks require numerical inputs, i.e., scalars or vectors.
+For example, images can be processed by looking at pixel values representing
+coloration, which can either be scalar (grey-scale image) or multi-dimensional
+(RGB image).
+Consequently, in order to include tweet texts as input to a neural network,
+the respective texts need to be transformed into numbers.
+This is usually achieved by obtaining vector representations for single words.
+Such a mapping between words and vectors of real numbers is called a \textbf{word
+embedding}.
+This section is structured as follows.
+First, an introduction to word vectors are given.
+Afterwards, all five steps of the transformation process are be presented using a simple example.
+In addition, intermediate results of the preprocessing steps for the collected
+data sets are described.
+The example used throughout this section comprises two fictional tweet texts:
+
+\begin{enumerate}
+  \item Tweet: ``The weather is so niceee!!! \#ILoveDarmstadt''
+  \item Tweet: ``@rogerfederer is an 8 time Wimbledon champion! \#achievement''
+\end{enumerate}
+
+These will be preprocessed so that they can be used as an actual input to a neural network.
 
 \paragraph{Word vectors}
 \label{sub:word_vectors}
