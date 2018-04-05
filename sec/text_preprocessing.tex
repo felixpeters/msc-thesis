@@ -129,21 +129,41 @@ for NLP tasks.
 \paragraph{Word index}
 \label{sub:word_index}
 
+The next step of creating a word embedding is to compile a list of all unique
+words (resp.\ tokens) in the data set.
+As a results, the word index is developed, which constitutes a map structure.
+Here the words serve as keys, and the values are unique, numerical identifiers
+(IDs) for these words.
+
 \begin{figure}[h]
   \includegraphics[width=\textwidth]{img/text_preprocessing_2}
   \caption{Word index example}
 \label{fig:word_index}
 \end{figure}
 
-\outline{First step of embedding creation: get a list of all occurring words}
-\outline{Word index: map (key => word, value => unique ID)}
-\outline{IDs are usually ordered by number of occurrences, s.th. most important
-words can be extracted if number of words is limited for some reason}
+Fig.~\ref{fig:word_index} shows the resulting word index for the simple
+example.
+In this case, the word index contains a total of 19 words.
+The word IDs are usually ordered according to the number of occurrences of the
+associated word.
+In this example, exclamation mark, the word ``is'' and the hashtag token occur
+twice and are therefore given the smallest IDs.
+Ordering words in this way enables straightforward separation of the most
+popular words, if the vocabulary for further examination is restricted for some
+reason (e.g., computational ressources are limited).
+It is important to note, that word IDs should be ascending with step size 1 and
+start at 1.
+The reasons for that will become obvious in the following paragraphs.
+
 \outline{List number of words for data sets + most common words}
-\outline{Important: IDs are ascending (step size 1) and start 1}
 
 \paragraph{Sequences}
 \label{sub:sequences}
+
+At this stage, the input texts can be transformed into sequences, i.e., lists,
+of word IDs.
+This step requires tokenized texts and a complete word index, both of which
+are available at this point.
 
 \begin{figure}[h]
   \includegraphics[width=\textwidth]{img/text_preprocessing_3}
@@ -151,10 +171,27 @@ words can be extracted if number of words is limited for some reason}
 \label{fig:text_sequencing}
 \end{figure}
 
-\outline{Second step: transform texts into sequence (i.e., list of word IDs)}
-\outline{Split on whitespace (space, tab, newline)}
-\outline{Lookup word ID in word index}
-\outline{Zero-pad sequences according to specification (e.g., longest sequence)}
+The result of sequencing the example tweets is illustrated in Fig.~\ref{fig:text_sequencing}.
+Firstly, tokenized texts are split into a list of tokens.
+Split points can usually be defined tailored to the specific problem, but
+most commonly input texts are split on any kind of whitespace, i.e., spaces,
+tabs or newlines.
+Secondly, the list entries are transformed from actual words to their respective
+word IDs.
+This happens via a simple lookup in the word index.
+To recap, word indices are usually implemented as map structures, which are
+optimized for these kinds of lookup procedures.
+The resulting sequences possess varying lengths, due to the variation of the
+underlying texts.
+As a third and final step, the sequences are padded so that the differences in
+length vanish.
+This is achieved by either inserting zero values or removing sequence entries,
+depending on the specified common length.
+Often the longest sequence determines this common length, but it can also be
+set to an arbitrary number (e.g., if particular outliers in length exist).
+In this example, the second sequence is padded with two leading zeros.
+For the collected data sets, sequence lengths were set to 32 or 48, which
+means at least 99\% of all tweets were considered in full length.
 
 \paragraph{Embedding index}
 \label{sub:embedding_index}
