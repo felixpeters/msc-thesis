@@ -196,14 +196,37 @@ means at least 99\% of all tweets were considered in full length.
 \paragraph{Embedding index}
 \label{sub:embedding_index}
 
+The word index basically defines the vocabulary used in the input texts.
+Contained words now have to be equipped with word vectors, so that the
+consuming algorithm can make sense of this data.
+In this thesis, pre-trained word vectors are utilized, which come in form of a
+simple text file.
+The next step of creating a word embedding is to load the vectors from file
+into a more conveniently accessible data structure, thus creating the so-called
+\textit{embedding index}.
+
 \begin{figure}[h]
   \includegraphics[height=7cm]{img/text_preprocessing_4}
   \caption{Embedding index example}
 \label{fig:embedding_index}
 \end{figure}
 
-\outline{Third step: load pretrained word vectors from file}
-\outline{Create a map (key: word, value: d-dimensional vector)}
+Fig.~\ref{fig:embedding_index} shows how the embedding index typically looks
+like.
+In accordance to the word index, the embedding index is most commonly implemented
+as a map structure (e.g., \textit{dictionaries} in Python).
+Once again, the particular word serves as a unique key for lookups.
+Loaded word vectors are assigned as values.
+Vectors are usually represented as lists of some kind, e.g., arrays in Python.
+Vector dimensionality is predetermined, e.g., GloVe comes with vectors of length
+25, 50, 100 and 200.
+In this example, a three-dimensional representation is chosen for more
+improved overview.
+Moreover, it is assumed that the pre-trained vectors only cover a very restricted
+vocabulary.
+Generally, it should be denoted that using pre-trained word vectors does not guarantee
+to derive numerical representations for every token in the word index.
+How this problem is dealt with will be outlined in the upcoming paragraph.
 
 \paragraph{Embedding matrix}
 \label{sub:embedding_matrix}
