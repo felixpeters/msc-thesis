@@ -220,7 +220,7 @@ Loaded word vectors are assigned as values.
 Vectors are usually represented as lists of some kind, e.g., arrays in Python.
 Vector dimensionality is predetermined, e.g., GloVe comes with vectors of length
 25, 50, 100 and 200.
-In this example, a three-dimensional representation is chosen for more
+In this example, a random three-dimensional representation is chosen for more
 improved overview.
 Moreover, it is assumed that the pre-trained vectors only cover a very restricted
 vocabulary.
@@ -231,17 +231,42 @@ How this problem is dealt with will be outlined in the upcoming paragraph.
 \paragraph{Embedding matrix}
 \label{sub:embedding_matrix}
 
+The ultimate goal of creating an word embedding is to derive the so-called
+\textit{embedding matrix}, which serves as an initial weight matrix for the
+embedding layer in a neural network.
+Thus, the final step of the text preprocessing process is to derive this
+matrix in which the $i^{th}$ row represents the word vector for word with ID $i$
+in the word index.
+As a results, the embedding layer can iterate over input sequences and simply
+replace word IDs with vector one at a time.
+The dimensionality of the embedding matrix is then given by the length of the
+word index (number of rows) and chosen vector dimensionality $d$ (number of columns).
+
 \begin{figure}[h]
   \includegraphics[width=\textwidth]{img/text_preprocessing_5}
   \caption{Embedding matrix example}
 \label{fig:embedding_matrix}
 \end{figure}
 
-\outline{Final step: create a matrix in which the i-th row represents the word
-vector for the word with ID i from word index}
-\outline{Dimensionality: (number of words) x d}
-\outline{Enables simple lookup procedure for the network}
-\outline{Zero row is default for unknown words (i.e., words that were not found in pretrained
-word vectors)}
+Fig.~\ref{fig:embedding_matrix} illustrates the creation process of the embedding
+matrix for the running example.
+In detail, the embedding matrix is created by iterating over the word index.
+For each key, it is checked whether an entry with the same key exists in the
+embedding index.
+If this is the case, the $i^{th}$ row of the embedding matrix is filled with
+the derived word vector.
+In Fig.~\ref{fig:embedding_matrix}, this successful lookup is shown for the
+exclamation mark token, denoted by the green arrows.
+Contrary, if a mismatch between input and word vector vocabularies exists, i.e.,
+no matching word vector is found in the embedding index, the respective row
+is filled with zeros.
+In this example, this is the case for the ``darmstadt'' token, signified by the
+red arrow.
 
-
+Creating the embedding matrix completes necessary text preprocessing.
+Word and embedding index serve as intermediate results, which might be helpful
+for analyzing model results.
+Embedding matrix and padded sequences are directly used in the consuming
+algorithm, here a deep neural network.
+Detailed explications about their usage as model components can be found in the
+following section which presents architectures of the developed models.
