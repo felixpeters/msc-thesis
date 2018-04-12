@@ -1,7 +1,39 @@
 \subsection{Summary}
 \label{sec:res_summary}
 
-\missingfigure{Comparison of model results (just loss evolution)}
+\begin{table}
+\begin{tabular}{llrrr}
+\toprule
+\multicolumn{2}{c}{Data set} & \multicolumn{3}{c}{Model type} \\
+\midrule
+Name & Examples & Linear model & Feedforward DNN & Multi-input DNN \\
+\midrule
+Celebrities & 46,986 & 48.84\% & 70.29\% & 65.16\% \\
+Politicians & 94,919 & 54.17\% & 64.75\% & 65.34\% \\
+Companies & 254,059 & 59.64\% & 70.07\% & 73.52\% \\
+Combined & 863,004 & 51.69\% & 55.50\% & 68.42\% \\
+\bottomrule
+\end{tabular}
+\caption{Summary of results for classification task}
+\label{tab:summary_classification}
+\end{table}
+
+\begin{table}
+\begin{tabular}{llrrr}
+\toprule
+\multicolumn{2}{c}{Data set} & \multicolumn{3}{c}{Model type} \\
+\midrule
+Name & Examples & Linear model & Feedforward DNN & Multi-input DNN \\
+\midrule
+Celebrities & 46,986 & 3,490.21 & 2,345.91 & 3,286.16 \\
+Politicians & 94,919 & 482.81 & 414.68 & 447.61 \\
+Companies & 254,059 & 24.66 & 20.57 & 19.41 \\
+Combined & 863,004 & 579.26 & 549.93 & 401.52 \\
+\bottomrule
+\end{tabular}
+\caption{Summary of results for regression task}
+\label{tab:summary_classification}
+\end{table}
 
 \structure{Description of performance evolution}
 
