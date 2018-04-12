@@ -143,9 +143,9 @@ detail.
     \midrule
     Data set & CCE & Acc & Ret Acc & Fav Acc & MAE & Ret MAE & Fav MAE \\
     \midrule
-    Celebrities & 0.71 & 70.29\% & 66.30\% & 74.28\% & 2,345.85 & 1,165.19 & 3,526.51 \\
-    Politicians & 0.81 & 64.75\% & 63.37\% & 66.12\% & 424.05 & 247.40 & 600.69 \\
-    Companies & 0.72 & 70.07\% & 72.38\% & 67.76\% & 19.72 & 10.92 & 28.52 \\
+    Celebrities & 0.71 & 70.29\% & 66.30\% & 74.28\% & 2,345.91 & 1,142.60 & 3,549.23 \\
+    Politicians & 0.81 & 64.75\% & 63.37\% & 66.12\% & 414.68 & 230.60 & 598.76 \\
+    Companies & 0.72 & 70.07\% & 72.38\% & 67.76\% & 20.57 & 11.54 & 29.61 \\
     Combined & 1.03 & 55.50\% & 57.75\% & 53.25\% & 549.93 & 210.71 & 889.16 \\
     \bottomrule
   \end{tabular}
@@ -249,9 +249,9 @@ distribution.
     \midrule
     Data set & 0 & 1-10 & 10-100 & 100-1k & 1-10k & 10-100k & >100k \\
     \midrule
-    Celebrities & - & 51.9 & 161.4 & 701.3 & 3,884.9 & 21,557.9 & - \\
-    Politicians & 46.0 & 109.7 & 184.5 & 781.0 & 3,973.1 & - & - \\
-    Companies & 1.5 & 5.9 & 49.5 & 605.7 & - & - & - \\
+    Celebrities & 17.2 & 26.9 & 92.3 & 281.5 & 1,762.6 & 18,707.9 & 135,543.6 \\
+    Politicians & 17.5 & 16.7 & 35.8 & 238.9 & 2,185.0 & 15,758.5 & - \\
+    Companies & 1.1 & 2.3 & 16.9 & 179.3 & 2,345.5 & 15,446.9 & - \\
     Combined & 0.4 & 5.2 & 32.0 & 233.6 & 2,088.3 & 21,919.0 & 86,217.9 \\
     \bottomrule
     \toprule
@@ -259,9 +259,9 @@ distribution.
     \midrule
     Data set & 0 & 1-10 & 10-100 & 100-1k & 1-10k & 10-100k & >100k \\
     \midrule
-    Celebrities & - & 7.4 & 268.5 & 638.1 & 3,139.2 & 19,212.0 & 45,031.3 \\
-    Politicians & 92.6 & 130.4 & 234.1 & 864.5 & 3,528.9 & 12,167.6 & - \\
-    Companies & 6.5 & 6.6 & 39.7 & 743.1 & 1,314.0 & - & - \\
+    Celebrities & 101.7 & 107.3 & 216.4 & 494.4 & 1,928.2 & 13,965.3 & 125,209.9 \\
+    Politicians & 38.0 & 38.6 & 50.5 & 239.6 & 2,232.23 & 16,978.7 & 98,543.7 \\
+    Companies & 2.6 & 3.3 & 15.1 & 194.1 & 1,743.7 & 18,657.8 & - \\
     Combined & 0.4 & 4.4 & 32.1 & 355.8 & 3,279.5 & 26,871.1 & 169,920.5 \\
     \bottomrule
   \end{tabular}
@@ -285,16 +285,23 @@ validation set.
 As expected, mean absolute errors increase with rising actual engagement.
 Put simply: the smaller the actual retweet or favorite count, the smaller the
 average prediction error.
-The magnitudes of average errors vary drastically across ranges.
-Most notably, most classes are predicted best for the combined data set,
-especially for retweet prediction.
-This is in contrast to the classification task, where the combined data set
-showed the worst performance.
-Results of this analysis also explain higher regression loss values for
-celebrities and combined data set.
+As Table~\ref{tab:deep1_results} showed, retweet predictions are generally more
+accurate than favorite predictions.
+This more detailed examination suggests the generally higher levels of favorite
+counts as a possible reason for this observation.
+Favorite distributions are effectively shifted to the right compared with their
+retweet counterparts, thus putting more outliers into the mean calculation.
+A similar explanation can be given for higher regression loss values on
+celebrity and combined data set.
 These are the only data sets that contain examples with very large engagement
 counts, which act as outliers and thus have large influence on the mean
 calculation.
+The same biases found in classification models can also be identified for the
+regression task, i.e., errors are comparably smaller in bins containing many data points.
+For example, performance for the first three bins is comparably good on the company data
+set, where errors are rather small.
+This performance advantage diminishes for larger bins, performance is equal or
+worse compared to the other data sets here.
 
 This section concludes the results of applying deep feedforward networks to
 the problem of engagement prediction. 
