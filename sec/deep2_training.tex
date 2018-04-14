@@ -2,5 +2,22 @@
 \label{sub:comb_training_process}
 
 \structure{Similarities and differences compared to previous models}
+\outline{Same optimizer: Adam with default settings}
+\outline{Same cost functions: CCE for classification, MAE for regression}
+\outline{Overfitting is a more severe problem, because complex models contain
+more learnable parameters (can effectively memorize small data sets)}
+\outline{Time for running one epoch increases (CNN about one minute, LSTM up to
+three minutes on combined data set)}
 
 \structure{Explanation of applied training features}
+\outline{All in all, training process is more difficult to manage (takes longer,
+quicker overfitting)}
+\outline{Applied techiques: early stopping \& model checkpoints (both
+implemented by Keras)}
+\outline{Early stopping: monitoring validation loss, stopping model training
+if it did not decrease for certain time (patience hyperparameter, here 2 to 5
+depending on epoch time)}
+\outline{Model checkpoints: save weights for later access, everytime new
+validation loss minimum was found}
+\outline{Observation: more epochs on regression task (up to 50) than on
+classification taks (usually 10 to 20) before overfitting occurs}
