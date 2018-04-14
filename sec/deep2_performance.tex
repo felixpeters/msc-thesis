@@ -1,6 +1,9 @@
 \subsubsection{Model performance}
 \label{sub:comb_performance}
 
+\outline{Section will only cover DM2 results, summary of result evolution
+will be given in following section}
+
 \begin{table}
   \begin{tabular}{lrrrrrrr}
     \toprule
@@ -19,6 +22,19 @@
 \end{table}
 
 \structure{Description of overall results}
+\outline{Classification perf on similar level for all data sets (loss values
+between 0.62 and 0.82)}
+\outline{Overall classification accuracies between 65 and 75 percent}
+\outline{Best performance on company data set (which is most imbalanced)}
+\outline{Notable differences between RetAcc and FavAcc, biggest difference for
+celebrities (6.49\%), smallest for politicians (2.24\%)}
+\outline{On first glance, classification performance is not dependent on data set size}
+\outline{Validation metrics are listed for best generalizable model}
+\outline{Ignoring overfitting, accuracies of more than 90\% are achievable on
+all data sets}
+\outline{Regression results on different magnitudes (as expected)}
+\outline{Retweet predictions are more generally more accurate than favorite
+predictions (notable difference, about three times bigger for all data sets)}
 
 \begin{figure}[h]
 \begin{subfigure}{.5\textwidth}
@@ -46,6 +62,19 @@
 \end{figure}
 
 \structure{Description of classification results}
+\outline{Specialized data sets: class accuracies above 50\% for three of four
+classes}
+\outline{Best performance on company data set mainly stems from strong performance
+on most popular classes (acc around 80\%)}
+\outline{Less common classes are still predicted poorly (sometimes not at all)
+on these data sets}
+\outline{Combined data set: perf is more promising, five of six classes are
+predicted with acc higher than 50\%}
+\outline{Only class six is predicted poorly}
+\outline{Class 2 is predicted correctly 85\% of the time, possible indication
+of data requirement for labeled examples from one class}
+\outline{Overall: Still biased predictions, misclassifications are directed towards
+most popular class}
 
 \begin{table}
   \begin{tabular}{lrrrrrrr}
@@ -75,5 +104,9 @@
 \end{table}
 
 \structure{Description of regression results}
+\outline{Errors are still increasing with actual engagement}
+\outline{Most imbalanced company data set shows lowest errors for many classes}
+\outline{Zero values are predicted fairly well for company and combined data set}
+\outline{Outliers have strong influence on mean calculation}
 
 
