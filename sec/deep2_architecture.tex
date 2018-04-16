@@ -63,18 +63,46 @@ overfitting, mainly by restricting the number of layers and cells.
 \label{fig:dm2_architectures}
 \end{figure}
 
-\structure{Model selection process}
-\outline{Figure shows subset of tested architectures}
-\outline{DM2-CNN applies single convolutional layer to sequences}
-\outline{32 filters with size 3, padding before (keep sequence length) and max-pooling after conv layers}
-\outline{DM2-CNN2 \& DM2-CNN3: same concept, but consecutive conv layers, enables
-detection of more complex features, max-pooling after each layer (sequence
-gets halved everytime)}
-\outline{DM2-LSTM returns sequences, i.e., learned representation after each
-input of the sequence (16-dimensional)}
-\outline{DM2-CNN-LSTM combines both architectures, i.e., more features to combine}
-\outline{Use of regularization: partly dropout after convolutions, batch
-normalization after FC layer and for normalizing aux inputs}
+Figure~\ref{fig:dm2_architectures} shows a subset of the evaluated architectures for
+multi-input neural networks.
+For the sake of brevity, models are identified a shortcode (see subfigure captions).
+As illustrated, \textit{DM2-CNN} processes textual inputs via a single convolutional
+layer.
+More specifically, 32 filters aim to detect features from three successive words
+(thus, filter size is 3).
+Prior to consumption by the convolutional layer, inputs are padded with one leading
+and trailing zero in order to keep the output sequence length static.
+Max-pooling (see \ref{sub:dl_developments}) is applied following the convolutional layer,
+i.e., outputs of neighboring sequence subsets are combined by only keeping the
+maximum value.
+This effectively widens the scope of all filters and halves the input sequence
+for successive layers.
+Not included in this figure are models \textit{DM2-CNN2} and \textit{DM2-CNN3},
+which employ two respectively three consecutive convolutional layers to the
+textual inputs.
+In theory, this allows learning of more complex features.
+\textit{DM2-LSTM} replaces convolutional layers with a single LSTM cell.
+As described above, singular words are fed to this cell one-by-one.
+After processing this smallest possible input unit, a 16-dimensional learned
+representation is returned.
+Thus, LSTM cells in these models return sequences, similar to convolutional layers.
+The final architecture, called \textit{DM2-CNN-LSTM}, combines the above
+architectures by applying both convolutional and LSTM layers to the inputs
+in parallel.
+Consequently, more features can be combined with the following fully-connected
+layer.
+A commonality of all evaluated architectures is that inputs are firstly fed to
+a word embedding layer, which is also trainable.
+This means, that the pre-trained word vectors derived from GloVe are updated
+during each training iteration.
+Intuitively, this allows shaping of these vectors to the specific problem of
+engagement prediction.
+The above models were regularized as needed, mainly by adding dropout after
+convolutional layers.
+Moreover, batch normalization was inserted after the fully-conntected layer and
+to normalize the additional inputs.
+Auxiliary inputs represent the same structured features from previous models,
+output classes are also unchanged.
 
 \begin{table}
 \begin{tabular}{llrr}
