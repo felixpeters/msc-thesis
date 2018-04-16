@@ -120,9 +120,23 @@ DM2-CNN3 & Combined & 0.8050 & 404.9901 \\
 \label{tab:dm2_selection_results}
 \end{table}
 
-\structure{Selection results}
-\outline{Selection was done on combined data set, since least prone to overfitting}
-\outline{Architectures show similar performance, differences are not that big}
-\outline{DM2-CNN chosen for regression: no regularization, 64 FC units}
-\outline{DM2-CNN-LSTM chosen for classification: regularized via dropout after
-conv layer, 128 FC neurons (intuitive since more features need to be combined)}
+The model selection process was undertaken on the combined data set, since it
+comprises the highest number of examples and is thus least prone to overfitting.
+Table~\ref{tab:dm2_selection_results} lists results of applying all evaluated
+architectures to engagement classification and regression.
+Presented loss values were calculated on the held-out validation data.
+It becomes obvious that all models show similar performance, i.e., differences
+between loss values are not that big.
+However, most suitable architectures for both tasks can be identified.
+The DM2-CNN architecture was chosen for further evaluation on the other data
+sets.
+As a sidenote, the trained model contains no regularization other than batch
+normalization.
+Furthermore, the combining fully-connected layer contains 64 neurons.
+A more complex architecture, namely DM2-CNN-LSTM, was selected for the multi-class
+classification problem.
+Here, regularization via dropout was needed for improved generalization capabilities.
+The size of the fully-connected layer was doubled to 128 neurons in order to
+account for the larger number of features derived from the tweet content.
+In the upcoming section, results of applying the selected architectures to
+all data sets are presented.
