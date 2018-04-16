@@ -25,20 +25,38 @@ outcomes in relation to previously trained models.
   \label{tab:deep2_results}
 \end{table}
 
-\structure{Description of overall results}
-\outline{Classification perf on similar level for all data sets (loss values
-between 0.62 and 0.82)}
-\outline{Overall classification accuracies between 65 and 75 percent}
-\outline{Best performance on company data set (which is most imbalanced)}
-\outline{Notable differences between RetAcc and FavAcc, biggest difference for
-celebrities (6.49\%), smallest for politicians (2.24\%)}
-\outline{On first glance, classification performance is not dependent on data set size}
-\outline{Validation metrics are listed for best generalizable model}
-\outline{Ignoring overfitting, accuracies of more than 90\% are achievable on
-all data sets}
-\outline{Regression results on different magnitudes (as expected)}
-\outline{Retweet predictions are more generally more accurate than favorite
-predictions (notable difference, about three times bigger for all data sets)}
+Table~\ref{tab:deep2_results} summarizes multi-input model results for both
+engagement classification and regression.
+As with all models in this work, metrics are calculated on held-out validation
+examples.
+Overall classification performance is similar for all data sets, as CCE loss values
+even out between 0.62 and 0.82.
+These results account for an overall classification accuracy, i.e., percentage
+of correctly classified examples, of 65 to 75\%.
+Best performance is achieved on the company data set, which is also the most
+imbalanced data set when looking at class distributions (see ch.~\ref{sec:engagement_stats}).
+In contrast to that, performance on the smaller celebrity and politician data sets
+worsens.
+Tweets from the larger, combined data sets are classified correctly 68\% of the
+time.
+Thus, classification performance seems not to be dependent on data set size alone.
+Notable differences in retweet and favorite classification accuracy exist,
+with the spread being widest for celebrity (6.49\%) and smallest for
+politician tweets (2.24\%).
+It has to be mentioned, that accuracies of more than 90\% were achievable on all
+data sets when ignoring overfitting and solely focussing on training loss.
+This once again points to the difficulty of learning generalizable models for
+the complex task of engagement prediction.
+As expected, MAE values for the regression task are of varying magnitude.
+Predictions on more narrow engagement distributions (e.g., company data set)
+are most precise than their counterparts on data sets containing many outliers
+(e.g., celebrity data set).
+As with classifications, notable differences between retweet and favorite prediction
+can be identified.
+In general, retweet predictions are most accurate, with favorite error values
+being about three times bigger on all data sets.
+According to the procudure applied in previous results chapters, both classification
+and regression performance are analyzed in more detail in the following paragraphs.
 
 \begin{figure}[h]
 \begin{subfigure}{.5\textwidth}
