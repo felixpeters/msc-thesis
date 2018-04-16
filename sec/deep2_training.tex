@@ -1,23 +1,64 @@
 \subsubsection{Training process}
 \label{sub:comb_training_process}
 
-\structure{Similarities and differences compared to previous models}
-\outline{Same optimizer: Adam with default settings}
-\outline{Same cost functions: CCE for classification, MAE for regression}
-\outline{Overfitting is a more severe problem, because complex models contain
-more learnable parameters (can effectively memorize small data sets)}
-\outline{Time for running one epoch increases (CNN about one minute, LSTM up to
-three minutes on combined data set)}
+The previous section explained how the network architectures for experiments
+in this chapter were chosen.
+Before presenting results in the next section, the upcoming paragraphs will
+detail characteristics of the training process.
+In particular, special features of training more complex deep neural networks
+are described.
 
-\structure{Explanation of applied training features}
-\outline{All in all, training process is more difficult to manage (takes longer,
-quicker overfitting)}
-\outline{Applied techiques: early stopping \& model checkpoints (both
-implemented by Keras)}
-\outline{Early stopping: monitoring validation loss, stopping model training
-if it did not decrease for certain time (patience hyperparameter, here 2 to 5
-depending on epoch time)}
-\outline{Model checkpoints: save weights for later access, everytime new
-validation loss minimum was found}
-\outline{Observation: more epochs on regression task (up to 50) than on
-classification taks (usually 10 to 20) before overfitting occurs}
+Selected architecture were applied to all four data sets with the goal of
+maximizing performance on unseen data.
+Therefore, some examples were not used for training and instead used as validation
+data.
+The composition of the validation sets was identical to the ones used in previous
+chapters.
+As with previous models, adaptive moment estimation (Adam) with default settings
+was used to optimize weights in the network.
+Furthermore, no changes were applied to the cost functions.
+Categorical cross-entropy was used for engagement classification, mean absolute
+error was calculated when predicting singular engagement values.
+Compared to simpler linear and deep feedforward networks, overfitting was
+expected to become a more severe problem when training complex models.
+This assumption is based on the larger number of parameters contained in these
+networks.
+With the embedding weights set to be trainable, the chosen regression model
+with one convolutional layer consists of a total of 22,560,912 learnable parameters.
+This high level of representational capability basically allows neural networks
+to memorize smaller data sets.
+This is contrary to the goal of developing a generalizable model.
+Thus, the resulting challenge is to apply regularization and stop model training
+when overfitting starts to occur.
+Another expected observation was the increase in training time.
+For example, running one epoch on the combined data set took about one minute
+for a CNN and up to three minutes for models containing LSTM cells, compared
+to about half a minute for deep feedforward networks.
+
+Several techniques have been developed in the deep learning community to cope
+with these special features of training deep neural networks.
+Most of these best practices are implemented in deep learning software libraries
+such as Keras.
+For this work, \textbf{early stopping} and \textbf{model checkpoints} were applied
+in order to manage longer training times and overfitting more effectively.
+Early stopping denotes a process of monitoring the calculated validation loss,
+minimization of which represents the main goal of model training.
+If this metric does not decrease for a certain number of iterations, it is assumed
+that a minimum was already reached and training is automatically stopped.
+The accepted number of successive non-progress epochs is denoted as the
+\textit{patience} hyperparameters, which has to be set prior to training.
+For this work, the parameter was set from two to five epochs, depending on
+model complexity.
+Model checkpoints basically represent snapshots of the network state after training
+for a specific number of epochs.
+This state is represented by architecture and weight values.
+Both of these state components can be saved for later access, e.g., in JSON~\footnote{\url{https://www.json.org/}} 
+(more suitable for architecture) or HDF5~\footnote{\url{https://support.hdfgroup.org/HDF5/}}
+(more suitable for weights) format.
+In practice, this is most commonly done everytime a new validation loss minimum
+was established.
+Using both techniques in conjunction allows shortening training time and
+repetitive access of trained models.
+Observations of experiments in this work were, that regression models took
+more operations to minimize validation loss (up to 50 epochs) compared
+to classification models (usually between ten and 20 epochs).
