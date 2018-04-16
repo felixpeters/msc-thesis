@@ -1,18 +1,47 @@
 \subsubsection{Model architecture}
 \label{sub:comb_model_architecture}
 
-\structure{General architecture ideas \& requirements}
-\outline{Basic idea: sequences (content features) are processed before merging 
-with structured features (mainly contextual), combination via FC layer}
-\outline{Text processing with convolutional and recurrent layers, as is common
-practice in many NLP models}
-\outline{Differences: RNNs take longer to train (limited parallelization 
-possibilities, often magnitude of 3!), CNNs are feature detectors (e.g., sentiment, requests, specific terms), 
-RNNs model features across time}
-\outline{LSTM cells are used for RNNs, most widely adopted RNN cell type}
-\outline{Input sequences have length 32, word embedding is 100-dimensional}
-\outline{Since data sets are rather small for such a complex NLP task, models
-are kept simple (avoids overfitting too quickly)}
+This sections outlines how the specific architectures for multi-input models
+were determined.
+Firstly, requirements and ideas for working with textual input data
+are discussed.
+Secondly, the experimentation process for model selection is described in detail.
+
+The basic intuition behind incorporating tweet content into the network is to
+derive more powerful content features, e.g., sentiment or recurring linguistic
+patterns.
+These features can then be used in conjunction  with the structured features used in previous
+chapters which mainly represent contextual features about the tweet author.
+This two-step process can be mapped onto a multi-input network architecture,
+where sequences are processed in order to learn content features, before
+merging in auxiliary contextual features, and combining both types via fully-connected
+layers.
+The question arises how to process textual input data most effectively.
+Chapter~\ref{sub:dl_app_nlp} introduced recurrent (RNN) and convolutional neural
+networks (CNN) as the most popular architectures for natural language processing tasks.
+These layer architectures require input data to be temporally or locally dependent,
+i.e., neighboring input features of one particular example are in some way related.
+This is clearly given for sequences, as singular words only make sense
+in combination with their surrounding context.
+RNNs and CNNs process textual inputs in different ways.
+Convolutions aim to learn features from small subsets of input data, e.g., a
+fixed number of successive words (also known as \textit{filter size}).
+Contrary, RNNs consume the input sequence word-by-word and learn representations
+for the complete sequence.
+This enables modeling of long-term dependencies in text, e.g., detection of
+opening and closing brackets or subject identification.
+In practice, training RNNs is more time-consuming since processing is obviously less
+parallelizable.
+This work focusses uses LSTM cells (see ch.~\ref{sub:dl_architectures}), because
+it is the most widely adopted cell type for RNNs.
+For CNNs, one-dimensional convolutional layers are applied, as textual input is
+also represented as a one-dimensional list of word IDs.
+Furthermore, input sequences are padded to a length of 32, and a 100-dimensional
+word embedding is used.
+As mentioned in Chapter~\ref{sec:data_collection}, collected data sets are
+comparably small for such a complex NLP task.
+As a results, model architectures have to be kept simple in order to avoid
+overfitting, mainly by restricting the number of layers and cells.
 
 \begin{figure}[h]
 \begin{subfigure}{.5\textwidth}
