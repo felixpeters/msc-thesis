@@ -83,20 +83,34 @@ and regression performance are analyzed in more detail in the following paragrap
 \label{fig:d2_cm}
 \end{figure}
 
-\structure{Description of classification results}
-\outline{Specialized data sets: class accuracies above 50\% for three of four
-classes}
-\outline{Best performance on company data set mainly stems from strong performance
-on most popular classes (acc around 80\%)}
-\outline{Less common classes are still predicted poorly (sometimes not at all)
-on these data sets}
-\outline{Combined data set: perf is more promising, five of six classes are
-predicted with acc higher than 50\%}
-\outline{Only class six is predicted poorly}
-\outline{Class 2 is predicted correctly 85\% of the time, possible indication
-of data requirement for labeled examples from one class}
-\outline{Overall: Still biased predictions, misclassifications are directed towards
-most popular class}
+Once again, confusion matrices can deliver further insights into classification
+performance.
+Figures~\ref{fig:retw_distr_sub1} to~\ref{fig:retw_distr_sub3} show that up to
+four out of six classes exhibit class accuracies above 50\% for the specialized
+data sets.
+Nevetheless, less common classes are still predicted poorly, in extreme cases
+predictions are always incorrect here, e.g., for class six on politician and
+company data.
+It also becomes obvious that strong overall classification accuracy on company data
+(73.52\%) is mainly based on high class accuracies for the most popular classes
+1 and 2 (around 80\% accuracy).
+Classification performance on the combined data set is more promising, as five
+out of six classes are predicted with accuracies higher than 50\%.
+Only the class with highest retweet counts is not predicted poorly, probably due
+to the limited number of labeled examples stemming from this class.
+Results on all data sets suggest that more training examples are
+required for the model to generalize well to unseen data.
+A possible indication about how many exampels are needed per class might be
+given by class 2 of the combined data set, which shows a class accuracy of 85\%.
+\outline{Add exact number of training examples for this class}
+Further experiments could examine if similar performance can be achieved for
+other classes, if the given number of examples are seen at training time.
+All in all, classification are still biased towards more popular classes, where
+the extent of the bias is dependent on overall data set size.
+Another indication of biased behavior is the observation that misclassifications
+on all data sets are pointed towards more popular classes.
+For example, engagement is mainly underestimated on company and combined data set,
+whereas overestimations occur for smaller classes of the celebrity data set.
 
 \begin{table}
   \begin{tabular}{lrrrrrrr}
