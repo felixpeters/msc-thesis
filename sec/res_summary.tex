@@ -1,6 +1,14 @@
 \subsection{Summary}
 \label{sec:res_summary}
 
+Over the course of the previous sections, three different model types were
+applied to the problem of engagement prediction for tweets.
+This concluding section of the results chapter compares results of these models
+across all collected data sets.
+Distinct comparisons are undertaken for classification and regression tasks.
+In addition, plausible explanations for differences in detected performance are
+given.
+
 \begin{table}
 \begin{tabular}{llrrr}
 \toprule
@@ -18,26 +26,47 @@ Combined & 863,004 & 51.69\% & 55.50\% & 68.42\% \\
 \label{tab:summary_classification}
 \end{table}
 
-\structure{Description of performance evolution for classification task}
-\outline{DM1 always performs better than linear model}
-\outline{Thus, model for structured inputs benefits from adding layers of
-abstraction}
-\outline{Of course, these performance gains come at the cost of interpretability
-(black-box model)}
-\outline{Adding texts as additional inputs leads to performance increases for
-all data sets except celebrities}
-\outline{Celebrities: DM2 still much better than linear model}
-\outline{Seems like data set is too small to make sense of additional inputs}
-\outline{Magnitude of performance gain increases with data set size}
-\outline{This is intuitive, since better features can be learned from a larger
-set of words}
-\outline{Previous section: class accuracy increases with more labeled examples
-(even if data set is imbalanced)}
-\outline{Overall, results are not bad but leave room for further improvements}
-\outline{Results suggest that adding more data (esp., for smaller classes) could
-further increase class accuracy}
-\outline{Furthermore, finding data for class 6 (more than 10,000 retweets) is difficult}
-\outline{Realignment of classes (combine classes 5 and 6) would be a plausible solution}
+Table~\ref{tab:summary_classification} presents the evolution of results for linear,
+deep feedforward and multi-input classifiers developed in this work.
+For each model and data set, the overall accuracy of predictions is listed.
+It can be stated that deep feedforward neural networks show better classification
+performance linear models on all data sets.
+Thus, for the specific task of engagement prediction, models using structured
+input data benefit from adding layers of abstraction.
+This is intuitive, since this process allows learning more complex features.
+Because of the black-box nature of neural networks, these performance gains
+come at the cost of interpretability.
+Consequently, it is not possible to derive an intuitive explanation of the learned
+features directly from the network.
+Structured input features in this work mainly comprise contextual features like
+follower count, which point to the overall popularity and activity of a tweet
+author.
+Adding the tweet content as an additional input, i.e., creating a multi-input
+neural network, results in performance increases for all data sets except
+celebrity tweets.
+A possible explanation of the performance decrease for this data set is its rather small number of
+training examples, which makes it difficult for the network to extract meaningful
+features from the additional, unstructured inputs.
+However, this type of model still performs better than simple linear models
+on this data set.
+It can be observed that the magnitude of performance gain increases with the
+overall size of data sets.
+Adding texts as further inputs leads to nearly 13\% increase in classification
+accuracy on the combined data set, containing tweet from all three user groups
+over the course of two full years.
+This dependency on the number of available training examples seems to be logical,
+since intuitively more powerful features can be learned from a larger set of words and
+sentence structures.
+Overall, classification experiments in this work indicate that
+deep learning can help to improve the accuracy of engagement predictions.
+Nevertheless, the results leave room for further improvements and thus point
+to research opportunities in this area.
+For example, previous analysis of classification results showed that class accuracy for less
+common classes increases the more labeled examples are present at training time (see ch.~\ref{sub:deep2_performance}).
+This suggests that adding more tweet data, especially for less popular classes,
+could further increase prediction accuracy and consequently overall model performance.
+Since examples for very popular tweets, e.g., with more than 10,000 retweets, are
+rare, a realignment of classes would also be a plausible action.
 
 \begin{table}
 \begin{tabular}{llrrr}
@@ -53,7 +82,7 @@ Combined & 863,004 & 579.26 & 549.93 & 401.52 \\
 \bottomrule
 \end{tabular}
 \caption{Summary of results for regression task}
-\label{tab:summary_classification}
+\label{tab:summary_regression}
 \end{table}
 
 \structure{Description of performance evolution for regression task}
