@@ -139,8 +139,27 @@ whereas overestimations occur for smaller classes of the celebrity data set.
   \label{tab:d1_regression_eval}
 \end{table}
 
-\structure{Description of regression results}
-\outline{Errors are still increasing with actual engagement}
-\outline{Most imbalanced company data set shows lowest errors for many classes}
-\outline{Zero values are predicted fairly well for company and combined data set}
-\outline{Outliers have strong influence on mean calculation}
+Table~\ref{tab:d1_regression_eval} dives deeper into performance of regression
+models on all data sets.
+In accordance to the previous chapter, mean absolute errors are calculated for
+separate ranges of actual engagement counts.
+For example, predictions for tweets receiving zero retweets from the combined data set
+exhibit an average error of 0.5.
+For all data sets it holds true that errors are still increasing with actual
+engagement.
+It can also be seen that the politician and company validation sets do not contain tweets
+with more than 100,000 retweets.
+Since errors are largest for this class, the overall MAE loss values for these
+data sets are lower than for the other data sets (see Fig.~\ref{tab:deep2_results}).
+Moreover, the most imbalanced company data set shows the lowest mean absolute error
+for many ranges of actual engagement.
+This increase in performance can be expected, as the overall range of values to
+predict is narrowest for this data set.
+Zero values for both retweets and favorites are predicted particularly well on 
+company and combined data set.
+As a conclusion it can be stated that regression models struggle with making
+accurate predictions when the underlying engagement counts stem from a broad
+distribution.
+Extensions to the conducted experiments, e.g., log-transforming skewed or broad-ranging
+variables, could be useful to diminish these effects, but are out of the scope
+for this work.
