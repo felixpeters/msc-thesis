@@ -85,12 +85,28 @@ Combined & 863,004 & 579.26 & 549.93 & 401.52 \\
 \label{tab:summary_regression}
 \end{table}
 
-\structure{Description of performance evolution for regression task}
-\outline{Similar results as for classification}
-\outline{Huge performance increase on combined data set when adding tweet content
-(27\% decrease in error)}
-\outline{Data requirements seem to even higher as perf decreases on politician
-data set and only slightly increases for companies}
-\outline{Scale of possible engagement is wide-ranging which complicates MAE
-interpretation}
-\outline{Example: being 400 off has different meaning for zero and 10,000 retweets}
+Results for directly predicting retweet and favorite counts prove to be similar
+to the classification observations.
+Table~\ref{tab:summary_regression} list weighted mean absolute errors for all model types
+and data sets.
+Again, deep feedforward networks provide a significant performance gain over
+linear regression models.
+Adding tweet content as an additional input results in further improvements for
+company and combined data set.
+For the latter data set, a 27\% decrease in loss values can be observed, which
+points to the predictive power of features derived from these additional inputs.
+It has be stated that the target space of actual engagement counts is broad, spanning
+from tweets with no engagement at all to popular messages with hundreds of thousands
+of retweets and favorites.
+Since the number of examples on each part of this spectrum varies between all
+data sets, the individual mean error values are hardly comparable.
+Moreover, the mean calculation complicates interpretability of the metric.
+Intuitively, an error of 400 should be evaluated differently for retweet counts
+of zero and 10,000.
+All in all, above results show that regression models for engagement prediction
+benefit from additional features, which are extracted from the preprocessed
+tweet content.
+Possible approaches for further model development are discussed in Chapter~\ref{ch:future_work}.
+
+This section concludes the presentation of results from experiments undertaken
+in the context of this thesis.
