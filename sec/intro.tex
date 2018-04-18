@@ -4,13 +4,13 @@
 \label{sec:problem}
 
 In 2011, Gartner senior vice president Peter Sondergaard made the following remark
-about what is commonly referred to as the \textit{big data phenomenon}~\footnote{\url{https://www.gartner.com/newsroom/id/1824919}}:
+about what is commonly referred to as the big data phenomenon~\footnote{\url{https://www.gartner.com/newsroom/id/1824919}}:
 
 \begin{quote}
   Information is the oil of the 21st century, and analytics is the combustion engine.
 \end{quote}
 
-Migrating transactions from the physical world to the internet has caused near
+Migrating transactions from the physical world to the internet has caused a near
 intangible increase in data availability.
 More and more goods are purchased on the web, social networks shift communication
 to the digital world, streaming platforms compete with more traditional ways
@@ -66,19 +66,44 @@ content publication could benefit from engagement prediction models.
 \subsection{Objectives}
 \label{sec:objectives}
 
-\structure{Additional benefits from applying deep learning in contrast to prior work}
-\outline{Forgo manual feature engineering, let model learn representation}
-\outline{Use multi-class classification and regression to derive precise predictions}
-\outline{Predict both retweets and favorites}
-\outline{Learn advanced content features using modern NLP methods}
-\outline{Apply models to diverse data sets for better generalization estimate}
-\outline{Apply to user groups interested in this kind of model}
-\outline{Find out about data requirements, apply to differently sized data sets}
+Experiments conducted in this thesis examine whether deep learning methods are
+suitable for tweet engagement prediction.
+Previous work in this area is mainly focussed on developing simple statistical
+models, which rely on manual feature engineering.
+Especially in the context of extracting features about the tweet content, this
+often requires massive amounts of data preprocessing.
+In contrast to that, deep neural networks are capable of learning their own 
+feature representations, even from unstructured data such as text.
+Thus, less preprocessing and feature engineering is required when applying
+these models.
+Moreover, tackled tasks in the literature are oftentimes simplified and not of 
+practical relevance, e.g., a simple prediction whether a message will be 
+retweeted or not.
+An additional shortcoming is the focus on retweets as the sole considered
+engagement metric.
+Models developed in the context of this thesis aim to produce useful predictions
+for both retweet and favorite counts.
+Furthermore, the models are applied to a diverse set of tweet data in order
+to derive a good estimate of their generalization capabilities.
+Here, all examined tweets stem from user groups who could potentially be interested
+in deploying such models, i.e., public figures and organizations.
+Employing the models on differently sized data sets should also enable estimates
+about the data requirements for training deep learning models on such a complex
+task.
 
-\structure{Deployable model}
-\outline{Minimal preprocessing}
-\outline{Quick inference}
-\outline{Ad-hoc prediction, not reliant on retweet cascades}
+In addition to coming up with satisfactory predictions about tweet engagement,
+this thesis puts an emphasis on developing practically oriented models.
+This means developed deep learning models should be deployable in a real-world
+setting.
+This includes the ability to make real-time predictions for previously unseen
+data.
+In order to account for these requirements, necessary preprocessing of incoming
+tweet objects needs to be kept to a minimum.
+As the prediction should happen in an ad-hoc fashion at the time of creation,
+no additional data requests can be made, i.e., all input features for the model
+are extracted from the tweet itself.
+The number and nature of usable features is therefore limited by the data source,
+e.g., the public Twitter API.
 
 \subsection{Approach}
 \label{sec:approach}
