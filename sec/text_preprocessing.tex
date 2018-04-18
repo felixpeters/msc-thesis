@@ -155,12 +155,19 @@ It is important to note, that word IDs should be ascending with step size 1 and
 start at 1.
 The reasons for that will become obvious in the following paragraphs.
 
-\outline{List number of words for data sets + most common words}
+Applying this procedure to the collected data sets results in the creation of
+word indices, whose sizes differ considerably.
+More precisely, totals of 34,295 (celebrity tweets), 56,265 (politician tweets),
+98,027 (company tweets) and 225,171 (combined set of tweets) words are identified.
+Unsurprisingly, the most commonly occurring tokens across all data sets are markers
+for URLs, hashtags and users, punctuation like full stop and exclamation mark,
+definite and indefinite articles, as well as prepositions like ``to'', ``for''
+and ``of''.
 
 \paragraph{Sequences}
 \label{sub:sequences}
 
-At this stage, the input texts can be transformed into sequences, i.e., lists,
+At this stage, the input texts can be transformed into sequences, i.e., lists
 of word IDs.
 This step requires tokenized texts and a complete word index, both of which
 are available at this point.
