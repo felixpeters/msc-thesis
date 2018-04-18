@@ -3,8 +3,78 @@
 \subsection{Problem}
 \label{sec:problem}
 
+\structure{Recent popularity of ML/DL}
+\outline{Increase data availability for both individuals and companies}
+\outline{Main sources: migration of transactions from the physical world to the
+internet}
+\outline{Examples: online shopping, banking, entertainment, customer support}
+\outline{Result: more data, increased speed of access, more varied forms of data}
+\outline{Organizations aim to make use of available data through data-driven
+decision making}
+\outline{Here, machine learning comes in, enables to recognize patters in data
+that are useful to fulfill specific task}
+\outline{With increasing computational resources, deep learning has emerged
+as practical method, producing state-of-the-art results in many areas}
+\outline{Example: computer vision, natural language processing, audio processing}
+
+\structure{Recent popularity of social networks, esp., Twitter}
+\outline{Social media platforms have revolutionized the way users interact on
+the internet}
+\outline{Enable users to create and share content, e.g., messages (Facebook, Twitter), 
+images (Instagram, Snapchat), video (YouTube)}
+\outline{Platforms make use of data, e.g., by allowing advertisers to target
+specific market segments}
+\outline{Social media has practical implications for organizations, since they
+enable communication with and between customers}
+\outline{Examples: social media campaigns, customer support, community building}
+\outline{Twitter has emerged as microblogging platform which is used heavily
+by individuals and organizations, e.g., for trend detection and breaking news}
+
+\structure{Importance of engagement prediction - combining both fields}
+\outline{Engagement prediction is where both fields come together}
+\outline{In the context of Twitter, engagement prediction comprises estimating 
+how often some piece of content will be retweeted or favorited by other users}
+\outline{Possible use cases: anomaly detection (early detection of trends,
+breaking news), optimization of content creation process (shaping content, time of
+creation)}
+
 \subsection{Objectives}
 \label{sec:objectives}
 
+\structure{Additional benefits from applying deep learning in contrast to prior work}
+\outline{Forgo manual feature engineering, let model learn representation}
+\outline{Use multi-class classification and regression to derive precise predictions}
+\outline{Predict both retweets and favorites}
+\outline{Learn advanced content features using modern NLP methods}
+\outline{Apply models to diverse data sets for better generalization estimate}
+\outline{Apply to user groups interested in this kind of model}
+\outline{Find out about data requirements, apply to differently sized data sets}
+
+\structure{Deployable model}
+\outline{Minimal preprocessing}
+\outline{Quick inference}
+\outline{Ad-hoc prediction, not reliant on retweet cascades}
+
 \subsection{Approach}
 \label{sec:approach}
+
+\structure{Data}
+\outline{Build three different user groups - celebrities, politicians, companies}
+\outline{Collect all tweets for given time frame as training data}
+\outline{Data sets should employ diverse engagement distributions}
+\outline{Additionally, construct bigger data set containing all user groups
+and tweets from longer time frame}
+\outline{For all data sets, extract structured features according to prior work
+in this area}
+\outline{Also, extract raw tweet texts as addtional, unstructured inputs}
+
+\structure{Developed models}
+\outline{First step: Start with linear baseline model as simplest model type}
+\outline{Uses structured input features}
+\outline{Second step: Develop deep feedforward neural networks, solely relying
+on structured inputs as well}
+\outline{Think of it as simplest form of neural network}
+\outline{Third step: Develop more sophisticated multi-input neural network,
+which takes both structured and unstructured inputs}
+\outline{Compare results across model types and data sets}
+
