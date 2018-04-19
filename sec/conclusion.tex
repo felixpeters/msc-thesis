@@ -1,9 +1,46 @@
 \section{Conclusion}
 \label{ch:conclusion}
 
-\outline{Nature of main arguments}
-\outline{How researched}
-\outline{What discovered}
-\outline{Significance}
-\outline{Contribution statement}
+This thesis applied deep learning methods to the problem of tweet engagement
+prediction.
+It aimed to examine whether deep neural networks are suitable for this task, 
+especially concerning model performance and practical applicability.
+In short, developed models were structured to produce both retweet and favorite
+estimates for any given tweet from the public Twitter API.
+Additionally, a special emphasis was put on production-readiness of all
+developed deep neural networks.
 
+Four distinct data sets were compiled in order to test deep learning methods.
+Examined tweets came from three separate user groups, namely celebrities, US
+politicians and companies.
+Three specialized data sets contained eight months of tweets for each of the user
+groups, whereas the larger, combined data set consisted of tweets from all
+user groups over the course of two full years (2016-17).
+All tweets were more than two months old at the time of collection, guaranteeing
+the retweet process to be sufficiently completed.
+As inputs to the deep neural networks, structured and unstructured features
+were extracted from all tweets.
+Structured features comprised network, activity and content statistics, whereas
+unstructured features solely consisted of the actual tweet content.
+Three model types, namely linear models, deep feedforward and multi-input
+neural networks, were trained on all data sets.
+Here, the first two models rely on structured features only, whereas the multi-input
+models use both features types.
+All models were trained on the tasks of multi-class classification, i.e.,
+predicting engagement intervals, and regression, i.e., predicting a real-valued
+number.
+
+Experiments conducted in this thesis show that deep feedforward networks
+give better results than simple linear models, independent of data set and task.
+The increase is most probably caused by improved representational capability
+as a result of adding more layers of abstraction.
+Adding tweet texts as further inputs only improves performance for larger data
+sets.
+On smaller data sets up to 100,000 examples, the word corpus from all tweets
+is presumably to small for the networks to learn powerful features from it.
+Nevertheless, performance improvements for larger data sets (more than 800,000
+training examples) are significant.
+More precisely, multi-input neural networks provide a 13\% increase in performance
+for the classification task, on the regression task increases in prediction
+precision are as high as 27\%.
+Overall, classification accuracies of around 70\% are achieved on all data sets.
