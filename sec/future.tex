@@ -1,18 +1,51 @@
 \section{Future work}
 \label{ch:future_work}
 
-\structure{Data requirements}
-\outline{Collect more data, several hundreds of thousands of examples per class}
-\outline{Allows testing techniques like undersampling}
-\outline{Also, deeper architectures could be evaluated}
-\outline{Multi-lingual models are possibility as GloVe provide word vectors for
-different languages}
+As previously mentioned in the summary of results, the methodology used in this
+thesis can be evolved in many ways.
 
-\structure{Model architectures}
-\outline{Hyperparameter tuning and model architectures were tested manually}
-\outline{Evolve NN architectures using automated approaches, e.g., AutoML}
+In comparison to other natural language processing research, data sets in this
+work rely on a rather small collection of texts.
+This effectively limits the number of patterns identifiable by the network and
+thus its learning power.
+Consequently, futher research in this area should be conducted using large-scale
+data sets of tweets from a variety of sources.
+Based on results from this thesis, a rough guideline would be a minimum
+of 300,000 labeled examples of each class.
+Working on larger data sets would also allow to remove class imbalances,
+e.g., by applying techniques such as undersampling.
+Furthermore, deeper network architectures containing more text processing
+and feature combination layers could be evaluated, as overfitting is less likely
+to occur on large data sets.
+Another conceivable extension would be to make models work with multi-linguistic
+data.
+Some preconditions for this feature are already established, as GloVe word
+vectors come for tokens from a variety of languages.
 
-\structure{Interpretability}
-\outline{Try to interpret model features}
-\outline{Special focus should be on features learned from text}
+All hyperparameter tuning and testing of model architectures in this work was
+undertaken manually.
+As these processes mainly consist of executing the same set of tasks repeatedly,
+they are suitable for automation.
+Approaches to automatically testing different sets of hyperparameters for
+machine learning models have been subject of research for quite some time~\footnote{\url{http://www.ml4aad.org/automl/}}.
+Recently, these ideas were picked up by companies like Google in order to free
+up human resources and allow less experiences practicioners to develop
+well performing models~\footnote{\url{https://cloud.google.com/automl/}}.
+Applying such techniques to models in this work could further enhance their
+overall performance.
+
+The tradeoff between model performance and interpretability is ubiquitous in
+the area of machine learning.
+Regulatory authorities require companies in many sectors to be able to explain
+decision origins.
+As mentioned previously, deep neural networks represent so-called black box models.
+This means that the learned feature representations are not directly extractable
+and comprehensible for humans.
+Nevertheless, approaches to enhance interpretability have been established
+in recent research, especially for convolutional neural networks operating
+on image data (see ch.~\ref{sub:dl_architectures}).
+Similar experiments have been undertaken for recurrent neural networks~\footcite{Karpathy2015}.
+Future work in the area of engagement prediction using deep neural networks
+should focus on incorporating such techniques in order to understand learned
+model features for this task.
 
