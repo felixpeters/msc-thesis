@@ -50,7 +50,7 @@ The single layers of a neural network are wired together via edges that are
 called \textbf{weights}.
 This subsection will focus on the most basic architecture of a neural network,
 called a \textbf{feed-forward network}.
-In this architecture all units in a specific layer are connected to all units
+In this architecture, all units in a specific layer are connected to all units
 in the following layer.
 Such a layer is then referred to as being \textit{fully-connected}.
 More sophisticated layer architectures will be introduced in subsection~\ref{sub:dl_developments}.
@@ -82,7 +82,7 @@ All units in later layers are calculated using equation~\ref{eq:activation}.
 
 In this equation, $a_j^l$ is also called an \textbf{activation}, $\sigma$ is a
 non-linear transformation function and $b_j^l$ is an added bias term.
-The bias term is here independent of the activations in the previous layer.
+Here, the bias term is independent of the activations in the previous layer.
 In practice, this calculation can be parallelized for all activations in a layer
 by rewriting it in matrix form (see equation~\ref{eq:activation_matrix}).
 
@@ -161,7 +161,7 @@ biases.
 Two assumptions about the cost function have to be made, so that the 
 backpropagation algorithm is able to work. 
 The reasons for these assumptions will be explained in the next paragraph.
-For illustration purposes this paragraph will use the \textit{quadratic cost function}
+For illustration purposes, this paragraph will use the \textit{quadratic cost function}
 as a running example (see equation~\ref{eq:quad_costs}).
 Here, $y(x)$ is the desired output for input $x$, $n$ resembles the number of
 examples in the current mini-batch and $L$ denotes the output layer of the
@@ -174,7 +174,7 @@ network.
 
 The first assumption (equation~\ref{eq:cost_assump_1}) is that the cost function 
 can be calculated as the average of all error terms for the current batch
-of training examples. For example the quadratic cost function can be written in
+of training examples. For example, the quadratic cost function can be written in
 this form, because $C_x = \frac{1}{2} \Vert y - a^L \Vert^2$.
 
 \begin{equation}
@@ -192,7 +192,7 @@ for determining the error and all other components are fixed parameters.
   C = C(a^L)
 \end{equation}
 
-With these assumptions set the next paragraph will explain how the
+With these assumptions set, the next paragraph will explain how the
 backpropagation algorithm derives gradients for the weight updates which enable
 learning in the training process.
 
@@ -202,7 +202,7 @@ learning in the training process.
 As mentioned before, the backpropagation offers a way to calculate gradients
 of the cost function with regard to weights and biases of the network.
 Optimization algorithms such as gradient descent then make use of these 
-gradients when determining weight updates since they intuitively represent
+gradients when determining weight updates, since they intuitively represent
 the rate of change of the cost function with respect to these learnable weights.
 This paragraph will explain how the backpropagation algorithm works in detail.
 Proofs are out of scope for this thesis and therefore omitted completely.
@@ -235,7 +235,7 @@ procedure, the first step of backpropagation is to calculate the error in the
 output layer $L$.
 Equation~\ref{eq:bp_1_comp} states how this is achieved for a single neuron,
 whereas equation~\ref{eq:bp_1_mat} shows the matrix-based form for efficient
-computation in practice. In this equation $\nabla_a C$ is the vector of all partial
+computation in practice. In this equation, $\nabla_a C$ is the vector of all partial
 derivatives $\partial C / \partial a_j^L$ and $\odot$ denotes the element-wise
 multiplication of two vectors, known as the \textit{Hadamard product}.
 For the previously introduced quadratic cost function, it would simply hold

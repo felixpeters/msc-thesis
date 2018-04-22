@@ -49,7 +49,7 @@ an \textit{example} which consists of a set of \textit{features}. Features are
 attributes of an object that can be measured quantitatively~\footcite{Goodfellow2016}. 
 In the example described above, the number of bedrooms is one the features of 
 the house object. The task \textit{T} would then be to predict a price for this 
-house. Depending on the type of the specific output variable this problem can 
+house. Depending on the type of the specific output variable, this problem can 
 be assigned to one of many groups of tasks (see Fig.~\ref{fig:ml_classification}). If the output was an
 exact price (e.g. 1,000,000\$), this would constitute a \textbf{regression} task. 
 Assuming the goal is to assign the house to a price interval (e.g., (500,000\$, 1,000,000\$]),
@@ -65,7 +65,7 @@ estimation of the underlying probability distribution of the data (\textbf{densi
 In order to perform a task \textit{T} better over time, the algorithm needs
 a quantitative measure for its current performance. In the setting of
 house price prediction, the algorithm should get feedback on the quality of its
-predictions. For a regression problem a suitable performance measure would be 
+predictions. For a regression problem, a suitable performance measure would be 
 the \textbf{mean squared error} over all training examples. Possible measures
 for classification tasks would be \textbf{accuracy} (i.e., how many examples
 were classified correctly?) or the \textbf{error rate} (i.e., how many
@@ -80,16 +80,16 @@ one derives a better estimate of the generalization abilities of the model~\foot
 
 \paragraph{Experience}
 
-Machine learning algorithms can further be classified by the `kind of experience
-they are allowed to have during the training process'~\footcite[104]{Goodfellow2016}.
-In \textbf{unsupervised learning} settings the label for an example (also called
+Machine learning algorithms can further be classified by the ``kind of experience
+they are allowed to have during the training process''~\footcite[104]{Goodfellow2016}.
+In \textbf{unsupervised learning} settings, the label for an example (also called
 \textit{data point}) is unknown. For the house price prediction example this
 would mean that real prices for the houses in the data set are not
 available for training. Performing classification or regression tasks would
 therefore not be feasible as the performance measure \textit{P} can not be
 determined. Potential tasks in such an unsupervised learning setting would be
 clustering (e.g., identifying similar houses), or performing density estimation
-(e.g., to derive the probability for a given house price). In a broad sense these
+(e.g., to derive the probability for a given house price). In a broad sense, these
 kinds of algorithms aim to identify underlying distributions of data. Contrary, in 
 \textbf{supervised learning} settings each example is associated with an 
 observed output (usually called \textit{label} or \textit{target}). Hence, a
@@ -104,9 +104,9 @@ learning is the interaction of agents with the real environments, e.g.,
 self-driving cars. In most of these settings collecting all data points is
 insufficient or simply not feasible~\footcite{Sutton1998}.
 
-It becomes obvious that the three dimesions are related, i.e., choices for a
+It becomes obvious that the three dimensions are related, i.e., choices for a
 specific dimension are conditioned on the other dimensions. Prior identification 
 of all three dimensions is key in order to identify 
-`well-defined learning problems'~\footcite[2--3]{Mitchell1997}. All developed 
+``well-defined learning problems''~\footcite[2--3]{Mitchell1997}. All developed 
 learning algorithms in later chapters will also use this classification 
 framework. 
