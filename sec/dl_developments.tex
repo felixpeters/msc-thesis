@@ -28,7 +28,7 @@ variety, also known as the \textit{Three V's}.
 Here, \textbf{volume} describes increases in created data, mainly over the 
 internet. 
 Where volume refers to total size of data sets, \textbf{velocity} stands for the
-speed-up in data access. More and more data can be consumed in (nearly) real-time,
+speed-up in data access. More and more data can be consumed in (near) real-time,
 e.g., over streaming interfaces.
 In addition, big data comes in more diverse form, which is where the \textbf{variety}
 dimension has to be regarded.
@@ -84,11 +84,11 @@ Figure~\ref{fig:comp_graph}b exhibits the computation of a single neuron output
 from a two-dimensional input vector $x$, which is obviously independent of
 other activation computations in the same layer.
 Most notably, matrix operations are replaced with element-wise calculations here.
-Deep learning software typically computes forward and backward pass in this way
-layer by layer in order to speed up the training process~\footcite{Abadi2016}.
+Deep learning software typically computes forward and backward pass in this way,
+i.e., layer by layer, in order to speed up the training process~\footcite{Abadi2016}.
 
 This work applies modern deep learning software and hardware for its model.
-Exact specifications can be found in chapter~\ref{ch:methodology}.
+Exact specifications can be found in Chapter~\ref{sec:infrastructure}.
 
 \paragraph{Network architectures}
 \label{sub:dl_architectures}
@@ -100,9 +100,9 @@ representational capability.
 Over decades of neural network reserach, specialized architectures have been
 developed for tasks like image or speech recognition.
 This subsection will present three network architectures, two of which will
-be used for the model of this work.
+be used for the models developed in this thesis.
 For better understanding the architectures are compared to the basic fully-
-connected model from chapter~\ref{sub:dl_concepts}
+connected model from Chapter~\ref{sub:dl_concepts}
 
 \begin{figure}[h]
   \includegraphics[height=8cm]{img/conv_layer.png}
@@ -112,7 +112,7 @@ connected model from chapter~\ref{sub:dl_concepts}
 
 \textbf{Convolutional neural networks} were first developed by LeCun et al. in 1998,
 based on approaches that had been invented during the 1980s~\footcite{Fukushima1980, LeCun1998}.
-At that time they were mostly used for simple image processing tasks like
+At that time, they were mostly used for simple image processing tasks like
 automatic character recognition from handwriting.
 In order to understand what characterizes convolutional layers, it is helpful
 to compare them to fully-connected layers.
@@ -130,7 +130,7 @@ convolutions can be visualized.
 Intuitively, one can imagine a convolution as a neuron that is moved over the
 vector of inputs and looks for one specific pattern.
 For images, a convolution can thus be thought of as a filter that represents
-a common reoccuring visual theme.
+a common reoccurring visual theme.
 What kind of pattern (also called \textit{filter}) is learned by the neuron is
 determined during the training process.
 
@@ -145,7 +145,7 @@ a large convolutional neural network~\footcite{Krizhevsky2012}.
 The top half of filters identify edges of varying orientation and thickness,
 whereas the bottom half of filters focuses on color contrasts.
 These are examples for filters learned in the first convolutional layer of a
-network, that set a new benchmark for image recognition tasks.
+network, that set a new benchmark performance for image recognition tasks.
 
 \begin{figure}[h]
   \includegraphics[height=6cm]{img/conv_architecture}
@@ -157,8 +157,8 @@ In practice, convolutional layers are stacked, so that later layers can learn
 to identify increasingly complex shapes, e.g., faces or objects, from more
 primitive shapes like edges and color contrasts~\footcite{Simonyan2015}.
 \textit{Pooling layers} are often used to combine the output of neuron copies, which
-enables the next convolutional layer to detect shapes from a greater portion of
-the image effectively.
+effectively enables the next convolutional layer to detect shapes from a greater portion of
+the image.
 This effect is visualized in Fig.~\ref{fig:cnn_architecture}, where the first
 neuron copy of layer $B$ learns a filter from the output of two neuron copies
 of layer $A$.
@@ -167,13 +167,13 @@ find occurrences of two parallel edges in an image.
 
 As mentioned before, convolutional neural networks are mostly applied to data
 like images and texts.
-More details about practical applications will be discussed in chapter~\ref{sub:dl_applications}.
+More details about practical applications will be discussed in Chapter~\ref{sub:dl_applications}.
 
 Like convolutional neural networks, \textbf{recurrent neural networks} (RNNs) are usually
 used on data that underlies some kind of ordering.
 Popular applications of RNNs lie in the  area of \textbf{Naturual Language
 Processing (NLP)}, because text can be formalized as an ordered sequence of
-words.
+words or characters.
 
 \begin{figure}[h]
   \includegraphics[height=10cm]{img/rnn_unrolled_2}
@@ -181,7 +181,7 @@ words.
 \label{fig:rnn_unrolled}
 \end{figure}
 
-One drawback of basic feed-forward networks (see chapter~\ref{sub:dl_concepts})
+One drawback of basic feed-forward networks (see Chapter~\ref{sub:dl_concepts})
 when looking at ordered sequences is the lack of persistence between single
 iterations.
 Thus, when looking at an example $x_t$ the network does not know about previous
@@ -206,7 +206,7 @@ network, which will be explained in the following.
 The Long Short-Term Memory (LSTM) network was first introduced by Hochreiter \&
 Schmidhuber~\footcite{Hochreiter1997} in 1997, aiming to solve the problem of
 storing information in a neural network over time.
-A LSTM neuron (often calledLSTM cell) comprises four separate layers which 
+A LSTM neuron (often called LSTM cell) comprises four separate layers which 
 manipulate the \textit{cell state}.
 The cell state stores information and is passed between iterations of the
 training process.
@@ -219,21 +219,21 @@ The following explanations of LSTM gates are illustrated in Fig.~\ref{fig:lstm_c
 
 All three gates process the current input $x_t$ and the output of the previous
 iteration $y_{t-1}$.
-LSTMs are commonly applied for Natural Language Processing tasks such as
+LSTMs are commonly applied for natural language processing tasks such as
 language modeling, i.e., prediction of the next word based on previously seen
 text.
-Therefore, an example language modeling task will be used to describe the
+Therefore, language modeling will be used as an example task to describe the
 gate functionalities~\footcite{Olah2015}.
 Firstly, the \textit{forget gate} decides which information can be removed from
 the cell state.
 Internally, the forget gate contains a simple layer with sigmoid activations.
 Outputs of the layer are multiplied element-wise with the cell state.
 The activations are guaranteed to be between zero and one, where zero represents
-`forgetting' and one stands for `keeping' information.
+``forgetting'' and one stands for ``keeping'' information contained in the cell state.
 For example, when trying to predict words in a sequence it is necessary
 to know about the current subject in order to conjugate an upcoming predicate
 correctly.
-If the current input $x_t$ represents a new subject, e.g., `he',the old subject should
+If the current input $x_t$ represents a new subject, e.g., ``he'',the old subject should
 probably be removed from the cell state in the forget gate.
 Secondly, the \textit{input gate} is responsible for adding new information to the cell
 state.
@@ -246,7 +246,7 @@ Continuing previous example, the input gate would likely add information about
 the gender of the new subject, which determines word endings for predicates in
 many languages.
 Finally, an output for the current iteration is generated in the \textit{output gate}.
-The output represents `a filtered version'~\footcite{Olah2015} of the cell state, e.g.,
+The output represents ``a filtered version''~\footcite{Olah2015} of the cell state, e.g.,
 information for upcoming verbs when a new subject is observed.
 This happens through the use of another layer with sigmoid activations which
 intuitively filters relevant information from the cell state.
@@ -258,11 +258,11 @@ image captioning, which require storing input information with regard to the
 training process.
 Architectures using multiple, stacked LSTM layers are also used in practice,
 mainly to learn even more complex representations.
-Detailed use cases will be a central theme in Ch.~\ref{sub:dl_applications}.
+Detailed use cases will be a central theme in Chapter~\ref{sub:dl_applications}.
 
 The previously described architectures of CNNs and RNNs were developed prior to
 the third wave of neural network research and became efficiently trainable
-due to driving factors described in Chapter~\ref{sub:dl_drivers}.
+due to the driving factors described in Chapter~\ref{sub:dl_drivers}.
 Finally, this subsection introduces \textbf{Generative Adverserial Networks (GANs)}, which
 represent a more recently invented model architecture.
 The basic concept was presented by researchers in 2014, and has gained popularity
@@ -306,7 +306,7 @@ GANs use a different objective function, which is exemplified in equation~\ref{e
 
 The cost function includes the objectives of both networks, as the generator
 tries to minimize the above equation and the discriminator aims to maximize it.
-Both terms represent in the equation represent log-likelihood functions.
+Both terms in the equation represent log-likelihood functions.
 Maximizing the equation means assigning the correct labels to data samples (aim
 of the discriminator), minimizing it implies that the discriminator is not capable
 of specifying where a sample comes from (aim of the generator).
@@ -336,7 +336,7 @@ forward and backward through the network.
 
 GANs were applied to creation of images in the original paper, but have been
 used for a bigger variety of problems since. As for the other architectures,
-more practical applications can be found in Ch.~\ref{sub:dl_applications}.
+more practical applications can be found in Chapter~\ref{sub:dl_applications}.
 After examining more advanced architectures, the next two subsections will
 focus on the training process.
 In particular, developments in optimization algorithms and regularization
@@ -354,9 +354,9 @@ algorithms in neural network training, as well as update functions for the
 \textit{stochastic gradient descent} optimization algorithm.
 Basically, gradient descent only relies on derived gradients and a hyperparameter
 representing the learning rate, i.e., the step size towards a possible minimum
-(~\ref{eq:gd}).
+(see equation~\ref{eq:gd}).
 For complex neural networks, gradient descent can be hard to utilize effectively.
-Suitable, often manual weight initialization and adaptions of the learning rate
+Oftentimes, manual weight initialization and adaptions of the learning rate
 during training are needed in order to derive good solutions.
 More sophisticated optimization algorithms, which were developed in the last
 years, overcome these limitations.
@@ -374,7 +374,7 @@ to numerical optimization problems~\footcite{Polyak1964}.
 During the third wave of neural network research, the concept was first
 utilized for accelerating training processes in deep networks~\footcite{Sutskever2013}.
 In its essence, momentum (equation~\ref{eq:momentum}) adds an additional step to 
-the gradient descent update function (equation~\ref{eq:gd}).
+the gradient descent update function (displayed in equation~\ref{eq:gd}).
 
 \begin{align}
   \label{eq:momentum}
@@ -382,9 +382,9 @@ the gradient descent update function (equation~\ref{eq:gd}).
   w_{t+1} \rightarrow w_t - v_{t+1}
 \end{align}
 
-The weight update $v_{t+1}$ is composed by two terms: the gradient $\nabla f(w_t)$
-weighted with the learning rate $\eta$ and the previous update $v_t$ multiplied
-with the \textit{momentum coefficient} $\mu$.
+The weight update $v_{t+1}$ is consists of two terms: the gradient $\nabla f(w_t)$
+weighted with the learning rate $\eta$, and the previous update $v_t$ multiplied
+by the \textit{momentum coefficient} $\mu$.
 Therefore, the update in iteration $t+1$ depends on the update of iteration $t$,
 which again is dependent on $v_{t-1}$ and so on.
 The added term $\mu v_t$ can thus be interpreted as an exponentially moving 
@@ -403,8 +403,8 @@ known as \textit{mean estimate}.
 The \textbf{adaptive moment estimation (Adam)} optimization algorithm enhances
 momentum with further computations in order to guarantee accelerated
 convergence~\footcite{Kingma2014a}.
-Intuitively, Adam adapts the learning rate for each parameter based on mean and
-variance of recent updates in the specific parameter.
+Intuitively, Adam adapts the learning rate for each parameter individually, based on mean and
+variance of recent updates in this specific parameter.
 Equations~\ref{eq:adam_start} through~\ref{eq:adam_end} exemplify the update
 computation for a single parameter $w$ in iteration $t$.
 
@@ -422,7 +422,7 @@ uncentered variance estimates of the gradient, similar to momentum.
 $\beta_1$ and $\beta_2$ are hyperparameters, whose default values are $0.9$ and
 $0.999$ respectively.
 Because of these defaults and zero initialization of $m$ and $v$, the estimates
-are biases towards zero, especially in early iterations.
+are biased towards zero, especially in early iterations.
 This bias is corrected in equations~\ref{eq:adam_4} and~\ref{eq:adam_5}, where
 the scaling factor $\frac{1}{1-\beta_1^t}$ is larger for smaller values of $t$
 and therefore accounts for smaller values of the estimates as a result of 
@@ -458,7 +458,7 @@ This subsection will introduce regularization procedures after firstly explainin
 the concept of overfitting which many techniques aim to prevent.
 
 \textit{Generalization} constitutes the main challenge in machine learning and
-denotes the ability to `perform will on new, previously unseen inputs'~\footcite[110]{Goodfellow2016}.
+denotes the ability to ``perform well on new, previously unseen inputs''~\footcite[110]{Goodfellow2016}.
 Therefore, machine learning models should not only be evaluated using training
 error, i.e., the performance measure on training data, but also via \textit{test
 error}, i.e., the performance on unseen test data.
@@ -475,8 +475,8 @@ In summary, key objectives of machine learning algorithms can be put as follows:
 \label{fig:overfitting}
 \end{figure}
 
-\textbf{Overfitting} simply refers to a large gap between training error and test
-error.
+\textbf{Overfitting} simply refers to a large gap between training and test
+errors.
 Intuitively, the model learns too much about specific examples in the training
 set and can not perform well on other data.
 In contrast to that, \textit{underfitting} occurs when the model is not able
@@ -488,10 +488,10 @@ not regularized appropriately.
 The following paragraphs describe techniques commonly used to avoid overfitting.
 
 \textbf{Dropout} aims to solve a commonly occurring problem in deep neural networks
-called `co-adaption'~\footcite{Hinton2012a}.
+called ``co-adaption''~\footcite{Hinton2012a}.
 It refers to neurons that detect features whose usefulness can not be isolated,
-but is dependent on the detection of other features.
-Such a neuron is only helpful in conjunction with other neuron.
+but is instead dependent on the detection of other features.
+Such a neuron is only helpful in conjunction with other neurons.
 Co-adaptation can cause overfitting, because it creates an opportunity for
 the network to model patterns in the training data in an excessively detailed
 way.
@@ -513,7 +513,7 @@ This makes the application of dropout straighforward.
 Despite its algorithmic simplicity, dropout has been shown to reduce overfitting
 in several deep architectures~\footcite{Srivastava2014}.
 
-Another, even more recently developed regularization technique is \textbf{batch
+An even more recently developed regularization technique is \textbf{batch
 normalization}.
 It addresses the problem of slowly converging training processes caused by
 \textit{internal covariate shift}, which is the amount by which layer activations
@@ -527,7 +527,7 @@ a mini-batch of examples in an iteration.
 Intuitively, this makes sense since data is often normalized in preprocessing
 before being put into a model.
 Technically, inputs are normalized along all dimensions $k$ by subtracting the mean
-and dividing by the standard deviation of respective dimension (see equation~\ref{eq:bn_norm}).
+and dividing by the standard deviation of the respective dimension (see equation~\ref{eq:bn_norm}).
 
 \begin{align}
   \widehat{x}^{(k)} = \frac{x^{(k)} - E[x^{(k)}]}{\sqrt{Var[x^{(k)}]}} \label{eq:bn_norm} \\
@@ -537,11 +537,12 @@ and dividing by the standard deviation of respective dimension (see equation~\re
 Normalizing layer inputs in this way limits internal covariate shift, but also
 limits the representational capability of these neurons.
 Therefore, batch normalization adds learnable parameters $\gamma$ and $\beta$ for
-each input, which serve to scale and shift the input after normalization~\ref{eq:bn_scale_shift}.
+each input, which serve to scale and shift the input after normalization (see equation~\ref{eq:bn_scale_shift}).
 Hence, the network can learn to undo the normalization (\textit{denormalization})
 if necessary.
 Batch normalization has been shown to speed up the training process and also
-reduce overfitting which limits the necessity for dropout~\footcite{Ioffe2015}.
+reduce overfitting~\footcite{Ioffe2015}.
+In addition, less dropout is often required when applying batch normalization.
 
 \begin{figure}[h]
   \includegraphics[height=6.5cm]{img/data_augmentation}
@@ -564,4 +565,4 @@ color changes.
 Fig.~\ref{fig:augmented_images} shows examples of a handwritten character being
 mutated in various ways.
 Data augmentation leads to a bigger variety of inputs, which has been shown
-to reduce overfitting for deep neural networks~\footcite{Krizhevsky2012}.
+to reduce overfitting in deep neural networks~\footcite{Krizhevsky2012}.
