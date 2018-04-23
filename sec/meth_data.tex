@@ -1,16 +1,15 @@
 \subsection{Data}
 \label{sec:data_collection}
 
-The main goal of this thesis regarding the examined data is to have diverse
+The main goal of this thesis regarding examined data is to have diverse
 data sets from users for which engagement prediction has practical relevance.
-The diversity requirement mainly comprises different retweet distributions
-so that the model performance can evaluated in a generalized manner.
+The diversity requirement mainly demands different popularity distributions of contained tweets,
+so that the model performance can be evaluated in a more general manner.
 Predicting the popularity of tweets is relevant for all individuals and
 organizations that somehow rely on social media marketing or customer support.
-Therefore, the collected data sets include data from public figures and
-companies, most of whom actively maintain a Twitter account.
-The selected accounts were separated into three groups and saved as Twitter lists
-in the author's profile (see Appendix).
+Therefore, the collected data sets include data from celebrities, politicians and
+companies, most of whom actively maintain their Twitter account.
+All three user groups were saved as Twitter lists (see Appendix~\ref{sec:user_groups}.
 For each of the three groups, all tweets from January to August 2017 were
 fetched from the public Twitter API~\footnote{\url{https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline.html}}.
 Afterwards, retweets that the specified users made were excluded since their
@@ -23,7 +22,7 @@ at the time of retrieval.
 As mentioned in the previous section, the third stage of model development
 for this thesis aims to extract meaningful features from the raw tweet content.
 This typically requires a huge number of data points, so that popular NLP benchmark
-data set for similar tasks, e.g., sentiment analysis, usually contain more than
+data sets for similar tasks, e.g., sentiment analysis, usually contain more than
 a million labeled training examples~\footcite{Go2009}.
 In order to account for these massive data requirements, an additional data set was
 collected, which includes all tweets from the aforementioned user groups over
@@ -47,13 +46,13 @@ the course of two years.
 Table~\ref{tab:dataset_summary} sums up all data sets used for the purpose of
 this work.
 The first data set comprises all Twitter accounts from \textit{Fortune 500}
-companies in 2017~\footnote{\url{http://fortune.com/fortune500/}}.
+companies, as listed in 2017~\footnote{\url{http://fortune.com/fortune500/}}.
 All in all, 441 out of 500 companies operate a Twitter presence, which accounted
 for a total of 254,059 tweets in the evaluated period.
 The second user group includes all Twitter accounts of US Senators~\footnote{\url{https://twitter.com/cspan/lists/senators}} and Governors~\footnote{\url{https://twitter.com/cspan/lists/governors}}
-as of October 2017 which were derived from Twitter lists by the television
+(as of October 2017) which were derived from Twitter lists by the television
 network \textit{C-SPAN}.
-From January to August 2017, 162 politicians created a total of 94,919 tweets.
+From January to August 2017, 162 politicians authored a total of 94,919 tweets.
 The smallest data set stems from celebrities, namely the \textit{Forbes Highest-Paid
 Athletes 2017}~\footnote{\url{https://www.forbes.com/sites/kurtbadenhausen/2017/06/15/full-list-the-worlds-highest-paid-athletes-2017}}, \textit{Forbes Highest-Paid Actors and Actresses 2017}~\footnote{\url{https://www.forbes.com/sites/natalierobehmed/2017/08/22/full-list-the-worlds-highest-paid-actors-and-actresses-2017}} and
 \textit{Forbes Highest-Paid Celebrities 2017}~\footnote{\url{https://www.forbes.com/sites/zackomalleygreenburg/2017/06/12/full-list-the-worlds-highest-paid-celebrities-2017}}.
@@ -67,4 +66,4 @@ total of accounts from this group.
 Examining deep neural network performance on differently sized data sets should
 enable to draw conclusion about data requirements for the particular problem
 of engagement prediction.
-Descriptive statistics for all data sets can be found in ch.~\ref{sec:dda}.
+Descriptive statistics for all data sets can be found in Chapter~\ref{sec:dda}.
