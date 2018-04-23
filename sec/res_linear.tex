@@ -25,14 +25,15 @@ of linear models trained in this work.
 Firstly, inputs are normalized using a \textit{batch normalization} (see ch.~\ref{sub:dl_regularization})
 layer in order to account for different scaling in the features.
 As stated before, this layer type allows the model to undo normalization at
-training time if it serves the purpose of better output representation.
+training time if it serves the purpose of a better output representation.
 The normalized inputs are then directly mapped onto two distinct outputs,
 one for the number of retweets and one for the number of favorites.
 In this case, regression and classification models only differ in their
 respective type of prediction.
-The regression model simply outputs two numbers representing retweet and
-favorite estimates.
-Hence, this constitutes a \textit{linear regression model}, because the output is not transformed.
+The regression model employs ReLU activations in the output layer and thus
+outputs two positive, real-valued numbers representing retweet and favorite
+estimates.
+Hence, this constitutes a \textit{linear regression model}.
 Contrary, the classification model should output class probabilities for each
 of the six predefined classes (see Table~\ref{tab:classification_buckets}).
 As a result, the outputs have to be split according to the number of classes and transformed
@@ -78,7 +79,7 @@ Consequently, these features can be extracted with minimal preprocessing, which
 enables model application in a real-time prediction setting.
 The structured inputs are separated into content (top half) and contextual
 features (bottom half).
-Activity statistics, i.e. frequencies, are calculated on a per-day basis,
+Activity statistics, i.e. frequencies, are calculated on per day,
 the hour of tweet creation is given in \textit{Coordinated Universal Time (UTC)}.
 The previouly described need for normalization becomes obvious, e.g., when
 comparing scales for URL counts (usually 0-3) and account age (thousands of days).
@@ -141,7 +142,7 @@ For the combined data set, only 10,000 examples were set aside for validation,
 since the main purpose of this data set is to examine network behavior on a
 maximum amount of training examples.
 However, this should not be seen as a limitation, since this number of validation
-examples still guarantees precise detection of performance changes, e.g.,
+examples still guarantees precise detection of performance changes, namely
 in the magnitude of hundredths of percents.
 Since the splitting process was undertaken after permutating the example order
 randomly, class distributions in training and validation sets should be very
@@ -150,7 +151,7 @@ Training examples were used to learn the weights of the model, whereas validatio
 examples are not known to the algorithm during training.
 Consequently, the unseen data could be used to derive an estimate of the model
 generalizability.
-Models were trained for a fix number of iterations, each iteration consisting
+Models were trained for a fix number of iterations (previously introduced as epochs), each iteration consisting
 of a full pass over all training examples.
 Here, training data was split into batches of 128 examples whose gradients
 were averaged in order to derive weight updates.
@@ -159,11 +160,11 @@ convergence in loss function minimization.
 The regression models turned out to converge slower, so that these models
 had to be trained for a longer period of time.
 In summary, regression models were trained for 150 iterations, whereas classification
-models already converged after 50 iterations.
+models mostly converged after 50 iterations.
 
 After comparing multiple optimization algorithms on data samples, \textit{adaptive
 moment estimation (Adam)} was used for all experiments in this work.
-Recapping from ch.~\ref{sub:dl_optimization_algos}, this recently developed
+Recapping from Chapter~\ref{sub:dl_optimization_algos}, this recently developed
 algorithm adapts learning rates for each parameter based on mean and variance of
 recent updates.
 It therefore combines strengths of previously developed techniques such as
@@ -210,8 +211,7 @@ Therefore, it allows more precise performance evaluation.
 However, the metric is not interpretable directly.
 Accordingly, results in this work will also list the metric \textit{accuracy}, which simply
 denotes the percentage of correctly classified examples.
-Results tables will abbreviate these metrics as \textit{CCE} and \textit{Acc}
-respectively.
+Results tables will abbreviate these metrics as \textit{CCE} and \textit{Acc}.
 
 \begin{equation}
   \label{eq:mae}
@@ -341,7 +341,7 @@ omitted for the sake of brevity here (see Appendix).
 
 Analyzing above results points to an intuitive interpretation of model behavior.
 All models are obviously biased towards the more common classes in a data set.
-Since the company data possesses the most class imbalance (nearly 90\% of examples
+Since the company data set shows the most class imbalance (nearly 90\% of examples
 stem from classes 0 and 1), linear models tend to perform better here.
 Contrary, model performance decreases for wider and less imbalanced class distributions.
 Two possible reasons for this kind of model bias can be derived.
@@ -362,5 +362,5 @@ Moreover, modeling tweet content using more sophisticated layer architectures
 should enable deep neural networks to learn more meaningful features.
 These additional features derived from unstructured data should also enable
 more accurate engagement predictions.
-Ch.~\ref{sec:deep_combined} explores possibilities for building these kinds
+Chapter~\ref{sec:deep_combined} explores possibilities for building these kinds
 of more complex models.
