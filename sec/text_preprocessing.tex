@@ -11,7 +11,7 @@ This is usually achieved by obtaining vector representations for single words.
 Such a mapping between words and vectors of real numbers is called a \textbf{word
 embedding}.
 This section is structured as follows.
-First, an introduction to word vectors are given.
+First, an introduction to word vectors is given.
 Afterwards, all five steps of the transformation process are be presented using a simple example.
 In addition, intermediate results of the preprocessing steps for the collected
 data sets are described.
@@ -29,7 +29,7 @@ These will be preprocessed so that they can be used as an actual input to a neur
 
 As mentioned above, an embedding is a function that maps from a specific
 vocabulary to vectors with dimensionality $d$.
-As a results, words are effectively placed in a vector space $\mathbb{R}^d$.
+As a results, words are effectively placed into a vector space $\mathbb{R}^d$.
 This allows examination of space structure and relationships between words of 
 the vocabulary.
 This thesis uses the pre-trained \textit{GloVe} word vectors by the \textit{Stanford
@@ -38,7 +38,7 @@ These were trained on a corpus of two billion tweets containing a total of
 27 billion unique token from different languages, e.g., English, Arabic and
 Japanese.
 Here, a token can be a word or a symbol with a special meaning.
-In detail, vectors were obtained by examining co-occurrence statistics in this
+In detail, vectors were obtained by examining co-occurrence statistics on this
 large data set.
 Two special featues come with this set of word vectors.
 Firstly, it is possible to quantify linguistic or semantic similarity between
@@ -91,7 +91,7 @@ Step & Description & Before & After \\
 Table~\ref{tab:text_preprocessing} shows the undertaken tweet preprocessing
 steps for this thesis.
 These are inspired by a Ruby script written by the GloVe creators\footnote{\url{https://nlp.stanford.edu/projects/glove/preprocess-twitter.rb}}.
-The code was ported to Python, including necessary fixes and expansions.
+The code was ported to Python, including necessary code fixes and expansions.
 Special tokens often replace the original content, e.g., for URLs, user mentions,
 numbers and emoticons.
 The main reason behind this is that consuming algorithms are more capable of
@@ -227,8 +227,7 @@ Loaded word vectors are assigned as values.
 Vectors are usually represented as lists of some kind, e.g., arrays in Python.
 Vector dimensionality is predetermined, e.g., GloVe comes with vectors of length
 25, 50, 100 and 200.
-In this example, a random three-dimensional representation is chosen for more
-improved overview.
+In this example, a random three-dimensional representation is chosen for improved clarity.
 Moreover, it is assumed that the pre-trained vectors only cover a very restricted
 vocabulary.
 Generally, it should be denoted that using pre-trained word vectors does not guarantee
@@ -269,6 +268,8 @@ no matching word vector is found in the embedding index, the respective row
 is filled with zeros.
 In this example, this is the case for the ``darmstadt'' token, signified by the
 red arrow.
+All parameters can be updated at training time, which means neural networks
+can still learn to make sense of previously unknown words.
 
 Creating the embedding matrix completes necessary text preprocessing.
 Word and embedding index serve as intermediate results, which might be helpful

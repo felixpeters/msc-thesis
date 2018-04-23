@@ -46,7 +46,7 @@ minimization of which represents the main goal of model training.
 If this metric does not decrease for a certain number of iterations, it is assumed
 that a minimum was already reached and training is automatically stopped.
 The accepted number of successive non-progress epochs is denoted as the
-\textit{patience} hyperparameters, which has to be set prior to training.
+\textit{patience} hyperparameter, which has to be set prior to training.
 For this work, the parameter was set from two to five epochs, depending on
 model complexity.
 Model checkpoints basically represent snapshots of the network state after training
@@ -58,7 +58,7 @@ Both of these state components can be saved for later access, e.g., in JSON~\foo
 In practice, this is most commonly done everytime a new validation loss minimum
 was established.
 Using both techniques in conjunction allows shortening training time and
-repetitive access of trained models.
+repeated access to trained models.
 Observations of experiments in this work were, that regression models took
 more operations to minimize validation loss (up to 50 epochs) compared
 to classification models (usually between ten and 20 epochs).

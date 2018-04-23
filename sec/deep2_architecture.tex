@@ -14,7 +14,7 @@ These features can then be used in conjunction  with the structured features use
 chapters which mainly represent contextual features about the tweet author.
 This two-step process can be mapped onto a multi-input network architecture,
 where sequences are processed in order to learn content features, before
-merging in auxiliary contextual features, and combining both types via fully-connected
+merging in auxiliary contextual features, and combining both feature types via fully-connected
 layers.
 The question arises how to process textual input data most effectively.
 Chapter~\ref{sub:dl_app_nlp} introduced recurrent (RNN) and convolutional neural
@@ -32,7 +32,7 @@ This enables modeling of long-term dependencies in text, e.g., detection of
 opening and closing brackets or subject identification.
 In practice, training RNNs is more time-consuming since processing is obviously less
 parallelizable.
-This work focusses uses LSTM cells (see ch.~\ref{sub:dl_architectures}), because
+This work uses LSTM cells (see ch.~\ref{sub:dl_architectures}), because
 it is the most widely adopted cell type for RNNs.
 For CNNs, one-dimensional convolutional layers are applied, as textual input is
 also represented as a one-dimensional list of word IDs.
@@ -65,13 +65,13 @@ overfitting, mainly by restricting the number of layers and cells.
 
 Figure~\ref{fig:dm2_architectures} shows a subset of the evaluated architectures for
 multi-input neural networks.
-For the sake of brevity, models are identified a shortcode (see subfigure captions).
+For the sake of brevity, models are identified using a shortcode (see subfigure captions).
 As illustrated, \textit{DM2-CNN} processes textual inputs via a single convolutional
 layer.
 More specifically, 32 filters aim to detect features from three successive words
 (thus, filter size is 3).
 Prior to consumption by the convolutional layer, inputs are padded with one leading
-and trailing zero in order to keep the output sequence length static.
+and trailing zero in order to keep the sequence lengths static.
 Max-pooling (see \ref{sub:dl_developments}) is applied following the convolutional layer,
 i.e., outputs of neighboring sequence subsets are combined by only keeping the
 maximum value.
