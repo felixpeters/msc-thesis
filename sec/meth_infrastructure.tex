@@ -4,14 +4,13 @@
 The experiments in this thesis were conducted using infrastructure suitable
 to handle complex computations and large data sets.
 This section will describe hardware (ch.~\ref{sub:meth_hardware}) and software
-(ch.~\ref{sub:meth_software}) which was applied to the problem of tweet
-engagement prediction.
+(ch.~\ref{sub:meth_software}) which was applied to the model development in this work.
 
 \subsubsection{Hardware}
 \label{sub:meth_hardware}
 
 As stated in Chapter~\ref{sub:dl_drivers}, training deep neural networks
-typically requires the parallel computing power of graphics processors.
+typically requires the parallelizable computing power of graphics processors.
 In addition, large data files need to be stored and processed.
 Cloud environments are well suited for these tasks, since they enable on-demand 
 access to specialized hardware.
@@ -36,17 +35,17 @@ Moreover, p2.xlarge machines possess 61GB of memory and four CPU cores.
 \label{sub:meth_software}
 
 All model development was conducted using the \textit{Python}\footnote{\url{https://www.python.org/}} programming language,
-since it offers extensive and well-docomented libraries for data analysis and numerical computation.
+since it offers extensive and well-documented libraries for data analysis and numerical computation.
 \textit{Jupyter notebooks}\footnote{\url{http://jupyter.org/}} were used as development environment, because
 of their capability to combine code, visualizations and documentation in a single
 document.
-Conducting experiments in notebooks proved to increase reproducibility of results
+Conducting experiments in notebooks proved to improve reproducibility of results
 and overall project organization.
 Reusable functionality tested in notebooks was often transferred to Python
 modules.
 In order to collect data from the public Twitter API, a Python library called
-\textit{python-twitter} was used.
-The library provides wraps the API in that it directly converts the requested
+\textit{python-twitter} was used~\footnote{\url{https://python-twitter.readthedocs.io/en/latest/index.html}}.
+The library wraps the API in that it directly converts the requested
 data to Python objects.
 This removed the need to deal with raw JSON data and made the data collection
 process more convenient.
