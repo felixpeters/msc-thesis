@@ -15,7 +15,7 @@ Prior to presenting the results of this analysis, a few remarks about presentati
 have to be made.
 In almost all cases, data is discretized to improve clarity.
 Here, all created bins, e.g., in histograms, are left-inclusive and right-exclusive.
-For example, the bin `1-10k' denotes all observations between 1,000 and
+For example, the bin ``1-10k'' denotes all observations between 1,000 and
 9,999 (for a variable scaled as an integer).
 In addition, all represented distributions are normalized to account for varying
 data set sizes and improve comparability.
@@ -61,8 +61,8 @@ accounts.
 For all data sets, strong correlation between the number of favorites and retweets can
 be stated.
 This observation is useful for later model development, because it can be concluded that
-both variables should be predictable using similar statistical models, e.g.,
-a multi-output model with differently scaled weights in the last layer.
+both variables should be predictable using similar features, e.g.,
+in a multi-output model with differently scaled weights in the last layer.
 The differences between mean and median values point to skewness in the
 underlying distributions.
 Since the calculated means are significantly larger than their respective
@@ -205,8 +205,8 @@ user groups.
 It can be stated that celebrities tend to have the largest following on average,
 followed by companies and politicians.
 Most celebrities are followed by more than a million accounts, whereas the
-majority of politicans and companies have followings smaller than 100 thousand
-accounts (see Fig.~\ref{fig:follow_distr}).
+majority of politicans and companies have followings smaller than 100,000 
+users (see Fig.~\ref{fig:follow_distr}).
 Again, follower and friend distributions are skewed to the right across all
 groups.
 Considering the previously demonstrated differences in retweet and favorite
@@ -283,7 +283,7 @@ each user group individually.
 Superficially, the distributions look similar.
 For all groups, around 70\% of all accounts are seven to ten years old, thus being
 created two to four years after Twitter was opened for public access.
-Earlier adopters mainly stems from the politician and company user groups, about
+Earlier adopters mainly stem from the politician and company user groups, about
 5\% of accounts in these groups are older than ten years.
 There is hardly any skewness in the account age distribution, i.e., median and
 mean values are close to each other.
@@ -309,7 +309,7 @@ mean values are close to each other.
 \end{figure}
 
 Although accounts exemplify rougly the same age distribution across all user
-groups, their activity level differ considerably (see Fig.~\ref{fig:freq_distr}).
+groups, their activity levels differ considerably (see Fig.~\ref{fig:freq_distr}).
 Many celebrities do not average one tweet per day and the median for this group (1.20)
 is lower than the respective counterparts for politicians and companies (1.75 resp. 2.16).
 However, these numbers are not surprising, since many companies employ Twitter accounts
@@ -321,8 +321,7 @@ in the range of under five tweets per day.
 The 75th percentile is the lowest for all three user groups (2.83 tweets per day).
 Neither account age nor tweet frequency show any direct linear correlation with
 retweet or favorite counts for the collected tweets.
-In more detail, all correlation coefficients are located between -0.1 and 0.1 (all
-calculated values can be found in the appendix of this thesis).
+In more detail, all correlation coefficients are located between -0.1 and 0.1.
 
 This section concludes the descriptive data analysis part of this thesis.
 Observations derived from these analyses are used in subsequent sections,
