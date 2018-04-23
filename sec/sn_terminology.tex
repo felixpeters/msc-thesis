@@ -3,11 +3,11 @@
 
 As with deep learning, social network terminology is sometimes used in confusing
 ways.
-This subsection aims to introduce concepts regarding social networks, as well
-as describe the growing influence of social media on companies.
-Firstly, the term \textit{social network} is defined, before structural
-properties are explained (ch.~\ref{sub:sn_social_networks}).
-The second part of this section focuses on \textit{social media}, especially
+This subsection aims to eliminate terminology confusion and introduce basic concepts regarding social networks,
+as well as related notions like social media.
+Firstly, the term \textit{social network} is defined (ch.~\ref{sub:sn_social_networks}), before structural
+properties are explained (ch.~\ref{sub:sn_structure} and~\ref{sub:sn_properties}).
+The last paragraph of this section focuses on \textit{social media}, especially
 practical implications for organizations (ch.~\ref{sub:sn_social_media}).
 
 \paragraph{Social networks}
@@ -15,8 +15,8 @@ practical implications for organizations (ch.~\ref{sub:sn_social_media}).
 
 In order to examine social network structure and properties, the term first
 has to be defined.
-Wassermann \& Faust (1994) explicate that `a social network consists of a finite
-set or sets of actors and the relation or relations defined of them'~\footcite[20]{Wasserman1994}.
+Wassermann \& Faust (1994) explicate that ``a social network consists of a finite
+set or sets of actors and the relation or relations defined on them''~\footcite[20]{Wasserman1994}.
 Here, an \textit{actor} can be any social entity, e.g, people, groups, countries or
 organizations.
 \textit{Relations} are then batches of ties between these entities, e.g., resource
@@ -25,6 +25,7 @@ With this basic definition set, the next two paragraphs focus on structure and
 properties of social networks.
 
 \paragraph{Structure}
+\label{sub:sn_structure}
 
 Social networks can be visualized using graphs, where actors serve as nodes
 and lines represent relations between these actors.
@@ -50,10 +51,11 @@ More intuitively, transitivity means that two related actors of an actor $n$ are
 also related.
 The final property exemplified in Fig.~\ref{fig:tie_properties} is symmetry which
 is always given in undirected networks.
-For undirected networks, symmetry refers to the existence of a relation from
+For directed networks, symmetry refers to the existence of a relation from
 $n_i$ to $n_j$, if there is a relation in the opposite direction~\footcite{Wasserman1994}.
 
 \paragraph{Properties}
+\label{sub:sn_properties}
 
 Social network analysis is a research area which examines dynamics in social
 networks.
@@ -65,7 +67,7 @@ Here, involvement means being the sender or recipient of interactions in the
 network.
 A common measure for actor prominence is \textit{centrality}, which delivers
 several characteristic numbers for measuring activity and location of an actor~\footcite{Wasserman1994}.
-Observations in social network analysis contain the \textit{small world problem},
+An important observation in social network research is the \textit{small world problem},
 which is related to the probability of two random actors in a network being
 connected to each other.
 Formulated differently, the problem also comprises the question how many
@@ -84,8 +86,8 @@ intimate, but serve significant roles in information diffusion~\footcite{Granove
 
 In addition to the small world phenomenon, many social networks are observed to
 be \textit{scale-free}.
-Scale freedom denotes that few actors have a very high number and most actors 
-a low number of connections.
+Scale freedom denotes the observation that few actors have a very high number of connections,
+while the vast majority of actors is limited to very few connections.
 Highly connected nodes are referred to as \textit{hubs}.
 A power law distribution can be observed in scale-free networks, i.e., the
 probability for an actor to have exactly $k$ connections is given by $k^{-n}$
@@ -98,20 +100,20 @@ on a regular and log-scale.
 
 The terms social network and social media are often used interchangeably, though
 they generally refer to distinct matters.
-Social media can be described as `a group of Internet-based applications that
+Social media can be described as ``a group of Internet-based applications that
 build on the ideological and technological foundations of Web 2.0, and that allow
-the creation and exchange of User Generated Content'~\footcite[61]{Kaplan2010}.
-\textit{Web 2.0} refers to technologies like \textit{Flash}, \textit{RSS} and 
+the creation and exchange of User Generated Content''~\footcite[61]{Kaplan2010}.
+Here, Web 2.0 refers to technologies like \textit{Flash}, \textit{RSS} and 
 \textit{AJAX} that first enabled collaboration on the internet, e.g., via blogs
 or wiki pages.
 Examples for social media platforms are \textit{Facebook} (social network), 
 \textit{Twitter} (microblogging) or \textit{YouTube} (video platform).
-Upcoming of social media platforms brings practical challenges for organizations,
+Rise of social media platforms brings practical challenges for organizations with it,
 since they enable both direct communication with the customer, as well as
 communication between customers.
 Contents and frequency of the latter are mostly out of managerial control~\footcite{Mangold2009}.
-Nowadays, most companies maintain social media profiles as part of their
-marketing strategy.
+Nowadays, most companies maintain social media profiles as part of their overall
+marketing approach.
 Research has created guidelines for corporate use of social media and stressed the
 importance of community building around products of a company~\footcite{Culnan2010}.
 Here, tracking the return of social media investments often requires engagement
@@ -121,5 +123,5 @@ Attributes of social media marketing have been shown to have positive effects
 on purchase intention, e.g., for luxury fashion brands~\footcite{Kim2012}.
 
 Twitter has been listed as an example social media platform.
-The concluding section of the background chapter will explain terminology
+The concluding section of this background chapter will explain terminology
 and properties related to Twitter in more detail.
