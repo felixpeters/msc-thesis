@@ -71,11 +71,12 @@ As expected, increases in both number of hidden layers and units improve
 performance.
 However, adding units yields generally leads to higher performance increases than
 simply adding layers.
-In addition, adding more hidden layers increases total training time more than
+Moreover, adding more hidden layers increases total training time more than
 adding units.
 Including more than four hidden layers only leads to minor performance improvement for
 the classification setting.
-Also, a more unstable training process was observed, sometimes resulting in overfitting.
+Also, a more unstable training process was observed, sometimes resulting in quickly overfitting
+to the training data.
 Hence, the configuration consisting of four layers with 64 neurons each was
 chosen for models in this thesis.
 The regression setting proved to be a bit more robust regarding the number of
@@ -223,7 +224,7 @@ the biggest class.
 Instead, misclassifications mostly happen on behalf of neighboring classes (2 and 5),
 which makes the predictions in a sense ``better''.
 Both observations can also be made on the politician data set.
-In addition it has to be noted that class 6 is never predicted for politicians
+In addition, it has to be noted that class 6 is never predicted for politicians
 and companies.
 Reasons for this could be the small number of training examples from this class
 or a lack of representational capability in the model.
@@ -269,7 +270,7 @@ distribution.
   \label{tab:d1_regression_eval}
 \end{table}
 
-Analyzing regression results in more details is helpful, especially when considering
+Analyzing regression results in more detail is helpful, especially when considering
 that the MAE loss value represents an average over all validation examples.
 In order to evaluate model performance in more detail, MAE values should thus be
 observed separately for different ranges of actual engagement.
