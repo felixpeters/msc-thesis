@@ -55,7 +55,7 @@ exact price (e.g. 1,000,000\$), this would constitute a \textbf{regression} task
 Assuming the goal is to assign the house to a price interval (e.g., (500,000\$, 1,000,000\$]),
 one would describe this as a \textbf{classification} problem. Other common tasks
 can be derived from Figure 2.1. One such example would be \textbf{anomaly detection}, e.g.,
-if the goal were to detect expensive houses in a neighborhood where house prices
+if the goal was to detect expensive houses in a neighborhood where house prices
 are typically low. The task could also be to translate house descriptions from
 English into other languages (\textbf{machine translation}) or to derive an
 estimation of the underlying probability distribution of the data (\textbf{density estimation}).
@@ -73,7 +73,8 @@ examples were classified incorrectly?). If the algorithm outputs class
 probabilities, \textbf{cross entropy} can be used to evaluate model
 performance. Defining the correct performance measure can be more difficult
 for more complex learning problems such as machine translation. The design of 
-\textit{P} can influence the training process, e.g., if not all errors have the
+\textit{P}, i.e., the performance measures, can influence the training process, 
+e.g., if not all errors have the
 same misclassification cost. Furthermore, machine learning models should be evaluated on unseen
 data, i.e., data points that were not used for training the model. This way,
 one derives a better estimate of the generalization abilities of the model~\footcite{Bishop2006, Goodfellow2016, Mitchell1997}.
@@ -99,7 +100,7 @@ and regression examples)~\footcite{Goodfellow2016, Bishop2006}. The third kind o
 experience for a machine learning algorithm is a \textbf{reinforcement learning}
 setting. Here, the algorithm does not rely on a fixed data set, but instead 
 interacts with its environment steadily. It then learns from the feedback it
-derives from these interactions. A common usecase for reinforcement
+derives from these interactions. A common use case for reinforcement
 learning is the interaction of agents with the real environments, e.g.,
 self-driving cars. In most of these settings collecting all data points is
 insufficient or simply not feasible~\footcite{Sutton1998}.

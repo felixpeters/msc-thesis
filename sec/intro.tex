@@ -10,8 +10,8 @@ about what is commonly referred to as the big data phenomenon~\footnote{\url{htt
   Information is the oil of the 21st century, and analytics is the combustion engine.
 \end{quote}
 
-Migrating transactions from the physical world to the internet has caused a near
-intangible increase in data availability.
+Migrating transactions from the physical world to the internet has caused an unprecedented
+increase in data availability.
 More and more goods are purchased on the web, social networks shift communication
 to the digital world, streaming platforms compete with more traditional ways
 of media consumption and production is increasingly automated using smart robots.
@@ -75,7 +75,7 @@ often requires massive amounts of data preprocessing.
 In contrast to that, deep neural networks are capable of learning their own 
 feature representations, even from unstructured data such as text.
 Thus, less preprocessing and feature engineering is required when applying
-these models.
+these models which in turn enhances scalability in production settings.
 Moreover, tackled tasks in the literature are oftentimes simplified and not of 
 practical relevance, e.g., a simple prediction whether a message will be 
 retweeted or not.
@@ -103,14 +103,14 @@ As the prediction should happen in an ad-hoc fashion at the time of creation,
 no additional data requests can be made, i.e., all input features for the model
 are extracted from the tweet itself.
 The number and nature of usable features is therefore limited by the data source,
-e.g., the public Twitter API.
+i.e., the public Twitter API.
 
 \subsection{Approach}
 \label{sec:approach}
 
-As mentioned previously, all developed models are tested on a variety of data
+As mentioned previously, all developed models are tested on multiple tweet data
 sets, which differ in size and engagement distributions.
-Here, fixed user groups are established, with accounts coming from a variety
+In order to obtain these data sets, fixed user groups are established, with accounts coming from a variety
 of fields, e.g., politics, entertainment, sports and industry.
 For all user groups, all tweets for a given time frame are collected.
 The resulting tweet collections then serve as training and validation data for

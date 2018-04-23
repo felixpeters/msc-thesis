@@ -25,13 +25,13 @@ each example are known.
 These can be used to calculate the prediction error, which is determined by the
 \textbf{cost function}.
 The assessed error can then be used to calculate updates for the parameters of
-the networks which are called \textit{weights}.
+the networks, which are called \textit{weights}.
 This process is known as \textbf{backpropagation}.
 The examples which are used during one iteration of the training process are
 called a \textit{mini-batch}.
 A full run through all examples of the training data set is referred to as an
 \textit{epoch}.
-The forward and backpropagation algorithms and the cost function are the three
+The forward and backpropagation algorithms combined with the cost function are the three
 basic elements of an artifical neural network. 
 In order to define them in more detail, mathematical notation has first to be
 established.
@@ -55,7 +55,7 @@ in the following layer.
 Such a layer is then referred to as being \textit{fully-connected}.
 More sophisticated layer architectures will be introduced in subsection~\ref{sub:dl_developments}.
 Figure~\ref{fig:nn_architecture} shows an example of a fully-connected network
-that contains an input layer with six units, two hidden layers with four respective
+that contains an input layer with six units, two hidden layers with four respectively
 three units and and an output layer containing one single unit.
 Here, hidden layers are all layers between input and output layer.
 
@@ -106,13 +106,13 @@ The function $\sigma$ is applied element-wise to the result vector.
 
 If $\sigma(x) = x$, then the output activations $a^l$ will just be a linear
 combination of the input activations $a^{l-1}$.
-This property does obviously not change when applied over more layers.
+This property does obviously not change when applied to a larger number of layers.
 The result will still be a linear function.
 In contrast to that, if $\sigma$ is a non-linear function, the network receives more 
 representational capability, i.e., it can learn to represent a bigger variety of 
 functions. 
 Two popular choices for $\sigma$ are the \textit{sigmoid function} and the
-\textit{Rectified Linear Unit (ReLU)} (see figure~\ref{fig:activations}). 
+\textit{Rectified Linear Unit (ReLU)} (see Fig.~\ref{fig:activations}). 
 The sigmoid function is given by equation~\ref{eq:sigmoid}, whereas ReLU is 
 simply equal to the maximum of the input and zero (equation~\ref{eq:relu}).
 
@@ -207,7 +207,7 @@ the rate of change of the cost function with respect to these learnable weights.
 This paragraph will explain how the backpropagation algorithm works in detail.
 Proofs are out of scope for this thesis and therefore omitted completely.
 
-Some definitions are helpful for the further explanations. Firstly
+Some definitions are helpful for the further explanations. Firstly,
 $z^l$ is defined as an intermediate quantity which represents the weighted
 inputs for neurons in layer $l$ (see equation~\ref{eq:weighted_input}).
 
